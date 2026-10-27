@@ -245,7 +245,7 @@ section{scroll-margin-top:var(--head-h)}
 .band{background:var(--red);height:calc(var(--radius) * 3);margin-top:calc(var(--radius) * -1);border-radius:var(--radius) var(--radius) 0 0;position:relative;z-index:3}
 .contato{z-index:4}
 .contato h2 .it{color:var(--red)}
-.ct-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,.8fr) minmax(0,.8fr);gap:clamp(24px,4vw,64px);margin-top:clamp(36px,5vw,64px);padding-top:20px;border-top:1px solid var(--line-d)}
+.ct-grid{clear:both;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,.8fr) minmax(0,.8fr);gap:clamp(24px,4vw,64px);margin-top:clamp(36px,5vw,64px);padding-top:20px;border-top:1px solid var(--line-d)}
 .ct-grid .lbl{color:var(--mute-d);margin-bottom:12px}
 .call{display:inline-flex;align-items:center;gap:.4em;font-weight:700;text-transform:uppercase;font-size:clamp(1.4rem,3vw,2.6rem);letter-spacing:-.03em;line-height:1;text-decoration:none;color:var(--sand)}
 .call:hover{color:var(--red)}
@@ -256,6 +256,27 @@ section{scroll-margin-top:var(--head-h)}
 .people .who{color:var(--mute-d)}
 .copy-btn{border:0;background:none;padding:2px 0;cursor:pointer;color:var(--sand);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
 .ct-grid address{font-style:normal;line-height:1.6}
+.lead{display:grid;gap:20px}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.field{display:grid;gap:6px}
+.ct-grid .field .lbl,.ct-grid .chips legend{color:var(--mute-d);margin:0}
+.field input,.field textarea{width:100%;font:inherit;font-size:1rem;line-height:1.5;color:var(--sand);background:transparent;border:0;border-bottom:1px solid var(--line-d);border-radius:0;padding:8px 0;outline:none;resize:vertical}
+.field input::placeholder,.field textarea::placeholder{color:rgba(211,203,182,.32)}
+.field input:focus,.field textarea:focus{border-bottom-color:var(--sand)}
+.field input.bad{border-bottom-color:var(--red)}
+.chips{border:0;margin:0;padding:0;min-width:0;display:flex;flex-wrap:wrap;gap:8px}
+.ct-grid .chips legend{padding:0;margin-bottom:10px}
+.chips label{position:relative;cursor:pointer}
+.chips input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+.chips span{display:inline-block;font-weight:700;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;padding:9px 14px;border:1px solid var(--line-d);border-radius:999px;color:var(--sand);transition:background .15s,color .15s,border-color .15s}
+.chips label:hover span{border-color:var(--sand)}
+.chips input:checked+span{background:var(--sand);color:var(--ink);border-color:var(--sand)}
+.chips input:focus-visible+span{outline:2px solid var(--red);outline-offset:2px}
+.send{background:none;border:0;padding:4px 0 0;cursor:pointer;justify-self:start;text-align:left;white-space:nowrap;font-size:clamp(1.25rem,2.3vw,2rem)}
+.f-note{margin:-8px 0 0;min-height:1.3em;font-size:.9rem;color:var(--mute-d)}
+.f-note.err{color:var(--red)}
+.ct-grid .lbl.direct{margin:34px 0 0}
+@media (max-width:560px){.f-row{grid-template-columns:1fr}}
 .ct-list{list-style:none;margin:0;padding:0;display:grid;gap:6px}
 .ct-list a{text-decoration:none}
 .ct-list a:hover{color:var(--red)}
@@ -476,8 +497,30 @@ dialog.post::backdrop{background:var(--scrim)}
       <h2 class="big">Deu match?<br><span class="it">Pode ligar.</span></h2>
       <div class="ct-grid">
         <div>
-          <p class="lbl">WhatsApp</p>
-          <a class="call" href="https://wa.me/5585987070488?text=Oi%2C%20vim%20pelo%20site%20da%20SIMPLES." target="_blank" rel="noopener">Chamar no zap <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <p class="lbl">Manda uma mensagem</p>
+          <form class="lead" id="lead" novalidate>
+            <div class="f-row">
+              <label class="field"><span class="lbl">Seu nome</span><input name="nome" type="text" autocomplete="name" required placeholder="Como a gente te chama"></label>
+              <label class="field"><span class="lbl">Empresa ou marca</span><input name="empresa" type="text" autocomplete="organization" placeholder="Opcional"></label>
+            </div>
+            <fieldset class="chips">
+              <legend class="lbl">Do que você precisa</legend>
+              <label><input type="checkbox" name="tema" value="estratégia"><span>Estratégia</span></label>
+              <label><input type="checkbox" name="tema" value="conteúdo"><span>Conteúdo</span></label>
+              <label><input type="checkbox" name="tema" value="tráfego pago"><span>Tráfego pago</span></label>
+              <label><input type="checkbox" name="tema" value="site ou vitrine"><span>Site ou vitrine</span></label>
+              <label><input type="checkbox" name="tema" value="nao-sei"><span>Ainda não sei</span></label>
+            </fieldset>
+            <label class="field"><span class="lbl">Conta um pouco</span><textarea name="msg" rows="3" placeholder="O momento da marca, o que está pegando, onde você quer chegar"></textarea></label>
+            <fieldset class="chips">
+              <legend class="lbl">Falar com</legend>
+              <label><input type="radio" name="para" value="carol" checked><span>Carol</span></label>
+              <label><input type="radio" name="para" value="rafael"><span>Rafael</span></label>
+            </fieldset>
+            <button class="call send" type="submit">Enviar pelo WhatsApp <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></button>
+            <p class="f-note" id="lead-note" role="status"></p>
+          </form>
+          <p class="lbl direct">Ou direto no número</p>
           <div class="people">
             <div><span class="who lbl">Carol</span><span class="num" id="fone-carol">85 98707.0488</span><button class="copy-btn lbl" type="button" data-copy="+55 85 98707-0488" data-target="fone-carol">Copiar</button></div>
             <div><span class="who lbl">Rafael</span><span class="num" id="fone-rafael">85 98910.9914</span><button class="copy-btn lbl" type="button" data-copy="+55 85 98910-9914" data-target="fone-rafael">Copiar</button></div>
@@ -678,6 +721,34 @@ if ("IntersectionObserver" in window) {
     else if (!e.isIntersecting && !film.paused) film.pause();
   }), { threshold: 0.35 }).observe(film);
 }
+
+/* formulário: monta a mensagem e abre o WhatsApp */
+const lead = document.getElementById("lead"), leadNote = document.getElementById("lead-note");
+const fones = { carol: ["Carol", "5585987070488"], rafael: ["Rafael", "5585989109914"] };
+const juntar = l => l.length < 2 ? (l[0] || "") : l.slice(0, -1).join(", ") + " e " + l[l.length - 1];
+lead.addEventListener("submit", ev => {
+  ev.preventDefault();
+  const f = new FormData(lead);
+  const nome = (f.get("nome") || "").trim(), empresa = (f.get("empresa") || "").trim(), msg = (f.get("msg") || "").trim();
+  const campoNome = lead.elements.nome;
+  if (!nome) {
+    campoNome.classList.add("bad"); campoNome.focus();
+    leadNote.textContent = "Escreve seu nome pra gente saber com quem está falando."; leadNote.classList.add("err");
+    return;
+  }
+  campoNome.classList.remove("bad"); leadNote.classList.remove("err");
+  const temas = f.getAll("tema"), naoSei = temas.includes("nao-sei"), lista = temas.filter(t => t !== "nao-sei");
+  const [quem, fone] = fones[f.get("para")] || fones.carol;
+  const linhas = [`Oi, ${quem}! Vim pelo site da SIMPLES.`, `Meu nome é ${nome}${empresa ? `, da empresa ${empresa}` : ""}.`];
+  if (lista.length) linhas.push(`Quero conversar sobre ${juntar(lista)}.`);
+  else if (naoSei) linhas.push("Ainda não sei bem do que preciso, queria conversar.");
+  if (msg) linhas.push("", msg);
+  const url = `https://wa.me/${fone}?text=${encodeURIComponent(linhas.join("\n"))}`;
+  const w = window.open(url, "_blank");
+  if (w) w.opener = null; else location.href = url;
+  leadNote.textContent = `Abrimos o WhatsApp com a sua mensagem pra ${quem}. É só enviar.`;
+});
+lead.elements.nome.addEventListener("input", e => { if (e.target.value.trim()) { e.target.classList.remove("bad"); leadNote.classList.remove("err"); leadNote.textContent = ""; } });
 
 /* copiar número */
 const toast = document.getElementById("toast"); let tt;
