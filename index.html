@@ -21,7 +21,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "SIMPLES Comunicação", "description": "Agência de comunicação de Fortaleza. Estratégia, conteúdo, tráfego pago e sites.", "url": "https://simplesonline.com/", "image": "https://simplesonline.com/og.jpg", "telephone": "+55 85 98707-0488", "address": {"@type": "PostalAddress", "streetAddress": "Av. Dom Luís, 300, 7º andar, salas 712 e 713, Avenida Shopping e Office", "addressLocality": "Fortaleza", "addressRegion": "CE", "addressCountry": "BR"}, "sameAs": ["https://www.instagram.com/simplesonline/", "https://www.facebook.com/simplescomunicacao"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "SIMPLES Comunicação", "description": "Agência de comunicação de Fortaleza. Estratégia, conteúdo, tráfego pago e sites.", "url": "https://simplesonline.com/", "image": "https://simplesonline.com/og.jpg", "telephone": "+55 85 98707-0488", "address": {"@type": "PostalAddress", "addressLocality": "Fortaleza", "addressRegion": "CE", "addressCountry": "BR"}, "areaServed": ["Ceará", "Rio Grande do Norte", "Pernambuco"], "sameAs": ["https://www.instagram.com/simplesonline/", "https://www.facebook.com/simplescomunicacao"]}</script>
 <style>
 @font-face{font-family:"Arimo";src:url("fonts/arimo-latin-400-normal.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
 @font-face{font-family:"Arimo";src:url("fonts/arimo-latin-700-normal.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
@@ -217,6 +217,7 @@ section{scroll-margin-top:var(--head-h)}
 @media (max-width:520px){.narr{grid-template-columns:1fr}}
 .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:clamp(48px,7vw,96px);border-top:1px solid var(--line-d);padding-top:18px}
 .stats .lbl{color:var(--mute-d);margin-bottom:8px}
+.stats p.lbl{font-size:.62rem;letter-spacing:.22em}
 .stats p{margin:0;font-weight:700;text-transform:uppercase;font-size:clamp(1rem,1.6vw,1.3rem);letter-spacing:-.01em}
 @media (max-width:720px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .ticker{overflow:hidden;border-block:1px solid var(--line-d);margin-top:clamp(48px,7vw,96px)}
@@ -233,6 +234,9 @@ section{scroll-margin-top:var(--head-h)}
 .rows .n{font-size:.62rem;font-weight:700;letter-spacing:.2em;color:var(--mute-s);font-variant-numeric:tabular-nums}
 .rows .t{font-weight:700;text-transform:uppercase;font-size:clamp(1rem,1.8vw,1.45rem);letter-spacing:-.015em}
 .rows .g{color:var(--mute-s)}
+.rows li.grp{grid-template-columns:2.6rem minmax(0,1fr) auto}
+.rows li.grp .g{text-align:right}
+@media (max-width:480px){.rows li.grp{grid-template-columns:2.6rem minmax(0,1fr)}.rows li.grp .g{grid-column:2;text-align:left;margin-top:-6px}}
 .past{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 32px;margin:clamp(40px,6vw,72px) 0 0;padding-top:18px;border-top:1px solid var(--line-s)}
 .past div{display:grid;gap:6px;align-content:start}
 .past dt{color:var(--red-sand)}
@@ -255,7 +259,7 @@ section{scroll-margin-top:var(--head-h)}
 .people .num{font-weight:700;font-size:1.02rem;letter-spacing:.02em;font-variant-numeric:tabular-nums;user-select:all}
 .people .who{color:var(--mute-d)}
 .copy-btn{border:0;background:none;padding:2px 0;cursor:pointer;color:var(--sand);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
-.ct-grid address{font-style:normal;line-height:1.6}
+.ct-grid .where{margin:0;line-height:1.6}
 .lead{display:grid;gap:20px}
 .f-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .field{display:grid;gap:6px}
@@ -445,8 +449,8 @@ dialog.post::backdrop{background:var(--scrim)}
 
       <div class="stats">
         <div><p class="lbl">Base</p><p>Fortaleza, CE</p></div>
-        <div><p class="lbl">Sócios</p><p>Carol e Rafael</p></div>
-        <div><p class="lbl">Clientes atuais</p><p>8 marcas</p></div>
+        <div><p class="lbl">Atendemos</p><p>CE, RN e PE</p></div>
+        <div><p class="lbl">Clientes atuais</p><p>12 marcas</p></div>
         <div><p class="lbl">Assinatura</p><p>Viu? É simples.</p></div>
       </div>
     </div>
@@ -467,14 +471,18 @@ dialog.post::backdrop{background:var(--scrim)}
         <div>
           <p class="lbl c">Clientes atuais</p>
           <ol class="rows">
-            <li><span class="n">01</span><span class="t">Grupo Meia Sola</span></li>
-            <li><span class="n">02</span><span class="t">EXALLA</span></li>
-            <li><span class="n">03</span><span class="t">Construtora ARA</span></li>
-            <li><span class="n">04</span><span class="t">Gran Vellas</span></li>
-            <li><span class="n">05</span><span class="t">Bebêtenkitê</span></li>
-            <li><span class="n">06</span><span class="t">Gran Mareiro</span></li>
-            <li><span class="n">07</span><span class="t">Multimáquinas</span></li>
-            <li><span class="n">08</span><span class="t">MeLoc</span></li>
+            <li class="grp"><span class="n">01</span><span class="t">Meia Sola</span><span class="g lbl">Grupo Meia Sola</span></li>
+            <li class="grp"><span class="n">02</span><span class="t">Meia Sola Off</span><span class="g lbl">Grupo Meia Sola</span></li>
+            <li class="grp"><span class="n">03</span><span class="t">Arezzo Ceará</span><span class="g lbl">Grupo Meia Sola</span></li>
+            <li class="grp"><span class="n">04</span><span class="t">Schutz Fortaleza</span><span class="g lbl">Grupo Meia Sola</span></li>
+            <li class="grp"><span class="n">05</span><span class="t">Schutz Natal</span><span class="g lbl">Grupo Meia Sola</span></li>
+            <li class="grp"><span class="n">06</span><span class="t">Schutz Recife</span><span class="g lbl">Grupo Meia Sola</span></li>
+            <li><span class="n">07</span><span class="t">EXALLA</span></li>
+            <li><span class="n">08</span><span class="t">Construtora ARA</span></li>
+            <li><span class="n">09</span><span class="t">Gran Vellas</span></li>
+            <li><span class="n">10</span><span class="t">Bebêtenkitê</span></li>
+            <li><span class="n">11</span><span class="t">Multimáquinas</span></li>
+            <li><span class="n">12</span><span class="t">MeLoc</span></li>
           </ol>
         </div>
       </div>
@@ -527,8 +535,8 @@ dialog.post::backdrop{background:var(--scrim)}
           </div>
         </div>
         <div>
-          <p class="lbl">Onde a gente fica</p>
-          <address>Avenida Shopping e Office<br>Av. Dom Luís, 300, 7º andar<br>Salas 712 e 713, Meireles<br>Fortaleza, CE</address>
+          <p class="lbl">Onde a gente atende</p>
+          <p class="where">De Fortaleza para onde a sua marca estiver. Hoje atendemos marcas no Ceará, no Rio Grande do Norte e em Pernambuco, com reunião por vídeo ou presencial, quando fizer sentido.</p>
           <div class="ct-row lbl" style="margin-top:16px"><span>Fortaleza</span><span class="clock" data-clock>--:--</span></div>
         </div>
         <div>
@@ -536,7 +544,6 @@ dialog.post::backdrop{background:var(--scrim)}
           <ul class="ct-list">
             <li><a href="https://www.instagram.com/simplesonline/" target="_blank" rel="noopener">Instagram ↗</a></li>
             <li><a href="https://www.facebook.com/simplescomunicacao" target="_blank" rel="noopener">Facebook ↗</a></li>
-            <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Avenida+Shopping+e+Office%2C+Av.+Dom+Lu%C3%ADs%2C+300%2C+Fortaleza" target="_blank" rel="noopener">Ver no mapa ↗</a></li>
           </ul>
         </div>
       </div>
