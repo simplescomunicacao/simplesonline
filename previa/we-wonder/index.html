@@ -1,0 +1,688 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>We Wonder, Vila Real | Prévia de site</title>
+<meta name="description" content="Academia de fitness, dança e aerial arts em Vila Real. 21 modalidades, personal trainers, massagens e a primeira aula grátis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:ital,wght@0,600;0,700;0,800;1,800;1,900&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   We Wonder | prévia de proposta SIMPLES WEB (sw-002), v1
+   A cara vem do que a casa já usa: o azul-noite e a moldura em degradé dos
+   cartões das aulas, a fita do logótipo e os títulos em itálico pesado.
+   Uma ideia só: na abertura, as três aerial arts descem penduradas em fitas.
+   O amarelo é reservado às notas da SIMPLES. Nada do site usa amarelo.
+   ========================================================================== */
+:root{
+  --noite:#1c2a45; --noite-alta:#213151; --noite-funda:#162137; --tinta:#151f2d;
+  --laranja:#ee6848; --rosa:#ee2176; --magenta:#d31581; --roxo:#87157f; --indigo:#4d3189; --azul:#2c95c7;
+  --nevoa:#f2f4f9; --linha:rgba(21,31,45,.14); --cinza:#566074;
+  --nota:#ffe27a; --nota-tinta:#3a3000;
+  --fita:linear-gradient(45deg,#4d3189 0%,#87157f 26%,#d31581 50%,#ee2176 72%,#ee6848 100%);
+  --fita-funda:linear-gradient(45deg,#3b2a7a 0%,#7a167c 48%,#c2137b 100%);
+  --fita-btn:linear-gradient(90deg,#6a1c82 0%,#b01780 55%,#d31581 100%);
+  --titulo:"Montserrat","Arial Black",Arial,sans-serif;
+  --texto:"Lato","Helvetica Neue",Arial,sans-serif;
+  --pad:clamp(18px,5vw,64px); --bloco:clamp(56px,8vw,112px); --g:clamp(10px,1.4vw,18px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font:400 17px/1.6 var(--texto);color:var(--tinta);background:#fff;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3,h4,p,dl,dd,ul,figure{margin:0}
+ul{padding:0;list-style:none}
+section[id]{scroll-margin-top:84px}
+:focus-visible{outline:3px solid var(--azul);outline-offset:3px;border-radius:4px}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{max-width:1240px;margin-inline:auto;padding-inline:var(--pad)}
+.sec{padding-block:var(--bloco)}
+.nq{white-space:nowrap}
+
+/* vozes do texto */
+.t1{font:italic 900 clamp(30px,4.4vw,56px)/1 var(--titulo);letter-spacing:-.01em;text-transform:uppercase;text-wrap:balance}
+.lead{max-width:36em;margin-top:14px;font-size:clamp(17px,1.5vw,20px);color:var(--cinza)}
+.t3{font:800 20px/1.2 var(--titulo)}
+.miudo{font:600 14px/1.4 var(--titulo);color:var(--cinza)}
+.elo{font:700 15px/1.3 var(--titulo);text-decoration:underline;text-decoration-color:var(--magenta);text-decoration-thickness:2px;text-underline-offset:5px}
+.elo:hover{text-decoration-thickness:3px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 26px;border:2px solid transparent;border-radius:999px;background:none;font:700 15px/1.1 var(--titulo);text-align:center;text-decoration:none;color:inherit;cursor:pointer;transition:transform .15s,background .15s,color .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-fita{background:var(--fita-btn);color:#fff}
+.btn-clara{background:#fff;color:var(--tinta)}
+.btn-linha{border-color:currentColor}
+.acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+
+/* nota da SIMPLES dentro da prévia */
+.nota{max-width:44em;margin-top:26px;padding:14px 18px;border-radius:4px;background:var(--nota);box-shadow:0 2px 0 rgba(58,48,0,.2);font-size:15px;line-height:1.5;color:var(--nota-tinta);transform:rotate(-.5deg)}
+.nota b{font-family:var(--titulo);font-weight:800}
+
+/* fotografia com reserva de lugar (se a imagem não carregar) */
+.foto{position:relative;overflow:hidden;background:var(--nevoa)}
+.foto img{width:100%;height:100%;object-fit:cover}
+.foto.semimg img{display:none}
+.foto.semimg{background:repeating-linear-gradient(135deg,#e9ecf3 0 14px,#e1e5ee 14px 28px)}
+.foto.semimg::after{content:attr(data-leg);position:absolute;left:14px;right:14px;bottom:12px;font-size:13px;line-height:1.3;color:var(--cinza)}
+/* cartão de aula: se a imagem falhar, fica o cartão refeito em CSS */
+.cartao{aspect-ratio:1/1;border-radius:10px;background:linear-gradient(180deg,var(--noite-alta),var(--noite-funda))}
+.cartao.semimg{background:linear-gradient(180deg,var(--noite-alta),var(--noite-funda))}
+.cartao.semimg::before{content:"";position:absolute;inset:14% 14% 20%;background:var(--fita);opacity:.9}
+.cartao.semimg::after{left:6%;right:6%;bottom:9%;font:italic 900 clamp(13px,1.5vw,19px)/1 var(--titulo);text-align:center;text-transform:uppercase;color:#fff}
+
+/* faixa de prévia */
+.previa{padding:8px var(--pad);background:var(--nota);font-size:13px;font-weight:700;line-height:1.35;text-align:center;color:var(--nota-tinta)}
+
+/* topo */
+.topo{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.97);box-shadow:0 1px 0 var(--linha)}
+.topo .wrap{display:flex;align-items:center;gap:26px;min-height:68px}
+.marca{position:relative;flex:none;display:block;width:150px;aspect-ratio:2188/836;margin-right:auto;overflow:hidden;text-decoration:none}
+.marca img{position:absolute;left:-30.16%;top:-97.13%;width:160.33%;max-width:none}
+.marca-texto{display:none;font:italic 900 22px/1 var(--titulo);text-transform:uppercase;white-space:nowrap}
+.marca.semimg{width:auto;aspect-ratio:auto;overflow:visible}
+.marca.semimg img{display:none}
+.marca.semimg .marca-texto{display:block}
+.nav{display:flex;gap:22px}
+.nav a{padding:6px 0;border-bottom:2px solid transparent;font:600 14px/1.2 var(--titulo);text-decoration:none}
+.nav a:hover{border-color:var(--magenta)}
+.topo .btn{min-height:42px;padding:0 20px;font-size:14px}
+
+/* abertura: as aerial arts descem em fitas */
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--noite-alta),var(--noite-funda));color:#fff}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:center}
+.hero-texto{padding-block:clamp(48px,7vw,96px)}
+.hero h1{font:italic 900 clamp(38px,5.4vw,78px)/.96 var(--titulo);letter-spacing:-.015em;text-transform:uppercase;text-wrap:balance}
+.hero-sub{max-width:30em;margin-top:22px;font-size:clamp(17px,1.5vw,20px);color:rgba(255,255,255,.86)}
+.hero-linha{margin-top:26px;font:600 14px/1.5 var(--titulo);color:rgba(255,255,255,.78)}
+.hero-linha a{text-decoration:underline;text-decoration-color:var(--rosa);text-underline-offset:4px;color:#fff}
+.trapezio{position:relative;align-self:stretch;min-height:clamp(420px,44vw,580px)}
+.pend{position:absolute;display:block;text-decoration:none;transform-origin:50% -520px;transform:rotate(var(--r));animation:descer 1.6s cubic-bezier(.22,.9,.3,1) both;animation-delay:var(--t,0s)}
+.pend::before,.pend::after{content:"";position:absolute;bottom:calc(100% - 4px);width:8px;height:1000px;border-radius:0 0 2px 2px;background:linear-gradient(0deg,#87157f 0,#d31581 110px,#ee2176 240px,#ee6848 400px)}
+.pend::before{left:calc(50% - 13px)}
+.pend::after{left:calc(50% + 5px);opacity:.78}
+.pend .cartao{box-shadow:0 26px 50px -18px rgba(0,0,0,.65)}
+.p1{left:30%;top:38%;width:54%;z-index:2;--r:1.4deg;--t:.2s}
+.p2{left:0;top:12%;width:38%;--r:-2deg;--t:.05s}
+.p3{left:66%;top:6%;width:34%;--r:-1.2deg;--t:.35s}
+@keyframes descer{
+  0%{transform:translateY(-900px) rotate(0deg)}
+  55%{transform:translateY(0) rotate(calc(var(--r) * -1.4))}
+  78%{transform:translateY(0) rotate(calc(var(--r) * 1.6))}
+  100%{transform:translateY(0) rotate(var(--r))}
+}
+
+/* hoje: aberto ou fechado, à hora de Lisboa */
+.hoje{border-bottom:1px solid var(--linha)}
+.hoje .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 28px;padding-block:16px}
+.hoje-estado{display:flex;align-items:center;gap:10px;font:800 clamp(16px,1.5vw,19px)/1.3 var(--titulo)}
+.lamp{flex:none;width:11px;height:11px;border-radius:50%;background:#b3bac6}
+.lamp.aberto{background:#1fa971;box-shadow:0 0 0 4px rgba(31,169,113,.22)}
+.hoje-horas{margin-right:auto;color:var(--cinza)}
+
+/* agora na We Wonder */
+.agora{padding-block:clamp(32px,4.5vw,56px);background:var(--nevoa)}
+.tira{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,3.4fr);gap:clamp(18px,4vw,56px);align-items:start}
+.tira ul{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,3vw,40px)}
+.tira a{display:block;padding-top:14px;border-top:3px solid;border-image:var(--fita) 1;text-decoration:none}
+.tira b{display:block;font:800 17px/1.3 var(--titulo)}
+.tira li span{display:block;margin-top:6px;font-size:15px;line-height:1.5;color:var(--cinza)}
+.tira a:hover b{text-decoration:underline;text-decoration-color:var(--magenta);text-decoration-thickness:2px;text-underline-offset:4px}
+
+/* aulas: seis colunas no ecrã largo, calhas de deslizar no estreito */
+.grelha{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:clamp(28px,3.6vw,48px) var(--g);margin-top:clamp(32px,4.5vw,56px)}
+.grupo{grid-column:span var(--n,6);min-width:0}
+.grupo-topo{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 14px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--tinta)}
+.grupo-cartoes{display:grid;grid-template-columns:repeat(var(--n,6),minmax(0,1fr));gap:var(--g)}
+.aula-leg{padding:10px 2px 0}
+.aula h4{display:flex;align-items:baseline;justify-content:space-between;gap:8px;font:700 15px/1.25 var(--titulo)}
+.aula h4 small{flex:none;font:400 14px/1.25 var(--texto);color:var(--cinza)}
+.aula-nota{margin-top:4px;font-size:14px;line-height:1.4;color:var(--cinza)}
+.aula .elo{display:inline-block;margin-top:6px;font-size:14px}
+.aerial-texto{grid-column:span 3;align-self:center;padding-left:clamp(0px,2vw,32px)}
+.aerial-texto p{max-width:26em;color:var(--cinza)}
+
+/* a semana: blocos de abertura à escala, das 07:00 às 22:00 */
+.horario{background:var(--nevoa)}
+.semana{margin-top:clamp(28px,4vw,48px)}
+.dia{display:grid;grid-template-columns:7em minmax(0,1fr);align-items:center;gap:0 16px;padding:7px 0;border-top:1px solid var(--linha)}
+.dia:last-child{border-bottom:1px solid var(--linha)}
+.dia-nome{font:700 15px/1.2 var(--titulo)}
+.dia-horas{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;font-size:15px;color:var(--cinza)}
+.trilho{position:relative;height:36px;border-radius:6px;background:repeating-linear-gradient(90deg,transparent 0 calc(100% / 15 - 1px),var(--linha) calc(100% / 15 - 1px) calc(100% / 15))}
+.trilho i{position:absolute;top:4px;bottom:4px;left:calc((var(--a) - 420) / 900 * 100%);width:calc((var(--b) - var(--a)) / 900 * 100%);display:grid;place-items:center;overflow:hidden;border-radius:6px;background:var(--fita-btn);font:700 12.5px/1 var(--titulo);font-style:normal;white-space:nowrap;color:#fff}
+.trilho em{position:absolute;inset:0 auto 0 0;display:grid;place-items:center start;padding:0 14px 0 2px;background:var(--nevoa);font-style:normal;font-size:15px;color:var(--cinza)}
+.dia.e-hoje .dia-nome::after{content:"hoje";margin-left:8px;padding:2px 8px;border-radius:999px;background:var(--tinta);font-size:11px;color:#fff}
+.agora-linha{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--tinta)}
+.escala{display:grid;grid-template-columns:7em minmax(0,1fr);gap:0 16px;margin-bottom:6px}
+.escala div{grid-column:2;position:relative;height:16px;font:600 12px/1 var(--titulo);color:var(--cinza)}
+.escala span{position:absolute;top:0;transform:translateX(-50%)}
+.horario-pe{margin-top:22px;color:var(--cinza)}
+
+/* preços: dois passes */
+.precos{background:linear-gradient(180deg,var(--noite-alta),var(--noite-funda));color:#fff}
+.precos .lead{color:rgba(255,255,255,.8)}
+.precos-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);grid-template-areas:"cab passes" "resto passes";gap:0 clamp(28px,5vw,72px);align-items:start}
+.precos-cab{grid-area:cab}
+.precos-resto{grid-area:resto}
+.passes{grid-area:passes;align-self:center;display:grid;grid-template-columns:1fr 1fr;gap:var(--g)}
+.passe{display:flex;flex-direction:column;justify-content:space-between;min-width:0;min-height:200px;padding:24px;border-radius:18px}
+.passe-basic{background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 2px rgba(255,255,255,.26)}
+.passe-premium{background:var(--fita)}
+.passe h3{font:800 20px/1.2 var(--titulo)}
+.passe-preco{font:italic 900 clamp(36px,3.5vw,50px)/1 var(--titulo);letter-spacing:-.02em;white-space:nowrap}
+.passe-preco small{display:block;margin-top:8px;font:600 15px/1 var(--titulo);letter-spacing:0}
+.passe-obs{min-height:1.5em;margin-top:8px;font-size:15px}
+.precos-pe{max-width:40em;margin-top:22px;color:rgba(255,255,255,.8)}
+.precos-pe a{color:#fff}
+
+/* treino pessoal e equipa */
+.pt-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);grid-template-areas:"cab serv" "equipa serv";gap:clamp(24px,3vw,40px) clamp(28px,5vw,80px);align-items:start}
+.pt-cab{grid-area:cab}
+.pt-serv{grid-area:serv}
+.servicos > div{padding:18px 0;border-top:1px solid var(--linha)}
+.servicos > div:last-child{border-bottom:1px solid var(--linha)}
+.servicos p{margin-top:6px;max-width:38em;color:var(--cinza)}
+.equipa{grid-area:equipa;display:grid;grid-template-columns:1fr 1fr;gap:var(--g)}
+.pessoa .foto{aspect-ratio:3/4;border-radius:14px}
+.pessoa h3{margin-top:14px}
+.pessoa p{margin-top:6px;font-size:16px;color:var(--cinza)}
+
+/* wellness */
+.wellness{background:var(--nevoa)}
+.split{display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);align-items:center}
+.split .foto{aspect-ratio:4/5;border-radius:14px}
+.lista-linha{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(18px,3vw,40px);max-width:560px;margin-top:22px;border-top:2px solid var(--tinta)}
+.lista-linha li{padding:12px 0;border-bottom:1px solid var(--linha);font:700 16px/1.3 var(--titulo)}
+
+/* wonder events */
+.eventos{background:var(--tinta);color:#fff}
+.eventos .lead{color:rgba(255,255,255,.8)}
+.ev-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--g);margin-top:clamp(28px,4vw,48px)}
+.ev .foto{aspect-ratio:4/5;border-radius:14px;background:var(--noite)}
+.ev .foto.semimg{background:var(--noite)}
+.ev .foto.semimg::after{color:rgba(255,255,255,.7)}
+.ev h3{margin-top:14px}
+.ev p{margin-top:6px;font-size:16px;color:rgba(255,255,255,.78)}
+.ev-tambem{margin-top:clamp(24px,3vw,36px);padding-top:18px;border-top:1px solid rgba(255,255,255,.22);max-width:44em;color:rgba(255,255,255,.86)}
+.ev-pe{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px 40px;margin-top:clamp(24px,3vw,36px)}
+.ev-nota b{display:block;font:italic 900 clamp(28px,3vw,38px)/1 var(--titulo)}
+.ev-nota a{font-size:15px;color:rgba(255,255,255,.86)}
+.ev-pe .acoes{margin-top:0}
+
+/* marcar a aula experimental */
+.marcar{background:var(--fita-funda);color:#fff}
+.marcar .lead{color:rgba(255,255,255,.9)}
+
+/* onde estamos */
+.cont-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(28px,5vw,72px);align-items:start}
+.ficha{margin-top:clamp(22px,3vw,32px);border-top:2px solid var(--tinta)}
+.ficha > div{display:grid;grid-template-columns:7.5em minmax(0,1fr);gap:16px;padding:13px 0;border-bottom:1px solid var(--linha)}
+.ficha dd small{display:block;font-size:14px;color:var(--cinza)}
+.ficha a{text-underline-offset:3px}
+.redes{display:flex;flex-wrap:wrap;gap:4px 18px}
+.opiniao{margin-top:22px}
+.mapa{position:relative;display:grid;place-items:center;aspect-ratio:16/11;padding:24px;overflow:hidden;border-radius:14px;background:var(--nevoa);text-align:center}
+.mapa p{max-width:20em;font:700 17px/1.4 var(--titulo)}
+.mapa .acoes{justify-content:center;margin-top:18px}
+.mapa iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.letreiro{display:flex;align-items:center;gap:16px;margin-top:18px}
+.letreiro .foto{flex:none;width:96px;aspect-ratio:1/1;border-radius:50%}
+.letreiro .foto img{object-position:50% 42%;transform:scale(1.25)}
+.letreiro p{font-size:15px;color:var(--cinza)}
+
+/* rodapé */
+.rodape{padding-block:36px 44px;background:var(--noite-funda);font-size:14px;color:rgba(255,255,255,.76)}
+.rodape .wrap{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px 40px}
+.rodape a{color:#fff;text-underline-offset:3px}
+.rodape nav{display:flex;flex-wrap:wrap;gap:8px 20px}
+.rodape-nota{flex-basis:100%;max-width:60em}
+
+/* barra de ação no telemóvel */
+.barra{display:none}
+
+@media (max-width:1180px){
+  .nav{display:none}
+}
+@media (max-width:980px){
+  .hero .wrap{grid-template-columns:1fr;gap:0}
+  .trapezio{order:-1;min-height:0;height:calc(34vw + 46px)}
+  .hero-texto{padding-block:20px 44px}
+  .pend{transform-origin:50% -320px}
+  .p1{left:33%;top:40px;width:34%}
+  .p2{left:2%;top:12px;width:28%}
+  .p3{left:70%;top:26px;width:28%}
+  .grelha{display:block}
+  .grupo + .grupo,.aerial-texto{margin-top:30px}
+  .grupo-cartoes{display:flex;gap:12px;margin-inline:calc(var(--pad) * -1);padding:0 var(--pad) 10px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--pad);scrollbar-width:thin}
+  .aula{flex:0 0 clamp(150px,44vw,230px);scroll-snap-align:start}
+  .aerial-texto{padding-left:0}
+  .split,.cont-grid{grid-template-columns:1fr}
+  .pt-grid{grid-template-columns:1fr;grid-template-areas:"cab" "serv" "equipa"}
+  .precos-grid{grid-template-columns:1fr;grid-template-areas:"cab" "passes" "resto"}
+  .passes{margin-top:clamp(24px,4vw,40px);max-width:640px}
+  .grupo[style*="--n:1"] .aula{flex-basis:100%;display:flex;gap:14px;align-items:center}
+  .grupo[style*="--n:1"] .aula .foto{flex:0 0 clamp(150px,44vw,230px)}
+  .split .foto{aspect-ratio:3/2}
+  .tira{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  body{font-size:16px}
+  .rodape{padding-bottom:112px}
+  .topo .wrap{min-height:60px}
+  .topo .btn{display:none}
+  .marca{width:128px}
+  .tira ul{grid-template-columns:1fr}
+  .dia{grid-template-columns:1fr auto;gap:6px 12px}
+  .dia-horas{position:static;width:auto;height:auto;overflow:visible;clip:auto;white-space:normal}
+  .trilho{grid-column:1 / -1;height:22px}
+  .trilho i{font-size:0}
+  .dia.fechado .trilho{display:none}
+  .escala{display:none}
+  .passes{grid-template-columns:1fr}
+  .passe{min-height:170px}
+  .lista-linha{grid-template-columns:1fr}
+  .ev-grid{display:flex;gap:12px;margin-inline:calc(var(--pad) * -1);padding:0 var(--pad) 10px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--pad)}
+  .ev{flex:0 0 72vw;scroll-snap-align:start}
+  .ev .foto{aspect-ratio:1/1}
+  .acoes .btn{flex:1 1 150px}
+  .hero .acoes .btn-fita,.marcar .acoes .btn-clara{flex-basis:100%}
+  .ficha > div{grid-template-columns:1fr;gap:2px}
+  .barra{position:fixed;left:0;right:0;bottom:0;z-index:45;display:grid;grid-template-columns:1.6fr 1fr;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);border-top:1px solid var(--linha)}
+  .barra .btn{min-height:48px;padding:0 12px}
+  .barra .btn-linha{color:var(--tinta)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .pend{animation:none}
+  .btn{transition:none}
+}
+</style>
+</head>
+<body>
+
+<p class="previa">Prévia de proposta criada pela SIMPLES para a We Wonder. Este não é o site oficial.</p>
+
+<header class="topo">
+  <div class="wrap">
+    <a class="marca" href="#inicio" aria-label="We Wonder, início">
+      <img data-fb src="https://www.wewonder.com.pt/img/logo/logo2.png" alt="We Wonder" width="3508" height="2481" referrerpolicy="no-referrer">
+      <span class="marca-texto" aria-hidden="true">We Wonder</span>
+    </a>
+    <nav class="nav" aria-label="Secções">
+      <a href="#aulas">Aulas</a>
+      <a href="#horario">Horário</a>
+      <a href="#precos">Preços</a>
+      <a href="#pt">Personal trainer</a>
+      <a href="#wellness">Wellness</a>
+      <a href="#eventos">Wonder Events</a>
+      <a href="#contactos">Contactos</a>
+    </nav>
+    <a class="btn btn-fita" href="#experimentar">Aula grátis</a>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <div class="hero-texto">
+      <h1>A primeira aula é por nossa conta.</h1>
+      <p class="hero-sub">Fitness, dança e aerial arts em Vila Real, há 8 anos. Experimenta uma aula de grupo ou o WonderKids sem pagar.</p>
+      <div class="acoes">
+        <a class="btn btn-fita" href="#experimentar">Marcar aula experimental</a>
+        <a class="btn btn-linha" href="#aulas">Ver as aulas</a>
+      </div>
+      <p class="hero-linha">Rua Padre Filipe Borges, Vila Real. <a class="nq" href="tel:+351932130171">+351 932 130 171</a></p>
+    </div>
+    <div class="trapezio">
+      <a class="pend p2" href="#aerial"><figure class="foto cartao" data-leg="Aerial Hoop"><img data-fb src="https://www.wewonder.com.pt/img/class/modalidades/aerials/MOD-AERIAL-HOOP.png" alt="Aerial Hoop: aluna suspensa no aro" width="1080" height="1080" referrerpolicy="no-referrer"></figure></a>
+      <a class="pend p1" href="#aerial"><figure class="foto cartao" data-leg="Aerial Silks"><img data-fb src="https://www.wewonder.com.pt/img/class/modalidades/aerials/MOD-AERIAL-SILKS.png" alt="Aerial Silks: aluna suspensa nos tecidos" width="1080" height="1080" fetchpriority="high" referrerpolicy="no-referrer"></figure></a>
+      <a class="pend p3" href="#aerial"><figure class="foto cartao" data-leg="Pole Dance Fitness"><img data-fb src="https://www.wewonder.com.pt/img/class/modalidades/fitness/POLEDANCE.jpg" alt="Pole Dance Fitness: aluna no varão" width="1080" height="1080" referrerpolicy="no-referrer"></figure></a>
+    </div>
+  </div>
+</section>
+
+<div class="hoje">
+  <div class="wrap">
+    <p class="hoje-estado"><span class="lamp" id="lamp" aria-hidden="true"></span><span id="estado" aria-live="polite">Aberto de segunda a sexta</span></p>
+    <p class="hoje-horas" id="hoje-horas">De manhã, a partir das 07:30, e à tarde, a partir das 15:00.</p>
+    <a class="elo" href="#horario">Ver a semana</a>
+  </div>
+</div>
+
+<section class="agora" id="agora">
+  <div class="wrap tira">
+    <h2 class="t3">Agora na We Wonder</h2>
+    <ul>
+      <li><a href="https://www.instagram.com/p/DfX3jaOuC4A/" target="_blank" rel="noopener"><b>8 anos de We Wonder</b><span>A casa fez 8 anos em novembro de 2026.</span></a></li>
+      <li><a href="https://www.instagram.com/reel/Dcf2V8GNvU-/" target="_blank" rel="noopener"><b>Pilates Reformer</b><span>A novidade de 2026: Pilates com equipamento, para força, controlo e mobilidade.</span></a></li>
+      <li><a href="#experimentar"><b>Aula experimental grátis</b><span>Nas aulas de grupo e no WonderKids. Marca a tua.</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="aulas">
+  <div class="wrap">
+    <h2 class="t1">As aulas</h2>
+    <p class="lead">21 modalidades, em aulas de 20 a 45 minutos. Escolhe uma e experimenta sem pagar.</p>
+    <div class="grelha">
+      <div class="grupo" style="--n:6">
+        <div class="grupo-topo"><h3 class="t3">Fitness</h3><span class="miudo">12 aulas</span></div>
+        <div class="grupo-cartoes">
+          <article class="aula"><figure class="foto cartao" data-leg="Power Fit"><img data-fb loading="lazy" src="https://www.wewonder.com.pt/img/class/modalidades/fitness/PowerFit.png" alt="Power Fit" width="1080" height="1080" referrerpolicy="no-referrer"></figure><div class="aula-leg"><h4>Power Fit<small>30 min</small></h4><a class="elo" href="mailto:geral@wewonder.com.pt?subject=Aula%20experimental%3A%20Power%20Fit&amp;body=Ol%C3%A1%21%20Gostava%20de%20experimentar%20a%20aula%20de%20Power%20Fit.%20Em%20que%20dias%20e%20horas%20posso%20ir%3F" aria-label="Experimentar: Power Fit">Experimentar</a></div></article>
+          <article class="aula"><figure class="foto cartao" data-leg="3B Bum Bum Brasil"><img data-fb loading="lazy" src="https://www.wewonder.com.pt/img/class/modalidades/fitness/MOD-3B.png" alt="3B Bum Bum Brasil" width="1080" height="1080" referrerpolicy="no-referrer"></figure><div class="aula-leg"><h4>3B Bum Bum Brasil<small>30 min</small></h4><a class="elo" href="mailto:geral@wewonder.com.pt?subject=Aula%20experimental%3A%203B%20Bum%20Bum%20Brasil&amp;body=Ol%C3%A1%21%20Gostava%20de%20experimentar%20a%20aula%20de%203B%20Bum%20Bum%20Brasil.%20Em%20que%20dias%20e%20horas%20posso%20ir%3F" aria-label="Experimentar: 3B Bum Bum Brasil">Experimentar</a></div></article>
+          <article class="aula"><figure class="foto cartao" data-leg="Circuito"><img data-fb loading="lazy" src="https://www.wewonder.com.pt/img/class/modalidades/fitness/MOD-CIRCUITO.png" alt="Circuito" width="1080" height="1080" referrerpolicy="no-referrer"></figure><div class="aula-leg"><h4>Circuito<small>30 min</small></h4><a class="elo" href="mailto:geral@wewonder.com.pt?subject=Aula%20experimental%3A%20Circuito&amp;body=Ol%C3%A1%21%20Gostava%20de%20experimentar%20a%20aula%20de%20Circuito.%20Em%20que%20dias%20e%20horas%20posso%20ir%3F" aria-label="Experimentar: Circuito">Experimentar</a></div></article>
+          <article class="aula"><figure class="foto cartao" data-leg="Bungee Cord"><img data-fb loading="lazy" src="https://www.wewonder.com.pt/img/class/modalidades/fitness/MOD-BUNGEE-CORD.png" alt="Bungee Cord" width="1080" height="1080" referrerpolicy="no-referrer"></figure><div class="aula-leg"><h4>Bungee Cord<small>30 min</small></h4><a class="elo" href="mailto:geral@wewonder.com.pt?subject=Aula%20experimental%3A%20Bungee%20Cord&amp;body=Ol%C3%A1%21%20Gostava%20de%20experimentar%20a%20aula%20de%20Bungee%20Cord.%20Em%20que%20dias%20e%20horas%20posso%20ir%3F" aria-label="Experimentar: Bungee Cord">Experimentar</a></div></article>
+          <article class="aula"><figure class="foto cartao" data-leg="Express Core"><img data-fb loading="lazy" src="https://www.wewonder.com.pt/img/class/modalidades/fitness/MOD-EXPRESS-CORE.png" alt="Express Core" width="1080" height="1080" referrerpolicy="no-referrer"></figure><div class="aula-leg"><h4>Express Core<small>20 min</small></h4><a class="elo" href="mailto:geral@wewonder.com.pt?subject=Aula%20experimental%3A%20Express%20Core&amp;body=Ol%C3%A1%21%20Gostava%20de%20experimentar%20a%20aula%20de%20Express%20Core.%20Em%20que%20dias%20e%20horas%20posso%20ir%3F" aria-label="Experimentar: Express Core">Experimentar</a></div></article>
+          <article class="aula"><figure class="foto cartao" data-leg="Step Latino"><img data-fb loading="lazy" src="https://www.wewonder.com.pt/img/class/modalidades/fitness/MOD-STEP-LATINO.png" alt="Step Latino" width="1080" height="1080" referrerpolicy="no-referrer"></figure><div class="aula-leg"><h4>Step Latino<small>45 min</small></h4><a class="elo" href="mailto:geral@wewonder.com.pt?subject=Aula%20experimental%3A%20Step%20Latino&amp;body=Ol%C3%A1%21%20Gostava%20de%20experimentar%20a%20aula%20de%20Step%20Latino.%20Em%20que%20dias%20e%20horas%20posso%20ir%3F" aria-label="Experimentar: Step Latino">Experimentar</a></div></article>
+          <article class="aula"><figure class="foto cartao" data-leg="Fitball"><img data-fb loading="lazy" src="https://www.wewonder.com.pt/img/class/modalidades/fitness/MOD-FITBALL.png" alt="Fitball" width="1080" height="1080" referrerpolicy="no-referrer"></figure><div class="aula-leg"><h4>Fitball<small>30 min</small></h4><a class="elo" href="mailto:geral@wewonder.com.pt?subject=Aula%20experimental%3A%20Fitball&amp;body=Ol%C3%A1%21%20Gostava%20de%20experimentar%20a%20aula%20de%20Fitball.%20Em%20que%20dias%20e%20horas%20posso%20ir%3F" aria-label="Experimentar: Fitball">Experimentar</a></div></article>
+          <article class="aula"><figure class="foto cartao" data-leg="HIIT"><img data-fb loading="lazy" src="https://www.wewonder.com.pt/img/class/modalidades/fitness/MOD-HIIT.png" alt="HIIT" width="1080" height="1080" referrerpolicy="no-referrer"></figure><div class="aula-leg"><h4>HIIT<small>30 min</small></h4><a class="elo" href="mailto:geral@wewonder.com.pt?subject=Aula%20experimental%3A%20HIIT&amp;body=Ol%C3%A1%21%20Gostava%20de%20experimentar%20a%20aula%20de%20HIIT.%20Em%20que%20dias%20e%20horas%20posso%20ir%3F" aria-label="Experimentar: HIIT">Experimentar</a></div></article>
+          <article class="aula"><figure class="foto cartao" data-leg="Fit Shape Up"><img data-fb loading="lazy" src="https://www.wewonder.com.pt/img/class/modalidades/fitness/MOD-FIT-SHAPE-UP.png" alt="Fit Shape Up" width="1080" height="1080" referrerpolicy="no-referrer"></figure><div class="aula-leg"><h4>Fit Shape Up<small>30 min</small></h4><a class="elo" href="mailto:geral@wewonder.com.pt?subject=Aula%20experimental%3A%20Fit%20Shape%20Up&amp;body=Ol%C3%A1%21%20Gostava%20de%20experimentar%20a%20aula%20de%20Fit%20Shape%20Up.%20Em%20que%20dias%20e%20horas%20posso%20ir%3F" aria-label="Experimentar: Fit Shape Up">Experimentar</a></div></article>
+          <article class="aula"><figure class="foto cartao" data-leg="Wonder Fit"><img data-fb loading="lazy" src="https://www.wewonder.com.pt/img/class/modalidades/fitness/MOD-WONDER-FIT.png" alt="Wonder Fit" width="1080" height="1080" referrerpolicy="no-referrer"></figure><div class="aula-leg"><h4>Wonder Fit<small>30 min</small></h4><a class="elo" href="mailto:geral@wewonder.com.pt?subject=Aula%20experimental%3A%20Wonder%20Fit&amp;body=Ol%C3%A1%21%20Gostava%20de%20experimentar%20a%20aula%20de%20Wonder%20Fit.%20Em%20que%20dias%20e%20horas%20posso%20ir%3F" aria-label="Experimentar: Wonder Fit">Experimentar</a></div></article>
+          <article class="aula"><figure class="foto cartao" data-leg="Wonder +"><img data-fb loading="lazy" src="https://www.wewonder.com.pt/img/class/modalidades/fitness/MOD-WONDER-PLUS.png" alt="Wonder +" width="1080" height="1080" referrerpolicy="no-referrer"></figure><div class="aula-leg"><h4>Wonder +<small>30 min</small></h4><a class="elo" href="mailto:geral@wewonder.com.pt?subject=Aula%20experimental%3A%20Wonder%20%2B&amp;body=Ol%C3%A1%21%20Gostava%20de%20experimentar%20a%20aula%20de%20Wonder%20%2B.%20Em%20que%20dias%20e%20horas%20posso%20ir%3F" aria-label="Experimentar: Wonder +">Experimentar</a></div></article>
+          <article class="aula"><figure class="foto cartao" data-leg="Express Legs"><img data-fb loading="lazy" src="https://www.wewonder.com.pt/img/class/modalidades/fitness/MOD-EXPRESS-LEGS.png" alt="Express Legs" width="1080" height="1080" referrerpolicy="no-referrer"></figure><div class="aula-leg"><h4>Express Legs<small>30 min</small></h4><a class="elo" href="mailto:geral@wewonder.com.pt?subject=Aula%20experimental%3A%20Express%20Legs&amp;body=Ol%C3%A1%21%20Gostava%20de%20experimentar%20a%20aula%20de%20Express%20Legs.%20Em%20que%20dias%20e%20horas%20posso%20ir%3F" aria-label="Experimentar: Express Legs">Experimentar</a></div></article>
+        </div>
+      </div>
+      <div class="grupo" style="--n:3">
+        <div class="grupo-topo"><h3 class="t3">Body &amp; Mind</h3><span class="miudo">3 aulas</span></div>
+        <div class="grupo-cartoes">
+          <article class="aula"><figure class="foto cartao" data-leg="Pilates"><img data-fb loading="lazy" src="https://www.wewonder.com.pt/img/class/modalidades/bodyMind/MOD-PILATES.png" alt="Pilates" width="1080" height="1080" referrerpolicy="no-referrer"></figure><div class="aula-leg"><h4>Pilates<small>45 min</small></h4><a class="elo" href="mailto:geral@wewonder.com.pt?subject=Aula%20experimental%3A%20Pilates&amp;body=Ol%C3%A1%21%20Gostava%20de%20experimentar%20a%20aula%20de%20Pilates.%20Em%20que%20dias%20e%20horas%20posso%20ir%3F" aria-label="Experimentar: Pilates">Experimentar</a></div></article>
+          <article class="aula"><figure class="foto cartao" data-leg="Flexibilidade +"><img data-fb loading="lazy" src="https://www.wewonder.com.pt/img/class/modalidades/bodyMind/MOD-FLEX.png" alt="Flexibilidade +" width="1080" height="1080" referrerpolicy="no-referrer"></figure><div class="aula-leg"><h4>Flexibilidade +<small>45 min</small></h4><a class="elo" href="mailto:geral@wewonder.com.pt?subject=Aula%20experimental%3A%20Flexibilidade%20%2B&amp;body=Ol%C3%A1%21%20Gostava%20de%20experimentar%20a%20aula%20de%20Flexibilidade%20%2B.%20Em%20que%20dias%20e%20horas%20posso%20ir%3F" aria-label="Experimentar: Flexibilidade +">Experimentar</a></div></article>
+          <article class="aula"><figure class="foto cartao" data-leg="Wonder Body"><img data-fb loading="lazy" src="https://www.wewonder.com.pt/img/class/modalidades/bodyMind/WonderBody.png" alt="Wonder Body" width="1080" height="1080" referrerpolicy="no-referrer"></figure><div class="aula-leg"><h4>Wonder Body<small>45 min</small></h4><a class="elo" href="mailto:geral@wewonder.com.pt?subject=Aula%20experimental%3A%20Wonder%20Body&amp;body=Ol%C3%A1%21%20Gostava%20de%20experimentar%20a%20aula%20de%20Wonder%20Body.%20Em%20que%20dias%20e%20horas%20posso%20ir%3F" aria-label="Experimentar: Wonder Body">Experimentar</a></div></article>
+        </div>
+      </div>
+      <div class="grupo" style="--n:1">
+        <div class="grupo-topo"><h3 class="t3">Kids</h3></div>
+        <div class="grupo-cartoes">
+          <article class="aula"><figure class="foto cartao" data-leg="Wonder Kids"><img data-fb loading="lazy" src="https://www.wewonder.com.pt/img/class/modalidades/kids/WONDERKIDS.jpg" alt="Wonder Kids" width="1080" height="1080" referrerpolicy="no-referrer"></figure><div class="aula-leg"><h4>Wonder Kids<small>45 min</small></h4><p class="aula-nota">Hip Hop, Jazz, Contemporâneo e Pop Dance.</p><a class="elo" href="mailto:geral@wewonder.com.pt?subject=Aula%20experimental%3A%20Wonder%20Kids&amp;body=Ol%C3%A1%21%20Gostava%20de%20experimentar%20a%20aula%20de%20Wonder%20Kids.%20Em%20que%20dias%20e%20horas%20posso%20ir%3F" aria-label="Experimentar: Wonder Kids">Experimentar</a></div></article>
+        </div>
+      </div>
+      <div class="grupo" style="--n:2">
+        <div class="grupo-topo"><h3 class="t3">Grávidas e pós-parto</h3></div>
+        <div class="grupo-cartoes">
+          <article class="aula"><figure class="foto cartao" data-leg="Grávidas"><img data-fb loading="lazy" src="https://www.wewonder.com.pt/img/class/modalidades/gravidas/gravidas.png" alt="Grávidas" width="1080" height="1080" referrerpolicy="no-referrer"></figure><div class="aula-leg"><h4>Grávidas<small>45 min</small></h4><a class="elo" href="mailto:geral@wewonder.com.pt?subject=Aula%20experimental%3A%20Gr%C3%A1vidas&amp;body=Ol%C3%A1%21%20Gostava%20de%20experimentar%20a%20aula%20de%20Gr%C3%A1vidas.%20Em%20que%20dias%20e%20horas%20posso%20ir%3F" aria-label="Experimentar: Grávidas">Experimentar</a></div></article>
+          <article class="aula"><figure class="foto cartao" data-leg="Pós-Parto"><img data-fb loading="lazy" src="https://www.wewonder.com.pt/img/class/modalidades/gravidas/Pos-parto.jpg" alt="Pós-Parto" width="1080" height="1080" referrerpolicy="no-referrer"></figure><div class="aula-leg"><h4>Pós-Parto<small>45 min</small></h4><a class="elo" href="mailto:geral@wewonder.com.pt?subject=Aula%20experimental%3A%20P%C3%B3s-Parto&amp;body=Ol%C3%A1%21%20Gostava%20de%20experimentar%20a%20aula%20de%20P%C3%B3s-Parto.%20Em%20que%20dias%20e%20horas%20posso%20ir%3F" aria-label="Experimentar: Pós-Parto">Experimentar</a></div></article>
+        </div>
+      </div>
+      <div class="grupo" id="aerial" style="--n:3">
+        <div class="grupo-topo"><h3 class="t3">Aerial Arts</h3><span class="miudo">Curso intensivo</span></div>
+        <div class="grupo-cartoes">
+          <article class="aula"><figure class="foto cartao" data-leg="Aerial Hoop"><img data-fb loading="lazy" src="https://www.wewonder.com.pt/img/class/modalidades/aerials/MOD-AERIAL-HOOP.png" alt="Aerial Hoop" width="1080" height="1080" referrerpolicy="no-referrer"></figure><div class="aula-leg"><h4>Aerial Hoop</h4><a class="elo" href="mailto:geral@wewonder.com.pt?subject=Aerial%20Arts%3A%20Aerial%20Hoop&amp;body=Ol%C3%A1%21%20Gostava%20de%20saber%20como%20funciona%20o%20curso%20intensivo%20de%20Aerial%20Hoop." aria-label="Pedir informação: Aerial Hoop">Pedir informação</a></div></article>
+          <article class="aula"><figure class="foto cartao" data-leg="Aerial Silks"><img data-fb loading="lazy" src="https://www.wewonder.com.pt/img/class/modalidades/aerials/MOD-AERIAL-SILKS.png" alt="Aerial Silks" width="1080" height="1080" referrerpolicy="no-referrer"></figure><div class="aula-leg"><h4>Aerial Silks</h4><a class="elo" href="mailto:geral@wewonder.com.pt?subject=Aerial%20Arts%3A%20Aerial%20Silks&amp;body=Ol%C3%A1%21%20Gostava%20de%20saber%20como%20funciona%20o%20curso%20intensivo%20de%20Aerial%20Silks." aria-label="Pedir informação: Aerial Silks">Pedir informação</a></div></article>
+          <article class="aula"><figure class="foto cartao" data-leg="Pole Dance Fitness"><img data-fb loading="lazy" src="https://www.wewonder.com.pt/img/class/modalidades/fitness/POLEDANCE.jpg" alt="Pole Dance Fitness" width="1080" height="1080" referrerpolicy="no-referrer"></figure><div class="aula-leg"><h4>Pole Dance Fitness</h4><a class="elo" href="mailto:geral@wewonder.com.pt?subject=Aerial%20Arts%3A%20Pole%20Dance%20Fitness&amp;body=Ol%C3%A1%21%20Gostava%20de%20saber%20como%20funciona%20o%20curso%20intensivo%20de%20Pole%20Dance%20Fitness." aria-label="Pedir informação: Pole Dance Fitness">Pedir informação</a></div></article>
+        </div>
+      </div>
+      <div class="aerial-texto">
+        <p>Aerial Hoop, Aerial Silks e Pole Dance Fitness funcionam em curso intensivo. Pede informação e dizemos-te como funciona.</p>
+        <div class="acoes"><a class="btn btn-linha" href="mailto:geral@wewonder.com.pt?subject=Aerial%20Arts%3A%20curso%20intensivo&amp;body=Ol%C3%A1!%20Gostava%20de%20saber%20como%20funcionam%20os%20cursos%20intensivos%20de%20Aerial%20Arts.">Pedir informação</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec horario" id="horario">
+  <div class="wrap">
+    <h2 class="t1">A semana na We Wonder</h2>
+    <p class="lead">Abrimos de segunda a sexta, de manhã e à tarde. Ao fim de semana estamos encerrados.</p>
+    <div class="semana">
+      <div class="escala" aria-hidden="true"><span></span><div><span style="left:6.667%">08:00</span><span style="left:20%">10:00</span><span style="left:33.333%">12:00</span><span style="left:46.667%">14:00</span><span style="left:60%">16:00</span><span style="left:73.333%">18:00</span><span style="left:86.667%">20:00</span></div></div>
+      <div class="dia" data-d="1"><span class="dia-nome">Segunda</span><span class="dia-horas">07:30 às 12:00 e 15:00 às 21:30</span><span class="trilho" aria-hidden="true"><i style="--a:450;--b:720">07:30 às 12:00</i><i style="--a:900;--b:1290">15:00 às 21:30</i></span></div>
+      <div class="dia" data-d="2"><span class="dia-nome">Terça</span><span class="dia-horas">07:30 às 12:00 e 15:00 às 20:30</span><span class="trilho" aria-hidden="true"><i style="--a:450;--b:720">07:30 às 12:00</i><i style="--a:900;--b:1230">15:00 às 20:30</i></span></div>
+      <div class="dia" data-d="3"><span class="dia-nome">Quarta</span><span class="dia-horas">07:30 às 12:00 e 15:00 às 20:30</span><span class="trilho" aria-hidden="true"><i style="--a:450;--b:720">07:30 às 12:00</i><i style="--a:900;--b:1230">15:00 às 20:30</i></span></div>
+      <div class="dia" data-d="4"><span class="dia-nome">Quinta</span><span class="dia-horas">07:30 às 12:00 e 15:00 às 20:30</span><span class="trilho" aria-hidden="true"><i style="--a:450;--b:720">07:30 às 12:00</i><i style="--a:900;--b:1230">15:00 às 20:30</i></span></div>
+      <div class="dia" data-d="5"><span class="dia-nome">Sexta</span><span class="dia-horas">07:30 às 12:00 e 15:00 às 20:00</span><span class="trilho" aria-hidden="true"><i style="--a:450;--b:720">07:30 às 12:00</i><i style="--a:900;--b:1200">15:00 às 20:00</i></span></div>
+      <div class="dia fechado" data-d="6"><span class="dia-nome">Sábado</span><span class="dia-horas">Encerrado</span><span class="trilho" aria-hidden="true"><em>Encerrado</em></span></div>
+      <div class="dia fechado" data-d="0"><span class="dia-nome">Domingo</span><span class="dia-horas">Encerrado</span><span class="trilho" aria-hidden="true"><em>Encerrado</em></span></div>
+    </div>
+    <p class="horario-pe">Para saber o dia e a hora de uma aula, <a href="tel:+351932130171">liga-nos</a> ou <a href="mailto:geral@wewonder.com.pt?subject=Hor%C3%A1rio%20das%20aulas">escreve-nos</a>.</p>
+    <p class="nota"><b>Nota da prévia.</b> Aqui entra o mapa de aulas: cada modalidade no seu dia e na sua hora, dentro destes blocos. É o que hoje não está em página nenhuma do vosso site. O horário de abertura veio da vossa ficha do Google.</p>
+  </div>
+</section>
+
+<section class="sec precos" id="precos">
+  <div class="wrap precos-grid">
+    <div class="precos-cab">
+      <h2 class="t1">Packs mensais</h2>
+      <p class="lead">Dois packs, com desconto de estudante.</p>
+    </div>
+    <div class="passes">
+      <article class="passe passe-basic">
+        <h3>Basic</h3>
+        <div><p class="passe-preco">28,50 €<small>por mês</small></p><p class="passe-obs"></p></div>
+      </article>
+      <article class="passe passe-premium">
+        <h3>Premium</h3>
+        <div><p class="passe-preco">44,50 €<small>por mês</small></p><p class="passe-obs">Desconto de estudante: 15%</p></div>
+      </article>
+    </div>
+    <div class="precos-resto">
+    <p class="precos-pe">Personal trainer, Pilates Clínico e massagens têm valor próprio. <a href="tel:+351932130171">Liga</a> ou <a href="mailto:geral@wewonder.com.pt?subject=Pre%C3%A7os">escreve</a> e dizemos-te.</p>
+    <p class="nota"><b>Nota da prévia.</b> Falta dizer o que cada pack inclui. Com essa informação, quem chega aqui decide sem ter de perguntar.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="pt">
+  <div class="wrap pt-grid">
+    <div class="pt-cab">
+      <h2 class="t1">Treino só para ti</h2>
+      <p class="lead">Personal trainers focados nos teus objetivos, na We Wonder ou à distância.</p>
+    </div>
+    <div class="pt-serv">
+      <div class="servicos">
+        <div><h3 class="t3">PT Fitness</h3><p>Treino individual. Avaliação física no início e ao longo do tempo, plano de treino à tua medida, demonstração e correção dos exercícios e acompanhamento diário.</p></div>
+        <div><h3 class="t3">PT Fitness Duo</h3><p>O mesmo acompanhamento, para duas pessoas. Traz um amigo e vem treinar.</p></div>
+        <div><h3 class="t3">Acompanhamento Online</h3><p>Plano de treino para o teu objetivo, dicas de nutrição e avaliações periódicas por fotos. Apoio por SMS, e-mail ou WhatsApp.</p></div>
+        <div><h3 class="t3">Pilates Clínico</h3><p>Sessão individual para reduzir dor muscular, melhorar a postura e o equilíbrio e prevenir ou recuperar lesões.</p></div>
+      </div>
+      <div class="acoes"><a class="btn btn-fita" href="mailto:geral@wewonder.com.pt?subject=Personal%20trainer&amp;body=Ol%C3%A1!%20Gostava%20de%20saber%20mais%20sobre%20o%20servi%C3%A7o%20de%20personal%20trainer.">Falar com um personal trainer</a></div>
+    </div>
+    <div class="equipa">
+      <article class="pessoa">
+        <figure class="foto" data-leg="Fotografia: Ana Anjos"><img data-fb loading="lazy" src="https://www.wewonder.com.pt/img/about/ana.jpeg" alt="Ana Anjos, de braços cruzados, com a camisola da We Wonder" width="768" height="1024" referrerpolicy="no-referrer"></figure>
+        <h3 class="t3">Ana Anjos</h3>
+        <p class="miudo">Diretora técnica, instrutora de fitness e personal trainer</p>
+        <p>Rigor no acompanhamento e boa disposição em cada treino.</p>
+      </article>
+      <article class="pessoa">
+        <figure class="foto" data-leg="Fotografia: Nuno Sousa"><img data-fb loading="lazy" src="https://www.wewonder.com.pt/img/about/nuno.jpeg" alt="Nuno Sousa, de braços cruzados" width="1512" height="2016" referrerpolicy="no-referrer"></figure>
+        <h3 class="t3">Nuno Sousa</h3>
+        <p class="miudo">Instrutor de fitness e personal trainer</p>
+        <p>Trabalha com todas as idades, das crianças aos seniores.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec wellness" id="wellness">
+  <div class="wrap split">
+    <figure class="foto" data-leg="Fotografia: massagem"><img data-fb loading="lazy" src="https://www.wewonder.com.pt/img/portfolio/massagens.jpeg" alt="Massagem nas costas" width="768" height="1024" referrerpolicy="no-referrer"></figure>
+    <div>
+      <h2 class="t1">Wellness</h2>
+      <p class="lead">Massagens para recuperar e relaxar. Porque o corpo também precisa de um mimo.</p>
+      <ul class="lista-linha">
+        <li>Terapêutica</li>
+        <li>Desportiva</li>
+        <li>Drenagem linfática</li>
+        <li>Anticelulite</li>
+      </ul>
+      <div class="acoes">
+        <a class="btn btn-fita" href="tel:+351932130171">Marcar massagem</a>
+        <a class="btn btn-linha" href="mailto:geral@wewonder.com.pt?subject=Massagens">Enviar e-mail</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec eventos" id="eventos">
+  <div class="wrap">
+    <h2 class="t1">Wonder Events</h2>
+    <p class="lead">Animação para casamentos e outros eventos, pela equipa da We Wonder.</p>
+    <div class="ev-grid">
+      <article class="ev">
+        <figure class="foto" data-leg="Fotografia: noivos a dançar"><img data-fb loading="lazy" src="https://www.wewonder.com.pt/img/portfolio/aulasNoivos.png" alt="Noivos a dançar no casamento" width="2048" height="1365" referrerpolicy="no-referrer"></figure>
+        <h3 class="t3">Aulas para noivos</h3>
+        <p>Coreografia personalizada para a dança do casamento. De 5 a 10 sessões com instrutor, com vídeos para treinar em casa.</p>
+      </article>
+      <article class="ev">
+        <figure class="foto" data-leg="Fotografia: convidados a dançar"><img data-fb loading="lazy" src="https://www.wewonder.com.pt/img/portfolio/AnimacaoCoreo.png" alt="Convidados a dançar em grupo numa festa" width="2048" height="1365" referrerpolicy="no-referrer"></figure>
+        <h3 class="t3">Animação e coreógrafo</h3>
+        <p>Atuações coreografadas para pôr a festa a mexer.</p>
+      </article>
+      <article class="ev">
+        <figure class="foto" data-leg="Fotografia: show de fogo"><img data-fb loading="lazy" src="https://www.wewonder.com.pt/img/portfolio/ShowFogo.png" alt="Artista num espetáculo de fogo, à noite" width="1365" height="2048" referrerpolicy="no-referrer"></figure>
+        <h3 class="t3">Show de fogo</h3>
+        <p>Espetáculo de fogo, coreografado com música.</p>
+      </article>
+    </div>
+    <p class="ev-tambem">Também há DJ, animação infantil, babysitting à hora e photobooth com adereços.</p>
+    <div class="ev-pe">
+      <p class="ev-nota"><b>5,0 em 5 opiniões</b><a href="https://www.casamentos.pt/animacao-casamentos/wonder-events--e148878" target="_blank" rel="noopener">casamentos.pt, novembro de 2026</a></p>
+      <div class="acoes">
+        <a class="btn btn-clara" href="https://www.casamentos.pt/animacao-casamentos/wonder-events--e148878" target="_blank" rel="noopener">Pedir orçamento</a>
+        <a class="btn btn-linha" href="tel:+351932130171">Ligar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec marcar" id="experimentar">
+  <div class="wrap">
+    <h2 class="t1">Marca a tua aula experimental</h2>
+    <p class="lead">É grátis nas aulas de grupo e no WonderKids. Liga ou escreve e diz-nos que aula queres experimentar.</p>
+    <div class="acoes">
+      <a class="btn btn-clara" href="tel:+351932130171">Ligar: 932 130 171</a>
+      <a class="btn btn-linha" href="mailto:geral@wewonder.com.pt?subject=Aula%20experimental&amp;body=Ol%C3%A1!%20Gostava%20de%20marcar%20uma%20aula%20experimental.%0A%0AAula%3A%20%0AEm%20que%20dias%20e%20horas%20posso%20ir%3F">Enviar e-mail</a>
+      <a class="btn btn-linha" href="https://www.instagram.com/wewonderpt/" target="_blank" rel="noopener">Mensagem no Instagram</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="contactos">
+  <div class="wrap cont-grid">
+    <div>
+      <h2 class="t1">Onde estamos</h2>
+      <dl class="ficha">
+        <div><dt class="miudo">Telemóvel</dt><dd><a href="tel:+351932130171">+351 932 130 171</a><small>Chamada para rede móvel nacional</small></dd></div>
+        <div><dt class="miudo">E-mail</dt><dd><a href="mailto:geral@wewonder.com.pt">geral@wewonder.com.pt</a></dd></div>
+        <div><dt class="miudo">Morada</dt><dd>Rua Padre Filipe Borges, Lote 9, Bloco D, Loja 8<br>5000-409 Vila Real</dd></div>
+        <div><dt class="miudo">Horário</dt><dd>Segunda: 07:30 às 12:00 e 15:00 às 21:30<br>Terça a quinta: 07:30 às 12:00 e 15:00 às 20:30<br>Sexta: 07:30 às 12:00 e 15:00 às 20:00<br>Sábado e domingo: encerrado</dd></div>
+        <div><dt class="miudo">Redes</dt><dd class="redes"><a href="https://www.instagram.com/wewonderpt/" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/wewonderpt" target="_blank" rel="noopener">Facebook</a><a href="https://www.tiktok.com/@wewonderpt" target="_blank" rel="noopener">TikTok</a><a href="https://www.youtube.com/channel/UCr0XCK7_F4YiJT4Ux6UFavA" target="_blank" rel="noopener">YouTube</a></dd></div>
+      </dl>
+      <p class="opiniao">Já treinas connosco? <a class="elo" href="https://search.google.com/local/writereview?placeid=ChIJoVdNWvJLOw0RAleB3Bf8J9E" target="_blank" rel="noopener">Deixa a tua opinião no Google</a></p>
+    </div>
+    <div>
+      <div class="mapa" id="mapa">
+        <div>
+          <p>Rua Padre Filipe Borges, Lote 9, Bloco D, Loja 8, Vila Real</p>
+          <div class="acoes">
+            <a class="btn btn-fita" href="https://www.google.com/maps/search/?api=1&amp;query=We%20Wonder%2C%20Vila%20Real&amp;query_place_id=ChIJoVdNWvJLOw0RAleB3Bf8J9E" target="_blank" rel="noopener">Abrir no Google Maps</a>
+            <button class="btn btn-linha" type="button" id="ver-mapa">Mostrar o mapa aqui</button>
+          </div>
+        </div>
+      </div>
+      <div class="letreiro">
+        <figure class="foto" data-leg=""><img data-fb loading="lazy" src="https://www.wewonder.com.pt/img/about/door.png" alt="Letreiro redondo e iluminado com o logótipo da We Wonder" width="700" height="804" referrerpolicy="no-referrer"></figure>
+        <p>Procura o letreiro redondo da We Wonder.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="rodape">
+  <div class="wrap">
+    <p>We Wonder. Fitness, dança e aerial arts em Vila Real. <a href="https://www.instagram.com/explore/tags/bemoredomore/" target="_blank" rel="noopener">#bemoredomore</a></p>
+    <nav aria-label="Redes sociais">
+      <a href="https://www.instagram.com/wewonderpt/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/wewonderpt" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.tiktok.com/@wewonderpt" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://www.youtube.com/channel/UCr0XCK7_F4YiJT4Ux6UFavA" target="_blank" rel="noopener">YouTube</a>
+    </nav>
+    <p class="rodape-nota">Prévia criada pela SIMPLES COMUNICAÇÃO (<a href="https://www.simplesonline.com" target="_blank" rel="noopener">www.simplesonline.com</a>) em novembro de 2026. É uma proposta da SIMPLES: os textos e os dados estão a validar com a We Wonder.</p>
+  </div>
+</footer>
+
+<div class="barra">
+  <a class="btn btn-fita" href="#experimentar">Marcar aula grátis</a>
+  <a class="btn btn-linha" href="tel:+351932130171">Ligar</a>
+</div>
+
+<script>
+(function(){
+  var doc=document;
+
+  /* 1. Imagens: se uma falhar, fica a reserva de lugar */
+  doc.querySelectorAll('img[data-fb]').forEach(function(img){
+    function falha(){ var alvo=img.closest('.foto,.marca'); if(alvo){ alvo.classList.add('semimg'); } }
+    img.addEventListener('error',falha);
+    if(img.loading!=='lazy' && img.complete && img.naturalWidth===0){ falha(); }
+  });
+
+  /* 2. Horário de abertura (ficha do Google, novembro de 2026), à hora de Lisboa.
+        Índice 0 é domingo. Minutos desde a meia-noite. */
+  var SEMANA=[[],[[450,720],[900,1290]],[[450,720],[900,1230]],[[450,720],[900,1230]],[[450,720],[900,1230]],[[450,720],[900,1200]],[]];
+  var NOMES=['domingo','segunda','terça','quarta','quinta','sexta','sábado'];
+  function lisboa(){
+    var p={};
+    new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Lisbon',hour12:false,weekday:'short',hour:'2-digit',minute:'2-digit'})
+      .formatToParts(new Date()).forEach(function(x){ p[x.type]=x.value; });
+    return {dia:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(p.weekday), min:(+p.hour%24)*60 + +p.minute};
+  }
+  function hhmm(m){ return ('0'+Math.floor(m/60)).slice(-2)+':'+('0'+(m%60)).slice(-2); }
+  function estado(){
+    var el=doc.getElementById('estado'), lamp=doc.getElementById('lamp'), linha=doc.getElementById('hoje-horas'), t, txt, aberto=false;
+    try{ t=lisboa(); }catch(e){ return; }
+    if(t.dia<0){ return; }
+    var hoje=SEMANA[t.dia];
+    var atual=hoje.filter(function(h){ return t.min>=h[0] && t.min<h[1]; })[0];
+    var seguinte=hoje.filter(function(h){ return t.min<h[0]; })[0];
+    if(atual){
+      aberto=true; txt='Aberto agora, até às '+hhmm(atual[1]);
+    }else if(seguinte){
+      txt='Fechado agora. Abre às '+hhmm(seguinte[0]);
+    }else{
+      for(var i=1;i<=7;i++){
+        var d=(t.dia+i)%7;
+        if(SEMANA[d].length){ txt='Fechado agora. Abre '+(i===1?'amanhã':NOMES[d])+' às '+hhmm(SEMANA[d][0][0]); break; }
+      }
+    }
+    el.textContent=txt;
+    lamp.classList.toggle('aberto',aberto);
+    linha.textContent='Hoje, '+NOMES[t.dia]+': '+(hoje.length ? hoje.map(function(h){ return hhmm(h[0])+' às '+hhmm(h[1]); }).join(' e ') : 'encerrado')+'.';
+
+    /* marca o dia de hoje e a hora atual na semana */
+    doc.querySelectorAll('.dia').forEach(function(l){
+      var eHoje=+l.getAttribute('data-d')===t.dia, trilho=l.querySelector('.trilho'), marca=l.querySelector('.agora-linha');
+      l.classList.toggle('e-hoje',eHoje);
+      if(marca){ marca.remove(); }
+      if(eHoje && hoje.length && t.min>=420 && t.min<=1320){
+        marca=doc.createElement('span'); marca.className='agora-linha';
+        marca.style.left=((t.min-420)/900*100)+'%';
+        trilho.appendChild(marca);
+      }
+    });
+  }
+  estado();
+  setInterval(estado,60000);
+
+  /* 3. Mapa: só carrega quando a pessoa pede */
+  var botao=doc.getElementById('ver-mapa');
+  if(botao){
+    botao.addEventListener('click',function(){
+      var f=doc.createElement('iframe');
+      f.title='Mapa: We Wonder, Vila Real';
+      f.setAttribute('allowfullscreen','');
+      f.setAttribute('referrerpolicy','no-referrer-when-downgrade');
+      f.src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1089.4361429685719!2d-7.746768430284851!3d41.30603356547165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd3b4bf25a4d57a1%3A0xd127fc17dc815702!2sWe%20Wonder!5e0!3m2!1spt-PT!2spt!4v1638951166108!5m2!1spt-PT!2spt';
+      doc.getElementById('mapa').appendChild(f);
+    });
+  }
+})();
+</script>
+</body>
+</html>
