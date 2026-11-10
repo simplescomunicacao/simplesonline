@@ -1,0 +1,782 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Cais da Villa, Vila Real | Prévia de site</title>
+<meta name="description" content="Restaurante, wine bar e garrafeira no antigo armazém da estação de Vila Real. Cozinha do Douro e de Trás-os-Montes pelo Chef Daniel Gomes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Newsreader:ital,opsz,wght@1,6..72,300..500&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   Cais da Villa | prévia de proposta SIMPLES WEB (sw-001), v5
+   Topo em tela cheia com três palavras que levam às secções. Página branca,
+   fotografia grande, títulos finos em caixa alta (como o logótipo) e uma
+   palavra de apoio em itálico cor de latão. O azul da marca fica no texto,
+   nas palhetas do horário e no rodapé.
+   ========================================================================== */
+:root{
+  --tinta:#16212e; --tinta-2:#3a4652; --cinza:#5b6570;
+  --latao:#c9a35f; --latao-claro:#dcc08a; --latao-escuro:#96732f; --latao-suave:#f3ecdd;
+  --branco:#fff; --fundo:#faf9f6; --granito:#eceae4;
+  --linha:rgba(22,33,46,.14);
+  --sans:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --pad:clamp(20px,5vw,64px);
+  --bloco:clamp(64px,9vw,128px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--sans);font-size:17px;line-height:1.6;color:var(--tinta);background:var(--branco);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3,p,dl,dd,ul,figure,blockquote{margin:0}
+ul{padding:0;list-style:none}
+section[id]{scroll-margin-top:80px}
+:focus-visible{outline:2px solid var(--latao);outline-offset:3px}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{max-width:1240px;margin-inline:auto;padding-inline:var(--pad)}
+.nq{white-space:nowrap}
+.centro{text-align:center}
+
+/* vozes do texto */
+.acento{font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.3vw,32px);line-height:1.1;color:var(--latao-escuro)}
+.titulo{margin-top:4px;font-stretch:125%;font-weight:300;font-size:clamp(28px,3.8vw,54px);line-height:1.06;letter-spacing:.005em;text-transform:uppercase;text-wrap:balance}
+.miudo{font-weight:600;font-size:12.5px;line-height:1.5;letter-spacing:.16em;text-transform:uppercase;color:var(--cinza)}
+.corpo{color:var(--tinta-2)}
+.elo{display:inline-block;margin-top:26px;font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase;text-decoration:underline;text-decoration-color:var(--latao);text-decoration-thickness:1.5px;text-underline-offset:6px}
+.elo:hover{text-decoration-thickness:2.5px}
+.tri{flex:none;width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:9px solid var(--latao)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 24px;border:1.5px solid var(--tinta);border-radius:0;background:none;font:inherit;font-weight:600;font-size:13px;line-height:1.1;letter-spacing:.14em;text-transform:uppercase;text-align:center;text-decoration:none;color:var(--tinta);cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.btn:hover{background:var(--tinta);color:#fff}
+.btn-cheio{background:var(--tinta);color:#fff}
+.btn-cheio:hover{background:#233244;border-color:#233244}
+.btn-latao{border-color:var(--latao);background:var(--latao)}
+.btn-latao:hover{border-color:var(--latao-claro);background:var(--latao-claro);color:var(--tinta)}
+
+/* fotografia com reserva de lugar (se a imagem não carregar) */
+.foto{position:relative;overflow:hidden;background:var(--granito)}
+.foto img{width:100%;height:100%;object-fit:cover}
+.foto.semimg img{display:none}
+.foto.semimg{background:repeating-linear-gradient(135deg,#eceae4 0 14px,#e3e0d8 14px 28px)}
+.foto.semimg::after{content:attr(data-leg);position:absolute;left:14px;right:14px;bottom:12px;font-size:13px;line-height:1.3;color:var(--cinza)}
+
+/* faixa de prévia */
+.previa{background:var(--latao);color:var(--tinta);font-size:13px;font-weight:500;line-height:1.35;text-align:center;padding:7px var(--pad)}
+
+/* topo: transparente sobre a foto, branco ao rolar */
+.topo{position:sticky;top:0;z-index:40;margin-bottom:-74px;color:#fff;transition:background .25s,color .25s,box-shadow .25s}
+.topo .wrap{display:flex;align-items:center;gap:26px;max-width:none;min-height:74px}
+.topo.solido{background:rgba(255,255,255,.96);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:var(--tinta);box-shadow:0 1px 0 var(--linha)}
+.marca{display:inline-flex;align-items:center;margin-right:auto;text-decoration:none}
+.marca img{width:200px;height:auto}
+.marca .escuro{display:none}
+.topo.solido .marca .claro{display:none}
+.topo.solido .marca .escuro{display:block}
+.marca-texto{display:none;font-stretch:125%;font-size:13px;letter-spacing:.42em;text-transform:uppercase;white-space:nowrap}
+.marca-texto i{font-style:normal;color:var(--latao)}
+.marca.semimg img{display:none !important}
+.marca.semimg .marca-texto{display:inline}
+.nav{display:flex;gap:24px}
+.nav a{padding:6px 0;border-bottom:1.5px solid transparent;font-weight:600;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none}
+.nav a:hover{border-color:var(--latao)}
+.lingua{display:flex;gap:2px}
+.lingua button{padding:8px 7px;background:none;border:0;border-bottom:1.5px solid transparent;font:inherit;font-weight:600;font-size:12.5px;letter-spacing:.14em;color:inherit;opacity:.72;cursor:pointer}
+.lingua button[aria-pressed="true"]{opacity:1;border-color:var(--latao)}
+.topo .btn{min-height:40px;padding:0 18px;border-color:currentColor;color:inherit}
+.topo .btn:hover{background:var(--latao);border-color:var(--latao);color:var(--tinta)}
+
+/* abertura em tela cheia */
+.hero{position:relative;isolation:isolate;display:grid;place-items:center;min-height:calc(100svh - 32px);padding:120px var(--pad) 72px;background:var(--tinta);color:#fff;text-align:center}
+.hero-foto{position:absolute;inset:0;z-index:-2}
+.hero .foto.semimg,.faixa .foto.semimg{background:var(--tinta)}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(13,18,24,.6) 0%,rgba(13,18,24,.36) 32%,rgba(13,18,24,.52) 100%)}
+.tres{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(20px,5vw,96px)}
+.tres a{padding-bottom:.1em;border-bottom:1.5px solid rgba(255,255,255,.8);font-weight:300;font-size:clamp(40px,5.6vw,96px);line-height:1;letter-spacing:.02em;text-transform:uppercase;text-decoration:none;transition:border-color .15s,color .15s}
+.tres a:hover{border-color:var(--latao);color:var(--latao-claro)}
+.hero-linha{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px 18px;margin-top:clamp(28px,4vw,52px);font-weight:500;font-size:clamp(13px,1.15vw,16px);letter-spacing:.16em;text-transform:uppercase}
+.hero-linha a{text-decoration:none}
+.hero-nota{margin-top:14px;font-family:var(--serif);font-style:italic;font-size:clamp(17px,1.5vw,21px);color:rgba(255,255,255,.92)}
+
+/* vídeo de abertura: o filme do restaurante por cima da fotografia */
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s}
+.hero-video.on{opacity:1}
+.ver-video{display:none;align-items:center;gap:10px;margin-top:20px;padding:8px 2px;border:0;border-bottom:1.5px solid rgba(255,255,255,.8);background:none;font:inherit;font-weight:600;font-size:12.5px;line-height:1.2;letter-spacing:.16em;text-transform:uppercase;color:#fff;cursor:pointer}
+.ver-video.mostrar{display:inline-flex}
+.ver-video::before{content:"";width:0;height:0;border-top:6px solid transparent;border-bottom:6px solid transparent;border-left:10px solid var(--latao-claro)}
+
+/* selo do Guia Michelin, só em texto */
+.selo{display:inline-flex;flex-direction:column;align-items:center;gap:7px;margin-top:clamp(22px,3vw,36px);padding:15px 28px 14px;border:1.5px solid var(--latao-claro);background:rgba(13,18,24,.28);text-decoration:none;color:#fff;transition:background .15s,color .15s,border-color .15s}
+.selo:hover{background:var(--latao);border-color:var(--latao);color:var(--tinta)}
+.selo-topo{padding-left:.3em;font-stretch:125%;font-weight:600;font-size:clamp(13px,1.2vw,16px);line-height:1;letter-spacing:.3em;text-transform:uppercase;color:var(--latao-claro)}
+.selo:hover .selo-topo{color:var(--tinta)}
+.selo-base{font-family:var(--serif);font-style:italic;font-size:clamp(17px,1.5vw,21px);line-height:1.2}
+
+/* quadro de horários */
+.quadro-faixa{border-bottom:1px solid var(--linha)}
+.quadro{display:grid;grid-template-columns:auto auto 1fr;align-items:center}
+.q-linha,.q-estado{padding:18px clamp(18px,2.4vw,32px)}
+.q-linha{border-right:1px solid var(--linha)}
+.q-linha:first-child{padding-left:0}
+.q-rot{display:block;margin-bottom:8px;font-weight:600;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--cinza)}
+.q-horas{display:flex;align-items:center;gap:10px}
+.q-ate{font-size:14px;color:var(--cinza)}
+.flap{display:inline-flex;gap:3px;font-stretch:75%;font-weight:600;font-size:clamp(22px,2.2vw,30px);line-height:1;font-variant-numeric:tabular-nums}
+.flap b{position:relative;display:inline-grid;place-items:center;width:.8em;height:1.38em;border-radius:3px;background:var(--tinta);color:#fff;font-weight:600}
+.flap b::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:rgba(255,255,255,.2)}
+.flap b.dp{width:.28em;background:none;color:var(--tinta)}
+.flap b.dp::after{display:none}
+.flap b.vira{animation:vira .1s linear infinite}
+@keyframes vira{50%{transform:rotateX(-68deg)}}
+.q-estado{display:flex;flex-direction:column;justify-content:center;gap:4px}
+.q-agora{display:flex;align-items:center;gap:10px;font-weight:600;font-size:clamp(16px,1.4vw,19px)}
+.lamp{flex:none;width:10px;height:10px;border-radius:50%;background:#b9bec4}
+.lamp.aberto{background:var(--latao);box-shadow:0 0 0 4px rgba(201,163,95,.25)}
+.q-obs{font-size:14px;color:var(--cinza)}
+
+/* tiras de três ligações: "Agora no Cais" e "Receitas do Chef" */
+.tira{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,3.2fr);gap:clamp(20px,4vw,56px);align-items:start}
+.tira h2,.tira h3{font-stretch:125%;font-weight:300;font-size:20px;line-height:1.2;letter-spacing:.01em;text-transform:uppercase}
+.tira ul{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,3vw,40px)}
+.tira a{display:block;padding-top:14px;border-top:1.5px solid var(--tinta);text-decoration:none}
+.tira b{display:block;font-weight:600;font-size:16px;line-height:1.3}
+.tira li span{display:block;margin-top:6px;font-size:15px;line-height:1.5;color:var(--cinza)}
+.tira a:hover b{text-decoration:underline;text-decoration-color:var(--latao);text-decoration-thickness:2px;text-underline-offset:4px}
+.agora{padding-block:clamp(36px,5vw,60px);background:var(--fundo)}
+
+/* cozinha: frase ao centro, duas fotos altas e a caixa de texto por cima */
+.cozinha{padding-top:var(--bloco)}
+.frase{max-width:22em;margin-inline:auto;font-weight:300;font-size:clamp(22px,3vw,40px);line-height:1.25;letter-spacing:.01em;text-transform:uppercase;text-wrap:balance}
+.frase + .miudo{margin-top:16px}
+.historia{display:grid;grid-template-columns:1fr 1fr 1.3fr;align-items:center;margin-top:clamp(40px,6vw,80px)}
+.historia .foto{aspect-ratio:3/4.4}
+.historia .foto + .foto{margin-left:clamp(6px,.8vw,12px)}
+.historia-texto{position:relative;z-index:1;margin-left:clamp(-90px,-6vw,-40px);padding:clamp(28px,4vw,56px);background:var(--branco)}
+.historia-texto .miudo{margin-top:14px}
+.historia-texto .corpo{margin-top:18px;max-width:32em}
+.receitas{margin-top:clamp(40px,6vw,72px);padding-top:28px;border-top:1px solid var(--linha)}
+
+/* os pratos: faixa de foto, grade sem intervalos e a lista da carta */
+.pratos{padding-bottom:var(--bloco)}
+.faixa{position:relative;isolation:isolate;display:grid;place-items:end center;height:clamp(320px,52vw,620px);margin-top:var(--bloco);padding:0 var(--pad) clamp(28px,5vw,64px);color:#fff;text-align:center}
+.faixa .foto{position:absolute;inset:0;z-index:-2}
+.faixa::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(13,18,24,.66) 0%,rgba(13,18,24,.06) 58%)}
+.faixa .acento{color:var(--latao-claro)}
+.grade{display:grid;grid-template-columns:repeat(4,1fr)}
+.grade .foto{aspect-ratio:1/1}
+.pratos .miudo{margin-top:clamp(40px,6vw,72px)}
+.lista{max-width:920px;margin:18px auto 0;columns:2;column-gap:clamp(32px,6vw,96px);border-top:1.5px solid var(--tinta)}
+.lista li{display:flex;align-items:baseline;gap:12px;padding:13px 0;border-bottom:1px solid var(--linha);break-inside:avoid;font-weight:600;font-size:14px;line-height:1.4;letter-spacing:.1em;text-transform:uppercase}
+.lista li small{display:block;margin-top:2px;font-weight:400;font-size:14px;letter-spacing:0;text-transform:none;color:var(--cinza)}
+
+/* menus em bilhete */
+.menus{padding-block:var(--bloco);background:var(--latao-suave)}
+.menus-intro{margin-top:16px}
+.bilhetes{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,28px);margin-top:clamp(36px,5vw,60px);text-align:left}
+.bilhete{display:flex;flex-direction:column;background:var(--branco)}
+.b-topo{flex:1;padding:26px 26px 30px}
+.b-topo h3{font-stretch:125%;font-weight:400;font-size:19px;line-height:1.2;letter-spacing:.02em;text-transform:uppercase}
+.b-topo p{margin-top:12px;font-size:16px;color:var(--tinta-2)}
+.b-corte{position:relative;margin-inline:14px;border-top:2px dashed rgba(22,33,46,.28)}
+.b-corte::before,.b-corte::after{content:"";position:absolute;top:-12px;width:22px;height:22px;border-radius:50%;background:var(--latao-suave)}
+.b-corte::before{left:-25px}
+.b-corte::after{right:-25px}
+.b-talao{display:grid;gap:10px;padding:20px 26px 24px}
+.b-preco{font-stretch:75%;font-weight:600;font-size:44px;line-height:1;letter-spacing:-.01em;white-space:nowrap}
+.b-preco small{margin-left:6px;font-stretch:100%;font-weight:500;font-size:15px;letter-spacing:0;color:var(--cinza)}
+
+/* a casa */
+.casa{padding-block:var(--bloco)}
+.casa-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(32px,6vw,96px);align-items:center}
+.lema{margin-top:22px;font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.4vw,30px);line-height:1.25}
+.casa-texto .corpo{margin-top:16px;max-width:34em}
+.ficha{margin-top:32px;border-top:1.5px solid var(--tinta)}
+.ficha div{display:grid;grid-template-columns:12em 1fr;gap:16px;padding:13px 0;border-bottom:1px solid var(--linha)}
+.ficha dd{font-size:16px}
+.casa-fotos{position:relative;padding-bottom:17%}
+.casa-fotos .f1{aspect-ratio:3/2}
+.casa-fotos .f2{position:absolute;left:-13%;bottom:0;width:52%;aspect-ratio:3/2;border:10px solid var(--branco)}
+
+/* espaços: quatro fotos lado a lado, sem intervalos */
+.espacos{padding-top:var(--bloco);background:var(--fundo)}
+.esp-grid{display:grid;grid-template-columns:repeat(4,1fr);margin-top:clamp(36px,5vw,60px)}
+.esp{background:var(--branco)}
+.esp .foto{aspect-ratio:4/5}
+.esp-leg{padding:20px clamp(14px,1.8vw,26px) 30px}
+.esp h3{font-weight:600;font-size:14px;letter-spacing:.14em;text-transform:uppercase}
+.esp p{margin-top:6px;font-size:15px;line-height:1.5;color:var(--cinza)}
+
+/* dias diferentes */
+.noites{padding-block:var(--bloco)}
+.noites-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,48px);margin-top:clamp(36px,5vw,60px);text-align:left}
+.noite{padding-top:18px;border-top:1.5px solid var(--tinta)}
+.noite h3{font-weight:600;font-size:14px;letter-spacing:.14em;text-transform:uppercase}
+.noite p{margin-top:10px;max-width:28em;color:var(--tinta-2)}
+
+/* quem passou por cá */
+.dizem{padding-block:var(--bloco);background:var(--fundo)}
+.citacoes{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);margin-top:clamp(36px,5vw,56px)}
+.citacoes p{font-family:var(--serif);font-style:italic;font-size:clamp(24px,2.6vw,34px);line-height:1.2;text-wrap:balance}
+.citacoes cite{display:block;margin-top:14px;font-style:normal}
+.notas{display:grid;grid-template-columns:repeat(4,1fr);gap:20px 24px;margin-top:clamp(40px,5vw,64px);padding-top:22px;border-top:1.5px solid var(--tinta);text-align:left}
+.notas dd{margin-top:4px;font-size:16px}
+.notas-elos{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 32px}
+.oferta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 40px;margin-top:clamp(40px,5vw,64px);padding:26px clamp(20px,3vw,36px);background:var(--branco);border:1px solid var(--linha);text-align:left}
+.oferta b{display:block;font-stretch:125%;font-weight:400;font-size:18px;line-height:1.25;letter-spacing:.02em;text-transform:uppercase}
+.oferta p span{display:block;margin-top:4px;color:var(--cinza)}
+
+/* reservas */
+.reservas{padding-block:var(--bloco);background:var(--latao-suave)}
+.reservas .corpo{max-width:34em;margin:22px auto 0}
+.reservas .horario{margin-top:10px;font-size:15px}
+.acoes{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:28px}
+.contactos{display:grid;grid-template-columns:repeat(3,1fr);gap:20px 24px;max-width:860px;margin:clamp(36px,5vw,56px) auto 0;padding-top:22px;border-top:1.5px solid var(--tinta)}
+.contactos dd{margin-top:4px}
+.contactos a{text-decoration:none;border-bottom:1px solid rgba(22,33,46,.4)}
+.contactos a:hover{border-color:var(--tinta)}
+
+/* como chegar */
+.chegar{padding-top:var(--bloco)}
+.linha{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:16px;margin-top:36px}
+.paragem{display:flex;align-items:center;gap:10px;font-weight:600;font-size:13px;line-height:1.3;letter-spacing:.12em;text-transform:uppercase}
+.paragem .anel{flex:none;width:14px;height:14px;border:2px solid var(--latao-escuro);border-radius:50%}
+.carril{position:relative;height:16px;border-block:2px solid var(--latao-escuro);background:repeating-linear-gradient(90deg,transparent 0 14px,rgba(150,115,47,.55) 14px 17px)}
+.carril span{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);padding:0 14px;background:var(--branco);font-stretch:75%;font-weight:600;font-size:15px;letter-spacing:.06em;white-space:nowrap}
+.morada{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 40px;margin-top:36px}
+.morada p{max-width:30em}
+.morada small{display:block;margin-top:4px;font-size:15px;color:var(--cinza)}
+.mapa{position:relative;height:clamp(300px,36vw,460px);margin-top:clamp(36px,5vw,56px);background:var(--granito)}
+.mapa::before{content:attr(data-leg);position:absolute;inset:0;display:grid;place-items:center;padding:20px;text-align:center;font-size:14px;color:var(--cinza)}
+.mapa iframe{position:relative;display:block;width:100%;height:100%;border:0;filter:grayscale(.85) contrast(1.05)}
+
+/* rodapé */
+.rodape{padding-block:36px 44px;background:var(--tinta);font-size:14px;color:rgba(255,255,255,.74)}
+.rodape .wrap{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px 40px}
+.rodape a{color:#fff;text-underline-offset:3px}
+.rodape nav{display:flex;flex-wrap:wrap;gap:8px 20px}
+
+/* barra de ação no telemóvel */
+.barra{display:none}
+
+@media (max-width:1180px){
+  .nav{display:none}
+}
+@media (max-width:980px){
+  .casa-grid{grid-template-columns:1fr}
+  .casa-fotos{padding-bottom:0}
+  .casa-fotos .f2{position:relative;left:auto;bottom:auto;width:58%;margin:-15% 0 0 auto}
+  .historia{grid-template-columns:1fr 1fr}
+  .historia-texto{grid-column:1 / -1;margin:-48px clamp(16px,6vw,56px) 0}
+  .bilhetes{grid-template-columns:1fr;max-width:520px;margin-inline:auto}
+  .tira{grid-template-columns:1fr}
+  .esp-grid{grid-template-columns:repeat(2,1fr)}
+  .notas{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:760px){
+  body{font-size:16px}
+  .rodape{padding-bottom:112px}
+  .topo{margin-bottom:-60px}
+  .topo .wrap{min-height:60px;gap:14px}
+  .topo .btn{display:none}
+  .marca img{width:158px}
+  .hero{padding-top:96px}
+  .tres{flex-direction:column;align-items:center;gap:20px}
+  .tres a{font-size:clamp(44px,15.5vw,70px)}
+  .hero-linha{flex-direction:column;gap:6px}
+  .hero-linha .tri{display:none}
+  .quadro{grid-template-columns:1fr}
+  .q-linha,.q-estado{padding:14px 0}
+  .q-linha{display:flex;align-items:center;justify-content:space-between;gap:12px;border-right:0;border-bottom:1px solid var(--linha)}
+  .q-rot{margin-bottom:0}
+  .q-horas{gap:8px}
+  .flap{font-size:22px;gap:2px}
+  .tira ul,.noites-grid,.citacoes,.contactos{grid-template-columns:1fr}
+  .grade{grid-template-columns:repeat(2,1fr)}
+  .lista{columns:1}
+  .ficha div{grid-template-columns:8.5em 1fr}
+  .linha{grid-template-columns:1fr;gap:12px}
+  .carril{width:100%}
+  .acoes .btn{flex:1 1 150px}
+  .barra{position:fixed;left:0;right:0;bottom:0;z-index:45;display:grid;grid-template-columns:1.5fr 1fr;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);border-top:1px solid var(--linha)}
+  .barra .btn{min-height:46px;padding:0 12px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .flap b.vira{animation:none}
+  .topo{transition:none}
+  .hero-video{transition:none}
+}
+</style>
+</head>
+<body>
+
+<p class="previa" data-en="Proposal preview created by SIMPLES for Cais da Villa. This is not the official website.">Prévia de proposta criada pela SIMPLES para o Cais da Villa. Este não é o site oficial.</p>
+
+<header class="topo">
+  <div class="wrap">
+    <a class="marca" href="#inicio" aria-label="Cais da Villa">
+      <img class="claro" data-fb src="https://caisdavilla.com/wp-content/uploads/2022/02/caisdavilla_logo_branco-750.png" alt="Cais da Villa" width="750" height="66" referrerpolicy="no-referrer">
+      <img class="escuro" data-fb src="https://caisdavilla.com/wp-content/uploads/2022/02/caisdavilla_logo_preto-750.png" alt="" width="750" height="66" referrerpolicy="no-referrer">
+      <span class="marca-texto" aria-hidden="true">Caisda<i>V</i>illa</span>
+    </a>
+    <nav class="nav" aria-label="Secções">
+      <a href="#cozinha" data-en="Kitchen">Cozinha</a>
+      <a href="#pratos" data-en="Dishes">Pratos</a>
+      <a href="#menus">Menus</a>
+      <a href="#casa" data-en="The house">A casa</a>
+      <a href="#espacos" data-en="Spaces">Espaços</a>
+      <a href="#chegar" data-en="Getting here">Como chegar</a>
+    </nav>
+    <div class="lingua" role="group" aria-label="Idioma">
+      <button type="button" data-l="pt" aria-pressed="true" aria-label="Português">PT</button>
+      <button type="button" data-l="en" aria-pressed="false" aria-label="English">EN</button>
+    </div>
+    <a class="btn" href="https://www.covermanager.com/reservation/module_restaurant/restaurante-cais-da-villa/portuguese" target="_blank" rel="noopener" data-en="Book a table">Reservar mesa</a>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="foto hero-foto">
+    <img data-fb src="https://caisdavilla.com/wp-content/uploads/2025/07/cais-da-vila_23_05_2025-70-1536x1024.jpg" srcset="https://caisdavilla.com/wp-content/uploads/2025/07/cais-da-vila_23_05_2025-70-1536x1024.jpg 1536w, https://caisdavilla.com/wp-content/uploads/2025/07/cais-da-vila_23_05_2025-70-scaled.jpg 2560w" sizes="100vw" alt="Mesa vista de cima, com vários pratos e mãos a servir" data-en-alt="A table seen from above, with several dishes and hands serving" width="1536" height="1024" fetchpriority="high" referrerpolicy="no-referrer">
+    <video class="hero-video" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" data-src="https://caisdavilla.com/wp-content/uploads/2026/02/site-_eader.mp4#t=5"></video>
+  </div>
+  <div>
+    <h1 class="vh" data-en="Cais da Villa: restaurant, wine bar and wine cellar by Chef Daniel Gomes, in Vila Real">Cais da Villa: restaurante, wine bar e garrafeira do Chef Daniel Gomes, em Vila Real</h1>
+    <nav class="tres" aria-label="Atalhos">
+      <a href="#cozinha" data-en="Eat">Comer</a>
+      <a href="#espacos" data-en="Drink">Beber</a>
+      <a href="#reservas" data-en="Book">Reservar</a>
+    </nav>
+    <p class="hero-linha"><span data-en="Cooking by Chef Daniel Gomes">Cozinha do Chef Daniel Gomes</span><span class="tri" aria-hidden="true"></span><span>Vila Real, Douro</span><span class="tri" aria-hidden="true"></span><a href="tel:+351259351209">+351 259 351 209</a></p>
+    <p><a class="selo" href="https://guide.michelin.com/pt/pt_PT/vila-real-region/vila-real/restaurant/cais-da-villa" target="_blank" rel="noopener"><span class="selo-topo" data-en="Michelin Guide">Guia Michelin</span><span class="selo-base" data-en="Selected restaurant, 2024 and 2026">Restaurante selecionado, 2024 e 2026</span></a></p>
+    <p><button class="ver-video" type="button" data-en="Watch the video">Ver o vídeo</button></p>
+  </div>
+</section>
+
+<div class="quadro-faixa">
+  <div class="wrap">
+    <div class="quadro" role="group" aria-label="Horário">
+      <div class="q-linha">
+        <span class="q-rot" aria-hidden="true" data-en="Lunch">Almoço</span>
+        <span class="vh" data-en="Lunch, 12:00 to 15:00">Almoço, das 12:00 às 15:00</span>
+        <span class="q-horas" aria-hidden="true"><span class="flap" data-t="12:00">12:00</span><span class="q-ate" data-en="to">às</span><span class="flap" data-t="15:00">15:00</span></span>
+      </div>
+      <div class="q-linha">
+        <span class="q-rot" aria-hidden="true" data-en="Dinner">Jantar</span>
+        <span class="vh" data-en="Dinner, 19:00 to 22:00">Jantar, das 19:00 às 22:00</span>
+        <span class="q-horas" aria-hidden="true"><span class="flap" data-t="19:00">19:00</span><span class="q-ate" data-en="to">às</span><span class="flap" data-t="22:00">22:00</span></span>
+      </div>
+      <div class="q-estado">
+        <p class="q-agora"><span class="lamp" id="lamp" aria-hidden="true"></span><span id="estado" aria-live="polite" data-en="Open every day">Aberto todos os dias</span></p>
+        <p class="q-obs" data-en="Every day. Closed on 24 and 25 December.">Todos os dias. Encerrado a 24 e 25 de dezembro.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="agora" id="agora">
+  <div class="wrap tira">
+    <h2 data-en="Now at the Cais">Agora no Cais</h2>
+    <ul>
+      <li><a href="https://caisdavilla.com/menu-de-natal-2026/" target="_blank" rel="noopener"><b data-en="Christmas Menu 2026">Menu de Natal 2026</b><span data-en="From 1 to 23 December, for group lunches and dinners, by reservation.">De 1 a 23 de dezembro, para almoços e jantares de grupo, com reserva.</span></a></li>
+      <li><a href="https://caisdavilla.com/menu-executivo-almoco/" target="_blank" rel="noopener"><b data-en="This week's executive menu">Menu Executivo da semana</b><span data-en="At lunch, Monday to Friday, 20 € per person.">Ao almoço, de segunda a sexta, por 20 € por pessoa.</span></a></li>
+      <li><a href="https://caisdavilla.com/cais-da-villa-recomendado-pelo-guia-michelin-2026/" target="_blank" rel="noopener"><b data-en="Michelin Guide 2026">Guia Michelin 2026</b><span data-en="The Cais is once again among the recommended restaurants.">O Cais está outra vez entre os restaurantes recomendados.</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="cozinha" id="cozinha">
+  <div class="wrap">
+    <p class="frase centro" data-en="What the region gives, when it gives it.">O que a região dá, na altura em que dá.</p>
+    <p class="miudo centro" data-en="Cooking from the Douro and Trás-os-Montes">Cozinha do Douro e de Trás-os-Montes</p>
+    <div class="historia">
+      <figure class="foto" data-leg="Fotografia: prato a ser finalizado"><img data-fb loading="lazy" src="https://caisdavilla.com/wp-content/uploads/2025/03/5a6fa37861c6e0f2ff40d45b8d14834b.jpg" alt="Mãos de luvas pretas a finalizar um prato" data-en-alt="Gloved hands finishing a dish" width="864" height="864" referrerpolicy="no-referrer"></figure>
+      <figure class="foto" data-leg="Fotografia: molho a ser servido"><img data-fb loading="lazy" src="https://caisdavilla.com/wp-content/uploads/2022/03/DSC06583.jpg" alt="Molho a ser servido à colher sobre um prato" data-en-alt="Sauce being spooned over a dish" width="1600" height="1067" referrerpolicy="no-referrer"></figure>
+      <div class="historia-texto">
+        <p class="acento" data-en="In the hands of">Pelas mãos do</p>
+        <h2 class="titulo">Chef Daniel Gomes</h2>
+        <p class="miudo" data-en="Local, seasonal produce">Produto local e da época</p>
+        <p class="corpo" data-en="Chef Daniel Gomes works with local, seasonal produce, meat and vegetables from the region and the traditions of the Douro and Trás-os-Montes, with a personal touch. Native breeds have a sure place on the menu.">O Chef Daniel Gomes trabalha com produto local e da época, carne e legumes da região e as tradições do Douro e de Trás-os-Montes, com um toque pessoal. As raças autóctones têm lugar certo na carta.</p>
+        <a class="elo" href="https://qrco.de/bbWxuR" target="_blank" rel="noopener" data-en="See the full menu">Ver a carta completa</a>
+      </div>
+    </div>
+    <div class="tira receitas">
+      <h3 data-en="Recipes from the Chef">Receitas do Chef</h3>
+      <ul>
+        <li><a href="https://caisdavilla.com/craquelin-com-mousse-de-avela-chocolate-e-gelado-de-tangerina/" target="_blank" rel="noopener"><b data-en="Craquelin with hazelnut mousse, chocolate and tangerine ice cream">Craquelin com mousse de avelã, chocolate e gelado de tangerina</b><span data-en="Dessert">Sobremesa</span></a></li>
+        <li><a href="https://caisdavilla.com/arroz-de-costelinhas-em-vinha-dalhos-com-moira-e-grelos/" target="_blank" rel="noopener"><b data-en="Rice with pork ribs in vinha d'alhos, moira and turnip greens">Arroz de costelinhas em vinha d'alhos com moira e grelos</b><span data-en="Main course">Prato principal</span></a></li>
+        <li><a href="https://caisdavilla.com/prepare-o-seu-cocktail-de-verao/" target="_blank" rel="noopener"><b data-en="Make your own summer cocktail">Prepare o seu cocktail de verão</b><span data-en="For the terrace">Para a esplanada</span></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="pratos" id="pratos">
+  <div class="faixa">
+    <figure class="foto"><img data-fb loading="lazy" src="https://caisdavilla.com/wp-content/uploads/2022/07/WhatsApp-Image-2022-07-15-at-12.35.53.jpeg" alt="Prato de peixe fatiado servido em prato branco, sobre uma mesa de madeira" data-en-alt="Sliced fish served on a white plate, on a wooden table" width="1600" height="1066" referrerpolicy="no-referrer"></figure>
+    <div>
+      <p class="acento" data-en="From the menu">Da carta</p>
+      <h2 class="titulo" data-en="The dishes">Os pratos</h2>
+    </div>
+  </div>
+  <div class="grade">
+    <figure class="foto" data-leg="Fotografia: prato"><img data-fb loading="lazy" src="https://caisdavilla.com/wp-content/uploads/2024/09/2e69ac01eee8ff28d774a393b173e37b-1024x1024.jpg" alt="Carne fatiada servida num prato de cerâmica" data-en-alt="Sliced meat served on a ceramic plate" width="1024" height="1024" referrerpolicy="no-referrer"></figure>
+    <figure class="foto" data-leg="Fotografia: prato"><img data-fb loading="lazy" src="https://caisdavilla.com/wp-content/uploads/2024/03/Cais-da-Vila_08022024_Originais_-36-copia-1024x1024.jpg" alt="Prato de tons claros servido em louça branca" data-en-alt="A pale dish served on white china" width="1024" height="1024" referrerpolicy="no-referrer"></figure>
+    <figure class="foto" data-leg="Fotografia: prato"><img data-fb loading="lazy" src="https://caisdavilla.com/wp-content/uploads/2022/03/CW4A1501.jpg" alt="Prato servido em taça azul" data-en-alt="Dish served in a blue bowl" width="1600" height="1067" referrerpolicy="no-referrer"></figure>
+    <figure class="foto" data-leg="Fotografia: sobremesa"><img data-fb loading="lazy" src="https://caisdavilla.com/wp-content/uploads/2026/01/cais_da_villa-51-1024x683.jpg" alt="Craquelin com mousse de avelã, chocolate e gelado de tangerina" data-en-alt="Craquelin with hazelnut mousse, chocolate and tangerine ice cream" width="1024" height="683" referrerpolicy="no-referrer"></figure>
+    <figure class="foto" data-leg="Fotografia: prato"><img data-fb loading="lazy" src="https://caisdavilla.com/wp-content/uploads/2025/01/dc170729274ce78542190524d57ddc85-1024x1024.jpg" alt="Prato servido em louça cinzenta" data-en-alt="Dish served on grey china" width="1024" height="1024" referrerpolicy="no-referrer"></figure>
+    <figure class="foto" data-leg="Fotografia: aperitivos"><img data-fb loading="lazy" src="https://caisdavilla.com/wp-content/uploads/2022/07/WhatsApp-Image-2022-07-15-at-12.36.13.jpeg" alt="Aperitivos e um copo servidos numa mesa da esplanada" data-en-alt="Appetisers and a drink served on a terrace table" width="1600" height="1066" referrerpolicy="no-referrer"></figure>
+    <figure class="foto" data-leg="Fotografia: sobremesa"><img data-fb loading="lazy" src="https://caisdavilla.com/wp-content/uploads/2024/05/Editadas_CaisDaVilla_27102023-71-1024x1024.jpg" alt="Sobremesa servida em prato escuro de aba branca" data-en-alt="Dessert served on a dark plate with a white rim" width="1024" height="1024" referrerpolicy="no-referrer"></figure>
+    <figure class="foto" data-leg="Fotografia: sobremesa"><img data-fb loading="lazy" src="https://caisdavilla.com/wp-content/uploads/2022/07/WhatsApp-Image-2022-07-15-at-12.39.07.jpeg" alt="Sobremesa em prato escuro, vista de cima" data-en-alt="Dessert on a dark plate, seen from above" width="1600" height="1066" referrerpolicy="no-referrer"></figure>
+  </div>
+  <div class="wrap centro">
+    <p class="miudo" data-en="A few dishes from the menu">Alguns pratos da carta</p>
+    <ul class="lista" style="text-align:left">
+      <li><span class="tri" aria-hidden="true"></span><span data-en="Maronesa veal, PDO">Vitela Maronesa DOP</span></li>
+      <li><span class="tri" aria-hidden="true"></span><span data-en="Bísaro pork secreto">Secreto de porco Bísaro</span></li>
+      <li><span class="tri" aria-hidden="true"></span><span data-en="Grilled game alheira">Alheira de caça grelhada</span></li>
+      <li><span class="tri" aria-hidden="true"></span><span data-en="Grilled octopus with garlic potatoes">Polvo grelhado com batata ao alho</span></li>
+      <li><span class="tri" aria-hidden="true"></span><span data-en="Salt cod with corn bread">Bacalhau com broa</span></li>
+      <li><span class="tri" aria-hidden="true"></span><span data-en="Trás-os-Montes cuscos with vegetables">Cuscos transmontanos com legumes</span></li>
+      <li><span class="tri" aria-hidden="true"></span><span data-en="Pão-de-Ló à Caisdavilla <small>Firm on the outside, creamy inside.</small>">Pão-de-Ló à Caisdavilla <small>Firme por fora, cremoso por dentro.</small></span></li>
+    </ul>
+    <a class="elo" href="https://qrco.de/bbWxuR" target="_blank" rel="noopener" data-en="See the full menu">Ver a carta completa</a>
+  </div>
+</section>
+
+<section class="menus" id="menus">
+  <div class="wrap centro">
+    <p class="acento" data-en="Besides à la carte">Além da carta</p>
+    <h2 class="titulo" data-en="Three set menus">Três menus</h2>
+    <p class="menus-intro corpo" data-en="À la carte is served every day, at lunch and dinner.">A carta é servida todos os dias, ao almoço e ao jantar.</p>
+    <div class="bilhetes">
+      <article class="bilhete">
+        <div class="b-topo">
+          <h3 data-en="Executive menu">Menu Executivo</h3>
+          <p data-en="Couvert, starter, main course, one drink and a coffee.">Couvert, entrada, prato principal, uma bebida e um café.</p>
+        </div>
+        <div class="b-corte" aria-hidden="true"></div>
+        <div class="b-talao">
+          <span class="b-preco">20 €<small data-en="per person">por pessoa</small></span>
+          <span class="miudo" data-en="Monday to Friday, at lunch">Segunda a sexta, ao almoço</span>
+        </div>
+      </article>
+      <article class="bilhete">
+        <div class="b-topo">
+          <h3 data-en="Chef's suggestion">Sugestão do Chef</h3>
+          <p data-en="Five courses chosen on the day, with wine pairing.">Cinco momentos escolhidos no próprio dia, com harmonização de vinhos.</p>
+        </div>
+        <div class="b-corte" aria-hidden="true"></div>
+        <div class="b-talao">
+          <span class="b-preco">60 €</span>
+          <span class="miudo" data-en="Served for the whole table">Servido para a mesa completa</span>
+        </div>
+      </article>
+      <article class="bilhete">
+        <div class="b-topo">
+          <h3 data-en="Children's menu">Menu Criança</h3>
+          <p data-en="For younger guests. The dishes are listed in the menu.">Para os mais novos. Os pratos estão na carta.</p>
+        </div>
+        <div class="b-corte" aria-hidden="true"></div>
+        <div class="b-talao">
+          <span class="b-preco">20 €</span>
+          <span class="miudo" data-en="Details in the menu">Detalhe na carta</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="casa" id="casa">
+  <div class="wrap casa-grid">
+    <div class="casa-texto">
+      <p class="acento" data-en="Since 2011">Desde 2011</p>
+      <h2 class="titulo" data-en="The house">A casa</h2>
+      <p class="lema" data-en="Goods once left from here. Today, this is where people arrive.">Daqui partiam mercadorias. Hoje é aqui que se chega.</p>
+      <p class="corpo" data-en="Cais da Villa lives in the former goods warehouse of Vila Real railway station. The building was carefully restored and kept its stone and timber in plain sight. Inside there is an à la carte restaurant, a wine bar and a wine cellar. Outside, a terrace.">O Cais da Villa ocupa o antigo armazém de mercadorias da estação ferroviária de Vila Real. O edifício foi recuperado com cuidado e guardou a pedra e a madeira à vista. Lá dentro há um restaurante à carta, um wine bar e uma garrafeira. Cá fora, uma esplanada.</p>
+      <dl class="ficha">
+        <div><dt class="miudo" data-en="Open since">Aberto desde</dt><dd data-en="November 2011">Novembro de 2011</dd></div>
+        <div><dt class="miudo" data-en="Building">Edifício</dt><dd data-en="Railway warehouse, over 100 years old">Armazém ferroviário com mais de 100 anos</dd></div>
+        <div><dt class="miudo">Turismo de Portugal</dt><dd data-en="Tourist point of interest in the Douro region">Ponto de interesse turístico da região do Douro</dd></div>
+      </dl>
+    </div>
+    <div class="casa-fotos">
+      <figure class="foto f1" data-leg="Fotografia: fachada do armazém">
+        <img data-fb loading="lazy" src="https://caisdavilla.com/wp-content/uploads/2022/03/DSC05840-Edit.jpg" alt="Fachada em pedra do Cais da Villa, o antigo armazém da estação de Vila Real" data-en-alt="Stone facade of Cais da Villa, the former warehouse of Vila Real station" width="1600" height="1067" referrerpolicy="no-referrer">
+      </figure>
+      <figure class="foto f2" data-leg="Fotografia: sala do restaurante">
+        <img data-fb loading="lazy" src="https://caisdavilla.com/wp-content/uploads/2022/03/DSC05864.jpg" alt="Sala do restaurante com paredes de pedra e estrutura de madeira" data-en-alt="Dining room with stone walls and timber structure" width="1600" height="1067" referrerpolicy="no-referrer">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="espacos" id="espacos">
+  <div class="wrap centro">
+    <p class="acento" data-en="One house">Uma casa</p>
+    <h2 class="titulo" data-en="Four ways to stay">Quatro maneiras de ficar</h2>
+  </div>
+  <div class="esp-grid">
+    <article class="esp">
+      <figure class="foto" data-leg="Fotografia: sala do restaurante"><img data-fb loading="lazy" src="https://caisdavilla.com/wp-content/uploads/2025/02/76021fd8cfbe3be88b83dfa17fb2c90d-4.jpg" alt="Sala do restaurante com cadeiras claras e mesas postas" data-en-alt="Dining room with pale chairs and set tables" width="864" height="864" referrerpolicy="no-referrer"></figure>
+      <div class="esp-leg">
+        <h3 data-en="Restaurant">Restaurante</h3>
+        <p data-en="À la carte service, at lunch and dinner, in an informal room.">Serviço à carta, ao almoço e ao jantar, numa sala informal.</p>
+      </div>
+    </article>
+    <article class="esp">
+      <figure class="foto" data-leg="Fotografia: wine bar"><img data-fb loading="lazy" src="https://caisdavilla.com/wp-content/uploads/2022/03/DSC05824.jpg" alt="Balcão do wine bar com prateleiras de garrafas" data-en-alt="Wine bar counter with shelves of bottles" width="1600" height="1067" referrerpolicy="no-referrer"></figure>
+      <div class="esp-leg">
+        <h3>Wine bar</h3>
+        <p data-en="Tapas and steak, with a glass of wine close at hand.">Tapas e steak, com um copo de vinho por perto.</p>
+      </div>
+    </article>
+    <article class="esp">
+      <figure class="foto" data-leg="Fotografia: vinho"><img data-fb loading="lazy" src="https://caisdavilla.com/wp-content/uploads/2022/07/WhatsApp-Image-2022-07-15-at-12.36.02.jpeg" alt="Garrafa de vinho branco e copo numa mesa da esplanada" data-en-alt="Bottle of white wine and a glass on a terrace table" width="1600" height="1066" referrerpolicy="no-referrer"></figure>
+      <div class="esp-leg">
+        <h3 data-en="Wine cellar">Garrafeira</h3>
+        <p data-en="Douro and Port wines take the lead.">Vinhos do Douro e do Porto em destaque.</p>
+      </div>
+    </article>
+    <article class="esp">
+      <figure class="foto" data-leg="Fotografia: esplanada"><img data-fb loading="lazy" src="https://caisdavilla.com/wp-content/uploads/2025/05/f341031c7e02f66c1e67d160a7166f2b-1-818x1024.jpg" alt="Esplanada com mesas e toldos" data-en-alt="Terrace with tables and awnings" width="818" height="1024" referrerpolicy="no-referrer"></figure>
+      <div class="esp-leg">
+        <h3 data-en="Terrace">Esplanada</h3>
+        <p data-en="A large one, for the many sunny days of Trás-os-Montes.">Ampla, para os muitos dias de sol de Trás-os-Montes.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="noites" id="noites">
+  <div class="wrap centro">
+    <p class="acento" data-en="Some days">Há dias em que</p>
+    <h2 class="titulo" data-en="The Cais changes pace">O Cais muda de ritmo</h2>
+    <div class="noites-grid">
+      <article class="noite">
+        <h3 data-en="Wine dinners">Jantares vínicos</h3>
+        <p data-en="Dinners with wine producers at the table. Dalva, Quinta Seara D'Ordens and Quinta do Lamal have already been here.">Jantares com produtores de vinho à mesa. Já passaram por cá a Dalva, a Quinta Seara D'Ordens e a Quinta do Lamal.</p>
+      </article>
+      <article class="noite">
+        <h3>Tapas, Música &amp; Cocktails</h3>
+        <p data-en="Evenings of tapas and cocktails, with music to go with them.">Noites de tapas e cocktails, com música a acompanhar.</p>
+      </article>
+      <article class="noite">
+        <h3 data-en="Brunch at the Cais">Brunch no Cais</h3>
+        <p data-en="Warm bread, local produce and time to stay.">Pão quente, produtos locais e tempo para ficar.</p>
+      </article>
+    </div>
+    <a class="elo" href="https://caisdavilla.com/blog/" target="_blank" rel="noopener" data-en="See dates and news">Ver datas e notícias</a>
+  </div>
+</section>
+
+<section class="dizem" id="dizem">
+  <div class="wrap centro">
+    <p class="acento" data-en="From those who have">De quem passou</p>
+    <h2 class="titulo" data-en="Been here">Por cá</h2>
+    <div class="citacoes">
+      <blockquote>
+        <p data-en="“Best restaurant in the interior”">«Melhor restaurante do interior»</p>
+        <cite class="miudo">Revista Wine</cite>
+      </blockquote>
+      <blockquote>
+        <p data-en="“The food here is absolutely Michelin quality, but at an accessible price”">«A comida aqui é de qualidade absolutamente Michelin, mas a um preço acessível»</p>
+        <cite class="miudo" data-en="Inspired Citizen, blog">Blog Inspired Citizen</cite>
+      </blockquote>
+    </div>
+    <dl class="notas">
+      <div><dt class="miudo" data-en="Michelin Guide">Guia Michelin</dt><dd data-en="Selected restaurant, 2024 and 2026">Restaurante selecionado, 2024 e 2026</dd></div>
+      <div><dt class="miudo">Google</dt><dd data-en="4.4 from 1,052 reviews">4,4 em 1.052 avaliações</dd></div>
+      <div><dt class="miudo">TripAdvisor</dt><dd>Travelers' Choice 2023</dd></div>
+      <div><dt class="miudo">Restaurant Guru</dt><dd data-en="Best restaurant, 2022 and 2023">Melhor restaurante, 2022 e 2023</dd></div>
+    </dl>
+    <p class="notas-elos"><a class="elo" href="https://www.google.com/maps/search/?api=1&amp;query=Cais%20da%20Villa%2C%20Vila%20Real&amp;query_place_id=ChIJybzeq6lLOw0RQ_t91FMDjBo" target="_blank" rel="noopener" data-en="Read the reviews on Google">Ler as avaliações no Google</a><a class="elo" href="https://search.google.com/local/writereview?placeid=ChIJybzeq6lLOw0RQ_t91FMDjBo" target="_blank" rel="noopener" data-en="Leave your review">Deixar a sua opinião</a></p>
+    <div class="oferta">
+      <p><b data-en="Give the Cais as a gift">Ofereça o Cais a alguém</b><span data-en="Gift vouchers are bought online.">Os vouchers de oferta compram-se online.</span></p>
+      <a class="btn" href="https://caisdavilla.com/vouchers/" target="_blank" rel="noopener" data-en="Buy a voucher">Comprar um voucher</a>
+    </div>
+  </div>
+</section>
+
+<section class="reservas" id="reservas">
+  <div class="wrap centro">
+    <p class="acento" data-en="We will keep">Guardamos-lhe</p>
+    <h2 class="titulo" data-en="A place for you">Um lugar</h2>
+    <p class="corpo" data-en="Book online or give us a call. For groups, special dates or gift vouchers, write to us.">Reserve online ou ligue-nos. Para grupos, datas especiais ou vouchers de oferta, escreva-nos.</p>
+    <p class="corpo horario" data-en="Every day, 12:00 to 15:00 and 19:00 to 22:00. Closed on 24 and 25 December.">Todos os dias, das 12:00 às 15:00 e das 19:00 às 22:00. Encerrado a 24 e 25 de dezembro.</p>
+    <div class="acoes">
+      <a class="btn btn-cheio" href="https://www.covermanager.com/reservation/module_restaurant/restaurante-cais-da-villa/portuguese" target="_blank" rel="noopener" data-en="Book online">Reservar online</a>
+      <a class="btn" href="tel:+351259351209" data-en="Call the restaurant">Ligar para o restaurante</a>
+    </div>
+    <dl class="contactos">
+      <div><dt class="miudo" data-en="Phone">Telefone</dt><dd><a href="tel:+351259351209">+351 259 351 209</a></dd></div>
+      <div><dt class="miudo" data-en="Mobile">Telemóvel</dt><dd><a href="tel:+351960377268">+351 960 377 268</a></dd></div>
+      <div><dt class="miudo">Email</dt><dd><a href="mailto:geral@caisdavilla.com">geral@caisdavilla.com</a></dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="chegar" id="chegar">
+  <div class="wrap">
+    <p class="acento" data-en="150 metres">A 150 metros</p>
+    <h2 class="titulo" data-en="From the station">Da estação</h2>
+    <div class="linha" role="img" aria-label="Da estação de Vila Real ao Cais da Villa: 150 metros">
+      <span class="paragem"><span class="anel"></span><span data-en="Vila Real station">Estação de Vila Real</span></span>
+      <span class="carril"><span>150 m</span></span>
+      <span class="paragem"><span class="tri"></span>Cais da Villa</span>
+    </div>
+    <div class="morada">
+      <p>Rua Monsenhor Jerónimo do Amaral, 5000-570 Vila Real, Portugal<small data-en="Parking available.">Com estacionamento.</small></p>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Cais%20da%20Villa%2C%20Vila%20Real&amp;query_place_id=ChIJybzeq6lLOw0RQ_t91FMDjBo" target="_blank" rel="noopener" data-en="Open in Google Maps">Abrir no Google Maps</a>
+    </div>
+  </div>
+  <div class="mapa" data-leg="Mapa do Google. Se não carregar, use o botão acima."><iframe title="Mapa: Cais da Villa, Vila Real" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2997.7010163882624!2d-7.741910884577123!3d41.29361107927287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd3b4ba9abdebcc9%3A0x1a8c0353d47dfb43!2sCais%20da%20Villa!5e0!3m2!1spt-PT!2spt!4v1640086390871!5m2!1spt-PT!2spt"></iframe></div>
+</section>
+</main>
+
+<footer class="rodape">
+  <div class="wrap">
+    <p>Cais da Villa. Rua Monsenhor Jerónimo do Amaral, 5000-570 Vila Real.</p>
+    <nav aria-label="Mais ligações">
+      <a href="https://caisdavilla.com/blog/" target="_blank" rel="noopener" data-en="News">Notícias</a>
+      <a href="https://caisdavilla.com/recrutamento/" target="_blank" rel="noopener" data-en="Careers">Recrutamento</a>
+      <a href="https://caisdavilla.com/politica-de-privacidade/" target="_blank" rel="noopener" data-en="Privacy policy">Política de privacidade</a>
+      <a href="https://www.instagram.com/cais_da_villa/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/CaisDaVillaRestauranteWineBar/" target="_blank" rel="noopener">Facebook</a>
+    </nav>
+    <p data-en="Preview created by SIMPLES COMUNICAÇÃO in November 2026. Texts and details to be confirmed with the restaurant.">Prévia criada pela SIMPLES COMUNICAÇÃO em novembro de 2026. Textos e dados a validar com o restaurante.</p>
+  </div>
+</footer>
+
+<div class="barra">
+  <a class="btn btn-latao" href="https://www.covermanager.com/reservation/module_restaurant/restaurante-cais-da-villa/portuguese" target="_blank" rel="noopener" data-en="Book a table">Reservar mesa</a>
+  <a class="btn" href="tel:+351259351209" data-en="Call">Ligar</a>
+</div>
+
+<script>
+(function(){
+  var doc=document, root=doc.documentElement;
+
+  /* 1. Fotografias: se uma imagem falhar, fica a reserva de lugar */
+  doc.querySelectorAll('img[data-fb]').forEach(function(img){
+    function falha(){ var alvo=img.closest('.foto,.marca'); if(alvo){ alvo.classList.add('semimg'); } }
+    img.addEventListener('error',falha);
+    if(img.loading!=='lazy' && img.complete && img.naturalWidth===0){ falha(); }
+  });
+
+  /* 2. Topo: transparente sobre a foto, branco depois de rolar */
+  var topo=doc.querySelector('.topo');
+  function topoEstado(){ topo.classList.toggle('solido', window.scrollY>60); }
+  window.addEventListener('scroll',topoEstado,{passive:true});
+  topoEstado();
+
+  /* 3. Quadro de horários: hora de Lisboa, encerrado a 24 e 25 de dezembro */
+  var HORAS=[[720,900],[1140,1320]];
+  function agoraLisboa(){
+    var p={};
+    new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Lisbon',hour12:false,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'})
+      .formatToParts(new Date()).forEach(function(x){ p[x.type]=x.value; });
+    return {min:(+p.hour%24)*60 + +p.minute, dia:+p.day, mes:+p.month, ano:+p.year};
+  }
+  function encerrado(dia,mes){ return mes===12 && (dia===24 || dia===25); }
+  function hhmm(m){ return ('0'+Math.floor(m/60)).slice(-2)+':'+('0'+(m%60)).slice(-2); }
+  function estado(){
+    var el=doc.getElementById('estado'), lamp=doc.getElementById('lamp'), en=root.lang==='en', t, txt, aberto=false;
+    if(!el){ return; }
+    try{ t=agoraLisboa(); }catch(e){ return; }
+    if(encerrado(t.dia,t.mes)){
+      txt=en?'Closed today':'Encerrado hoje';
+    }else{
+      var atual=HORAS.filter(function(h){ return t.min>=h[0] && t.min<h[1]; })[0];
+      var seguinte=HORAS.filter(function(h){ return t.min<h[0]; })[0];
+      if(atual){
+        aberto=true;
+        txt=(en?'Open now, until ':'Aberto agora, até às ')+hhmm(atual[1]);
+      }else if(seguinte){
+        txt=(en?'Closed now. Opens at ':'Fechado agora. Abre às ')+hhmm(seguinte[0]);
+      }else{
+        var am=new Date(Date.UTC(t.ano,t.mes-1,t.dia+1));
+        txt=encerrado(am.getUTCDate(),am.getUTCMonth()+1)
+          ? (en?'Closed now. Reopens on 26 December':'Fechado agora. Reabre a 26 de dezembro')
+          : (en?'Closed now. Opens tomorrow at ':'Fechado agora. Abre amanhã às ')+hhmm(HORAS[0][0]);
+      }
+    }
+    el.textContent=txt;
+    lamp.classList.toggle('aberto',aberto);
+  }
+
+  /* 4. Palhetas do quadro: um único movimento, ao abrir a página */
+  function montar(){
+    doc.querySelectorAll('.flap').forEach(function(f){
+      var t=f.getAttribute('data-t'); f.textContent='';
+      t.split('').forEach(function(c){
+        var b=doc.createElement('b'); b.textContent=c; b.setAttribute('data-c',c);
+        if(c===':'){ b.className='dp'; }
+        f.appendChild(b);
+      });
+    });
+  }
+  function girar(){
+    if(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches){ return; }
+    var n=0;
+    doc.querySelectorAll('.flap b:not(.dp)').forEach(function(b){
+      var alvo=b.getAttribute('data-c'), dur=380+n*65, ini=Date.now(); n++;
+      b.classList.add('vira');
+      var iv=setInterval(function(){
+        if(Date.now()-ini>=dur){ clearInterval(iv); b.textContent=alvo; b.classList.remove('vira'); }
+        else{ b.textContent=Math.floor(Math.random()*10); }
+      },60);
+    });
+  }
+
+  /* 5. PT / EN */
+  var textos=doc.querySelectorAll('[data-en]'), alts=doc.querySelectorAll('[data-en-alt]'), botoes=doc.querySelectorAll('.lingua button');
+  textos.forEach(function(el){ el.setAttribute('data-pt',el.innerHTML); });
+  alts.forEach(function(el){ el.setAttribute('data-pt-alt',el.getAttribute('alt')); });
+  function lingua(l){
+    textos.forEach(function(el){ if(el.id!=='estado'){ el.innerHTML=el.getAttribute('data-'+l); } });
+    alts.forEach(function(el){ el.setAttribute('alt',el.getAttribute('data-'+l+'-alt')); });
+    root.lang = l==='en' ? 'en' : 'pt-PT';
+    botoes.forEach(function(b){ b.setAttribute('aria-pressed', String(b.getAttribute('data-l')===l)); });
+    estado();
+    try{ localStorage.setItem('cdv-lingua',l); }catch(e){}
+  }
+  botoes.forEach(function(b){ b.addEventListener('click',function(){ lingua(b.getAttribute('data-l')); }); });
+
+  /* 6. Vídeo de abertura: o filme do próprio restaurante, servido pelo site deles.
+        No computador começa sozinho, depois de a página carregar. No telemóvel fica a
+        fotografia e o vídeo só carrega se a pessoa tocar em "Ver o vídeo". */
+  var video=doc.querySelector('.hero-video'), botao=doc.querySelector('.ver-video');
+  function mostrarBotao(sim){ if(botao){ botao.classList.toggle('mostrar',sim); } }
+  function tocar(){
+    if(!video){ return; }
+    if(!video.getAttribute('src')){ video.setAttribute('src',video.getAttribute('data-src')); }
+    var p=video.play();
+    if(p && p.catch){ p.catch(function(){ mostrarBotao(true); }); }
+  }
+  if(video){
+    video.addEventListener('playing',function(){ video.classList.add('on'); mostrarBotao(false); });
+    video.addEventListener('error',function(){ video.classList.remove('on'); mostrarBotao(false); });
+    if(botao){ botao.addEventListener('click',tocar); }
+    var poupar=(navigator.connection && navigator.connection.saveData) || (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+    var largo=window.matchMedia && matchMedia('(min-width: 761px)').matches;
+    if(largo && !poupar){
+      if(doc.readyState==='complete'){ tocar(); } else { window.addEventListener('load',tocar); }
+    }else{ mostrarBotao(true); }
+  }
+
+  montar();
+  var guardada=null;
+  try{ guardada=localStorage.getItem('cdv-lingua'); }catch(e){}
+  if(guardada==='en'){ lingua('en'); } else { estado(); }
+  girar();
+  setInterval(estado,60000);
+})();
+</script>
+</body>
+</html>
