@@ -74,8 +74,11 @@ ul{padding:0;list-style:none}
 
 /* abertura */
 .hero{position:relative;overflow:hidden;background:var(--verde);color:#fff}
-.hero::before{content:"";position:absolute;right:-12%;top:-22%;width:min(62vw,620px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(200,181,149,.26),rgba(200,181,149,0) 68%)}
-.hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,350px);gap:clamp(32px,5vw,72px);align-items:center;padding-block:clamp(56px,8vw,104px)}
+.hero-foto{position:absolute;inset:0}
+.hero-foto img{width:100%;height:100%;object-fit:cover;object-position:60% 45%}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(98deg,rgba(0,61,64,.95) 0%,rgba(0,69,72,.9) 34%,rgba(0,82,86,.66) 62%,rgba(0,89,93,.38) 100%)}
+.hero .wrap{position:relative;display:grid;gap:clamp(32px,5vw,72px);align-items:center;padding-block:clamp(72px,11vw,150px)}
+.hero .wrap>div{max-width:52ch}
 .hero .rot{color:var(--areia)}
 .hero h1{margin-top:20px;font:300 clamp(34px,5.4vw,66px)/1.08 var(--s);letter-spacing:.01em;text-wrap:balance}
 .hero p.lead{max-width:34ch;color:rgba(255,255,255,.88)}
@@ -84,20 +87,8 @@ ul{padding:0;list-style:none}
 
 /* o símbolo da casa, em grande e esbatido. Não é fotografia: é a marca deles */
 .raios{position:absolute;pointer-events:none;z-index:0}
-.hero .raios{right:-16%;top:-20%;width:min(74vw,820px);color:var(--areia);opacity:.13}
-.hero::after{content:"";position:absolute;left:-10%;bottom:-40%;width:min(70vw,700px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.1),rgba(255,255,255,0) 62%);pointer-events:none}
+.hero .raios{right:-14%;bottom:-34%;width:min(56vw,560px);color:var(--areia);opacity:.1}
 
-/* respiração: o único movimento da página */
-.resp{position:relative;display:grid;place-items:center;width:min(350px,74vw);height:min(350px,74vw);margin-inline:auto}
-.anel{position:absolute;inset:0;border:1px solid rgba(200,181,149,.5);border-radius:50%}
-.anel-2{position:absolute;inset:11%;border:1px solid rgba(255,255,255,.2);border-radius:50%;transform-origin:center;animation:respira 10s ease-in-out infinite}
-.lua{position:relative;align-self:center;justify-self:center;width:38%;aspect-ratio:1;filter:drop-shadow(0 6px 24px rgba(0,0,0,.25))}
-.lua img{width:100%;height:100%;object-fit:cover;border-radius:50%}
-.lua.semimg img{display:none}
-.lua.semimg::after{content:"ESTÚDIO SHANTI";display:grid;place-items:center;aspect-ratio:1;border:1px solid rgba(255,255,255,.4);border-radius:50%;font:400 12px/1.4 var(--s);letter-spacing:.14em;text-align:center}
-.resp figcaption{position:absolute;bottom:-2px;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.6)}
-@keyframes respira{0%,100%{transform:scale(.84)}45%{transform:scale(1)}55%{transform:scale(1)}}
-@media (prefers-reduced-motion:reduce){.anel-2{animation:none;transform:scale(.93)}}
 
 /* horário */
 .horario{background:var(--verde-claro)}
@@ -187,8 +178,6 @@ ul{padding:0;list-style:none}
 
 @media (max-width:1000px){
   .nav{display:none}
-  .hero .wrap{grid-template-columns:1fr;gap:44px}
-  .resp{width:min(280px,62vw);height:min(280px,62vw);margin-inline:0}
   .estudio .wrap,.contactos .wrap,.prof .wrap,.dupla{grid-template-columns:1fr}
   .precos{grid-template-columns:1fr}
   .terapias{columns:2}
@@ -205,7 +194,7 @@ ul{padding:0;list-style:none}
 </head>
 <body>
 
-<p class="previa">Prévia de proposta criada pela SIMPLES para o Estúdio Shanti. Este não é o site oficial.</p>
+<p class="previa">Prévia de proposta criada pela SIMPLES para o Estúdio Shanti. Este não é o site oficial. As fotografias de ambiente são de referência.</p>
 
 <header class="topo">
   <div class="wrap">
@@ -225,6 +214,7 @@ ul{padding:0;list-style:none}
 <main id="topo">
 
   <section class="hero">
+    <div class="hero-foto"><img src="img/topo.jpg" alt="Aula de yoga em grupo" width="1800" height="1200" fetchpriority="high"></div>
     <svg class="raios" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="100" cy="100" r="46" stroke-width="1"/><path d="M100 24V6M100 194v-18M24 100H6M194 100h-18M46.3 46.3 33.6 33.6M166.4 166.4l-12.7-12.7M46.3 153.7l-12.7 12.7M166.4 33.6l-12.7 12.7M73 29.6 66 13M134 186.4l-7-16.6M29.6 73 13 66M186.4 134l-16.6-7M29.6 127 13 134M186.4 66l-16.6 7M73 170.4 66 187M134 13.6l-7 16.6"/><path d="M118 70a40 40 0 1 0 0 60 34 34 0 0 1 0-60Z" fill="currentColor" stroke="none"/></g></svg>
     <div class="wrap">
       <div>
@@ -241,12 +231,6 @@ ul{padding:0;list-style:none}
           <span><b>935&nbsp;611&nbsp;565</b></span>
         </p>
       </div>
-      <figure class="resp">
-        <span class="anel"></span>
-        <span class="anel-2"></span>
-        <span class="lua" id="lua"><img src="https://ugc.production.linktr.ee/8aa470e5-50de-428e-8ccd-133778bb5144_d6tecMJax6gO4vJfOQf7GcR174MQmFexCVcVPQKacUBs9S5KjeaktVmmTvvUU36TIHag5oEXiX8-s800-c-k-c0x00ffffff-no-.jpeg?io=true&amp;size=avatar-v3_0" alt="Estúdio Shanti" width="320" height="320" referrerpolicy="no-referrer" onerror="document.getElementById('lua').classList.add('semimg')"></span>
-        <figcaption>inspira &middot; expira</figcaption>
-      </figure>
     </div>
   </section>
 
