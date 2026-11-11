@@ -105,6 +105,9 @@ ul{padding:0;list-style:none}
 .dia.e-hoje .hora{color:var(--areia)}
 .dia.e-hoje small{color:rgba(255,255,255,.75)}
 .dia.e-hoje b::after{content:"hoje";margin-left:10px;padding:3px 9px;border-radius:999px;background:var(--areia);font:500 10.5px/1 var(--f);letter-spacing:.1em;text-transform:uppercase;color:#2a2017;vertical-align:3px}
+.estado{display:flex;align-items:center;gap:12px;margin-top:28px;font:400 clamp(19px,2vw,24px)/1.35 var(--s);letter-spacing:.01em}
+.estado::before{content:"";flex:none;width:9px;height:9px;border-radius:50%;background:var(--areia);box-shadow:0 0 0 5px rgba(200,181,149,.3)}
+.estado.aberto::before{background:var(--verde);box-shadow:0 0 0 5px rgba(0,89,93,.18)}
 .notas{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:22px;font-size:14px;color:var(--suave)}
 
 /* preços */
@@ -237,6 +240,7 @@ ul{padding:0;list-style:none}
         <div class="dia" data-dia="4"><b>Quinta</b><span class="hora">19h00</span><small>Aula de grupo</small></div>
         <div class="dia" data-dia="6"><b>Sábado</b><span class="hora">10h30</span><small>Aula Sénior brevemente</small></div>
       </div>
+      <p class="estado" id="estado" hidden></p>
       <p class="notas">
         <span>O estúdio abre 15 minutos antes do início das aulas.</span>
         <span>Marcação prévia pelo <a href="tel:+351935611565">935 611 565</a>.</span>
@@ -416,11 +420,31 @@ ul{padding:0;list-style:none}
 
 <script>
 (function(){
-  // assinala o dia de hoje, na hora de Vila Real
+  // assinala o dia de hoje e diz qual é a próxima aula, na hora de Vila Real
   try{
-    var hoje = new Date(new Date().toLocaleString("en-US",{timeZone:"Europe/Lisbon"})).getDay();
+    var agora = new Date(new Date().toLocaleString("en-US",{timeZone:"Europe/Lisbon"}));
+    var hoje = agora.getDay();
     var cartao = document.querySelector('.dia[data-dia="'+hoje+'"]');
     if(cartao){ cartao.classList.add("e-hoje"); }
+
+    var aulas = [{d:2,h:19,m:0,nome:"terça",hora:"19h00"},{d:4,h:19,m:0,nome:"quinta",hora:"19h00"},{d:6,h:10,m:30,nome:"sábado",hora:"10h30"}];
+    var min = agora.getHours()*60 + agora.getMinutes(), prox = null, menor = 1e9;
+    for(var i=0;i<aulas.length;i++){
+      var a = aulas[i], dias = (a.d - hoje + 7) % 7, falta = dias*1440 + (a.h*60 + a.m) - min;
+      if(falta < 0 && dias === 0){ falta += 7*1440; }
+      if(falta >= 0 && falta < menor){ menor = falta; prox = a; }
+    }
+    if(prox){
+      var e = document.getElementById("estado");
+      var dias = (prox.d - hoje + 7) % 7;
+      if(dias === 0){
+        e.textContent = "Hoje há aula, às " + prox.hora + ".";
+        e.className = "estado aberto";
+      }else{
+        e.textContent = "Hoje não há aula. A próxima é " + (dias === 1 ? "amanhã, " : "") + prox.nome + " às " + prox.hora + ".";
+      }
+      e.hidden = false;
+    }
   }catch(e){}
 })();
 </script>
