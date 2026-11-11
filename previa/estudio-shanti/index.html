@@ -83,11 +83,11 @@ ul{padding:0;list-style:none}
 .factos b{font-weight:500;color:#fff}
 
 /* respiração: o único movimento da página */
-.resp{position:relative;display:grid;place-items:center;aspect-ratio:1;width:100%;max-width:350px;margin-inline:auto}
+.resp{position:relative;display:grid;place-items:center;width:min(350px,74vw);height:min(350px,74vw);margin-inline:auto}
 .anel{position:absolute;inset:0;border:1px solid rgba(200,181,149,.5);border-radius:50%}
 .anel-2{position:absolute;inset:11%;border:1px solid rgba(255,255,255,.2);border-radius:50%;transform-origin:center;animation:respira 10s ease-in-out infinite}
-.lua{position:relative;width:38%;filter:drop-shadow(0 6px 24px rgba(0,0,0,.25))}
-.lua img{width:100%;border-radius:50%}
+.lua{position:relative;align-self:center;justify-self:center;width:38%;aspect-ratio:1;filter:drop-shadow(0 6px 24px rgba(0,0,0,.25))}
+.lua img{width:100%;height:100%;object-fit:cover;border-radius:50%}
 .lua.semimg img{display:none}
 .lua.semimg::after{content:"ESTÚDIO SHANTI";display:grid;place-items:center;aspect-ratio:1;border:1px solid rgba(255,255,255,.4);border-radius:50%;font:400 12px/1.4 var(--s);letter-spacing:.14em;text-align:center}
 .resp figcaption{position:absolute;bottom:-2px;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.6)}
@@ -167,8 +167,8 @@ ul{padding:0;list-style:none}
 
 @media (max-width:1000px){
   .nav{display:none}
-  .hero .wrap{grid-template-columns:1fr}
-  .resp{order:-1;max-width:260px;margin-inline:0}
+  .hero .wrap{grid-template-columns:1fr;gap:44px}
+  .resp{width:min(280px,62vw);height:min(280px,62vw);margin-inline:0}
   .estudio .wrap,.contactos .wrap{grid-template-columns:1fr}
   .precos{grid-template-columns:1fr}
   .terapias{columns:2}
