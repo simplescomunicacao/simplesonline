@@ -236,9 +236,9 @@ ul{padding:0;list-style:none}
       <p class="rot">Aulas de yoga</p>
       <h2 class="tit" style="margin-top:14px">A semana no estúdio</h2>
       <div class="dias">
+        <div class="dia" data-dia="1"><b>Segunda</b><span class="hora">18h30</span><small>Aula de grupo</small></div>
         <div class="dia" data-dia="2"><b>Terça</b><span class="hora">19h00</span><small>Aula de grupo</small></div>
         <div class="dia" data-dia="4"><b>Quinta</b><span class="hora">19h00</span><small>Aula de grupo</small></div>
-        <div class="dia" data-dia="6"><b>Sábado</b><span class="hora">10h30</span><small>Aula Sénior brevemente</small></div>
       </div>
       <p class="estado" id="estado" hidden></p>
       <p class="notas">
@@ -396,7 +396,7 @@ ul{padding:0;list-style:none}
       <dl class="lista">
         <div><dt>Morada</dt><dd>Rua dos Três Lagares 1, Loja B<br>5000-577 Vila Real<br><a href="https://www.google.com/maps/place/?q=place_id:ChIJQx9ifgNLOw0RmFyrUAZN6V8" target="_blank" rel="noopener noreferrer">Abrir no Google Maps</a></dd></div>
         <div><dt>Telemóvel</dt><dd><a href="tel:+351935611565">935 611 565</a></dd></div>
-        <div><dt>Aulas</dt><dd>Terça e quinta às 19h00, sábado às 10h30</dd></div>
+        <div><dt>Aulas</dt><dd>Segunda às 18h30, terça e quinta às 19h00</dd></div>
         <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/estudio_shanti/" target="_blank" rel="noopener noreferrer">@estudio_shanti</a></dd></div>
         <div><dt>Facebook</dt><dd><a href="https://www.facebook.com/profile.php?id=100090870367298" target="_blank" rel="noopener noreferrer">Estúdio Shanti</a></dd></div>
       </dl>
@@ -427,7 +427,7 @@ ul{padding:0;list-style:none}
     var cartao = document.querySelector('.dia[data-dia="'+hoje+'"]');
     if(cartao){ cartao.classList.add("e-hoje"); }
 
-    var aulas = [{d:2,h:19,m:0,nome:"terça",hora:"19h00"},{d:4,h:19,m:0,nome:"quinta",hora:"19h00"},{d:6,h:10,m:30,nome:"sábado",hora:"10h30"}];
+    var aulas = [{d:1,h:18,m:30,nome:"segunda",hora:"18h30"},{d:2,h:19,m:0,nome:"terça",hora:"19h00"},{d:4,h:19,m:0,nome:"quinta",hora:"19h00"}];
     var min = agora.getHours()*60 + agora.getMinutes(), prox = null, menor = 1e9;
     for(var i=0;i<aulas.length;i++){
       var a = aulas[i], dias = (a.d - hoje + 7) % 7, falta = dias*1440 + (a.h*60 + a.m) - min;
