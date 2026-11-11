@@ -16,8 +16,8 @@
    As cores são as da casa: o verde do logótipo (#00595d) e a areia do
    Linktree (#c8b595), sobre creme. Letra de título no espírito do logótipo
    (serifada, caixa alta, aberta) e DM Sans no corpo, a letra que eles já
-   escolheram no Linktree. Sem fotografias: o estúdio não tem site de onde
-   as servir, por isso os lugares da fotografia ficam marcados.
+   escolheram no Linktree. As três fotografias são da própria casa, do
+   Instagram deles, tratadas com a mesma dominante para fazerem conjunto.
    ========================================================================== */
 :root{
   --verde:#00595d; --verde-fundo:#044b4e; --verde-claro:#e4efed;
@@ -135,6 +135,10 @@ ul{padding:0;list-style:none}
 .estudio{background:var(--areia-clara)}
 .estudio .wrap{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:clamp(32px,5vw,76px);align-items:center}
 .estudio p+p{margin-top:16px}
+.foto{overflow:hidden;border-radius:var(--r);background:var(--verde-claro)}
+.foto img{display:block;width:100%;height:100%;object-fit:cover}
+.foto figcaption{padding:10px 2px 0;font-size:12.5px;color:var(--suave)}
+.dupla{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,520px);gap:clamp(28px,5vw,64px);align-items:center}
 .lugares{display:grid;gap:12px}
 .painel{position:relative;display:grid;place-items:center;aspect-ratio:4/5;overflow:hidden;border-radius:var(--r);background:linear-gradient(158deg,#f7f1e6 0%,#e9dac0 52%,#d9c7a4 100%)}
 .painel .raios{position:relative;width:86%;color:var(--verde);opacity:.17}
@@ -142,7 +146,7 @@ ul{padding:0;list-style:none}
 
 /* quem te recebe */
 .prof{background:var(--creme)}
-.prof .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,5vw,76px);align-items:center}
+.prof .wrap{display:grid;grid-template-columns:minmax(0,440px) minmax(0,1fr);gap:clamp(28px,5vw,76px);align-items:center}
 .prof .nome{font:300 clamp(38px,5.6vw,72px)/1 var(--s);letter-spacing:.01em}
 .prof .cred{margin-top:18px;padding-top:18px;border-top:1px solid var(--linha);font-size:14.5px;line-height:1.9;color:var(--suave)}
 .prof blockquote{margin:0;font:300 clamp(23px,2.6vw,34px)/1.3 var(--s);letter-spacing:.01em;text-wrap:balance}
@@ -185,7 +189,7 @@ ul{padding:0;list-style:none}
   .nav{display:none}
   .hero .wrap{grid-template-columns:1fr;gap:44px}
   .resp{width:min(280px,62vw);height:min(280px,62vw);margin-inline:0}
-  .estudio .wrap,.contactos .wrap,.prof .wrap{grid-template-columns:1fr}
+  .estudio .wrap,.contactos .wrap,.prof .wrap,.dupla{grid-template-columns:1fr}
   .precos{grid-template-columns:1fr}
   .terapias{columns:2}
 }
@@ -265,10 +269,15 @@ ul{padding:0;list-style:none}
 
   <section class="sec" id="aulas">
     <div class="wrap">
-      <div class="eixo">
-        <p class="rot">Aulas e valores</p>
-        <h2 class="tit" style="margin-top:14px">Presencial no estúdio ou <em>on-line</em> via Zoom</h2>
-        <p class="lead">O nosso dia a dia é muito corrido e por essa razão no Estúdio Shanti pode fazer as suas práticas de diferentes formas.</p>
+      <div class="dupla">
+        <div class="eixo">
+          <p class="rot">Aulas e valores</p>
+          <h2 class="tit" style="margin-top:14px">Presencial no estúdio ou <em>on-line</em> via Zoom</h2>
+          <p class="lead">O nosso dia a dia é muito corrido e por essa razão no Estúdio Shanti pode fazer as suas práticas de diferentes formas.</p>
+        </div>
+        <figure class="foto" style="aspect-ratio:488/238">
+          <img src="img/sala.jpg" alt="Aula de yoga no Estúdio Shanti" width="488" height="238" loading="lazy">
+        </figure>
       </div>
       <div class="precos">
         <div>
@@ -350,25 +359,23 @@ ul{padding:0;list-style:none}
         <p style="margin-top:22px">Oferecemos uma ampla variedade de serviços como aulas de yoga, meditação, massagens e práticas de bem-estar, todas projetadas para ajudá-lo(a) a encontrar o seu equilíbrio físico, mental e espiritual.</p>
         <p>Os nossos professores, treinados e experientes, estão aqui para guiá-lo(a) na sua jornada de autodescoberta e crescimento pessoal. Num ambiente acolhedor e amigável, estamos sempre felizes em receber novos membros para a nossa família.</p>
       </div>
-      <div class="lugares">
-        <div class="painel">
-          <svg class="raios" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="100" cy="100" r="46" stroke-width=".9"/><path d="M100 24V6M100 194v-18M24 100H6M194 100h-18M46.3 46.3 33.6 33.6M166.4 166.4l-12.7-12.7M46.3 153.7l-12.7 12.7M166.4 33.6l-12.7 12.7M73 29.6 66 13M134 186.4l-7-16.6M29.6 73 13 66M186.4 134l-16.6-7M29.6 127 13 134M186.4 66l-16.6 7M73 170.4 66 187M134 13.6l-7 16.6"/><path d="M118 70a40 40 0 1 0 0 60 34 34 0 0 1 0-60Z" fill="currentColor" stroke="none"/></g></svg>
-        </div>
-        <div class="lugar">fotografia da casa, a sala de prática</div>
-      </div>
+      <figure class="foto" style="aspect-ratio:486/398">
+        <img src="img/aula.jpg" alt="Uma aula no Estúdio Shanti" width="486" height="398" loading="lazy">
+      </figure>
     </div>
   </section>
 
   <section class="sec prof" id="professora">
     <div class="wrap">
+      <figure class="foto" style="aspect-ratio:700/954">
+        <img src="img/tania.jpg" alt="Tânia Cardoso, professora de Hatha Yoga" width="700" height="954" loading="lazy">
+      </figure>
       <div>
         <p class="rot">Quem te recebe</p>
-        <p class="nome" style="margin-top:14px">Tânia<br>Cardoso</p>
+        <p class="nome" style="margin-top:14px">Tânia Cardoso</p>
+        <blockquote style="margin-top:26px">"Olá, eu sou a Tânia. Sou de Vila Real. Considero-me uma pessoa tranquila, cuidadora e sensível."</blockquote>
+        <p style="margin-top:18px;color:var(--suave)">"Há 18 anos, o yoga entrou na minha vida e nunca mais saiu."</p>
         <p class="cred">Professora de Hatha Yoga<br>Yoga Alliance International<br>Certificação YTT 200H</p>
-      </div>
-      <div>
-        <blockquote>"Olá, eu sou a Tânia. Sou de Vila Real. Considero-me uma pessoa tranquila, cuidadora e sensível."</blockquote>
-        <p>"Há 18 anos, o yoga entrou na minha vida e nunca mais saiu."</p>
       </div>
     </div>
   </section>
