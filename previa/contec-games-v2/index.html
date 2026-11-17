@@ -28,7 +28,7 @@ a{color:inherit}
 .notice a{font-weight:600}
 
 /* topo */
-.hero{background:var(--black);color:var(--white);position:relative;overflow:hidden}
+.hero{background:var(--white);color:var(--black);position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
 .hero-grid{display:grid;gap:34px;align-items:center}
 .hero-photo{position:relative;width:min(78vw,420px);aspect-ratio:1;justify-self:center;margin-bottom:8px}
 .hero-photo img{width:100%;height:100%;object-fit:cover;border-radius:50%;border:clamp(14px,3vw,26px) solid var(--red);box-shadow:0 0 0 6px var(--black),0 0 0 9px #2A2A2A;display:block}
@@ -39,24 +39,24 @@ a{color:inherit}
 .seal{width:46px;height:46px;border-radius:50%;background:var(--red);display:grid;place-items:center;font-family:var(--cond);font-weight:800;font-size:22px;letter-spacing:-.5px;overflow:hidden}
 .seal img{width:100%;height:100%;object-fit:cover;display:block}
 .brand b{font-family:var(--cond);font-weight:700;font-size:22px;line-height:1;letter-spacing:.5px}
-.brand small{display:block;font-size:12px;color:#BDBDBD;letter-spacing:.3px;margin-top:3px}
-.status{font-size:14px;display:flex;align-items:center;gap:8px;background:#1C1C1C;border-radius:30px;padding:7px 14px}
+.brand small{display:block;font-size:12px;color:var(--muted);letter-spacing:.3px;margin-top:3px}
+.status{font-size:14px;display:flex;align-items:center;gap:8px;background:var(--bench);color:var(--text);border-radius:30px;padding:7px 14px}
 .dot{width:9px;height:9px;border-radius:50%;background:#888}
 .dot.on{background:var(--ok);box-shadow:0 0 0 4px rgba(31,157,87,.25)}
 .hero-body{position:relative;z-index:2;padding:56px 0 64px}
 .hero h1{font-family:var(--cond);font-weight:800;font-size:clamp(52px,11vw,112px);line-height:.9;letter-spacing:-1px;text-transform:uppercase;max-width:11ch}
 .hero h1 span{display:block;color:var(--red)}
-.hero p.lead{margin-top:22px;font-size:19px;max-width:34ch;color:#E6E6E6}
+.hero p.lead{margin-top:22px;font-size:19px;max-width:34ch;color:var(--text)}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
 .btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--cond);font-weight:700;font-size:20px;letter-spacing:.4px;padding:14px 22px;border-radius:6px;border:2px solid transparent;cursor:pointer}
 .btn-red{background:var(--red);color:var(--white)}
 .btn-red:hover{background:var(--red-deep)}
-.btn-ghost{border-color:#5A5A5A;color:var(--white);background:transparent}
-.btn-ghost:hover{border-color:var(--white)}
+.btn-ghost{border-color:var(--black);color:var(--black);background:transparent}
+.btn-ghost:hover{background:var(--black);color:var(--white)}
 .btn svg{width:20px;height:20px;flex:none}
-.proof{margin-top:38px;display:flex;flex-wrap:wrap;gap:8px 26px;font-size:15px;color:#CFCFCF}
-.proof strong{color:var(--white);font-weight:600}
-.proof a{text-decoration-color:#666;text-underline-offset:3px}
+.proof{margin-top:38px;display:flex;flex-wrap:wrap;gap:8px 26px;font-size:15px;color:var(--muted)}
+.proof strong{color:var(--black);font-weight:600}
+.proof a{text-decoration-color:var(--line);text-underline-offset:3px}
 
 /* seletor */
 .picker{background:var(--bench);padding:72px 0}
@@ -120,33 +120,43 @@ h2{font-family:var(--cond);font-weight:800;font-size:clamp(36px,6vw,58px);line-h
 .sale .btn{background:var(--black);color:var(--white)}
 
 
-.kicker{position:relative;z-index:2;color:#9A9A9A;font-size:14px;margin-top:6px}
+.kicker{position:relative;z-index:2;color:var(--muted);font-size:14px;margin-top:6px}
 .stage{position:relative;height:clamp(420px,92vw,640px);margin-top:8px;touch-action:pan-y}
 .big{position:absolute;inset:0;margin:0;display:flex;flex-direction:column;justify-content:space-between;align-items:stretch;padding:4px 18px 18px;pointer-events:none;font-family:var(--cond);font-weight:800;text-transform:uppercase;letter-spacing:-1px;line-height:.82}
-.big .l1{font-size:clamp(76px,22vw,230px);color:var(--white);text-align:left}
+.big .l1{font-size:clamp(76px,22vw,230px);color:var(--black);text-align:left}
 .big .l2{font-size:clamp(56px,15.5vw,170px);color:var(--red);text-align:right}
 #pad{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:grab;outline:none}
 #pad.grab{cursor:grabbing}
-.drag{position:absolute;left:50%;bottom:35%;transform:translateX(-50%);display:flex;gap:8px;align-items:center;background:rgba(255,255,255,.92);color:#000;font-family:var(--cond);font-weight:700;font-size:15px;letter-spacing:.6px;text-transform:uppercase;padding:8px 14px;border-radius:30px;pointer-events:none;transition:opacity .4s}
+.drag{position:absolute;left:50%;bottom:35%;transform:translateX(-50%);display:flex;gap:8px;align-items:center;background:var(--black);color:var(--white);font-family:var(--cond);font-weight:700;font-size:15px;letter-spacing:.6px;text-transform:uppercase;padding:8px 14px;border-radius:30px;pointer-events:none;transition:opacity .4s}
 .drag svg{width:18px;height:18px}
 .drag.off{opacity:0}
 .hero-foot{position:relative;z-index:2;padding-bottom:56px}
 .hero-foot .lead{margin-top:0}
 .chips{display:flex;gap:8px;margin-top:22px;overflow-x:auto;padding:2px 2px 8px;scrollbar-width:none}
 .chips::-webkit-scrollbar{display:none}
-.chip{flex:none;display:flex;align-items:center;gap:10px;font-family:var(--body);font-weight:600;font-size:15px;padding:8px 16px 8px 8px;border-radius:40px;border:1.5px solid #3A3A3A;background:#111;color:var(--white);cursor:pointer}
-.chip i{width:26px;height:26px;border-radius:50%;background:var(--c);border:1.5px solid #555;display:block}
-.chip[aria-selected="true"]{border-color:var(--white);background:#1E1E1E;box-shadow:0 0 0 2px var(--red)}
+.chip{flex:none;display:flex;align-items:center;gap:10px;font-family:var(--body);font-weight:600;font-size:15px;padding:8px 16px 8px 8px;border-radius:40px;border:1.5px solid var(--line);background:var(--white);color:var(--black);cursor:pointer}
+.chip i{width:26px;height:26px;border-radius:50%;background:var(--c);border:1.5px solid #BDBDBD;display:block}
+.chip[aria-selected="true"]{border-color:var(--black);box-shadow:0 0 0 1px var(--black)}
 .chips.light .chip{background:var(--white);color:var(--black);border-color:var(--line)}
 .chips.light .chip[aria-selected="true"]{border-color:var(--black);background:var(--white)}
 .steps-head{display:grid;gap:30px;align-items:center}
 .steps .hero-photo{width:min(70vw,340px);justify-self:center;margin:0 0 10px}
 @media (min-width:860px){.steps-head{grid-template-columns:340px 1fr;gap:56px}.steps .hero-photo{width:340px}}
 @media (min-width:860px){.stage{height:600px}.big{padding:4px max(22px,calc((100vw - 1080px)/2 + 22px)) 18px}}
-footer{background:var(--black);color:#BDBDBD;padding:44px 0 90px;font-size:14px}
+
+.reviews{padding:72px 0;background:var(--bench)}
+.revs{display:flex;gap:14px;overflow-x:auto;margin:30px 0 26px;padding-bottom:8px;scroll-snap-type:x mandatory;scrollbar-width:thin}
+.rev{flex:0 0 min(82vw,320px);scroll-snap-align:start;background:var(--white);border-radius:10px;padding:22px 22px 18px;display:flex;flex-direction:column;gap:12px;border:1px solid var(--line)}
+.rev .stars{color:var(--red);letter-spacing:2px;font-size:17px}
+.rev blockquote{font-size:16.5px;line-height:1.5;color:var(--text);flex:1}
+.rev figcaption{font-size:14px;color:var(--muted)}
+.btn-ghost-dark{border:2px solid var(--black);color:var(--black);background:transparent}
+.btn-ghost-dark:hover{background:var(--black);color:var(--white)}
+@media (min-width:980px){.revs{display:grid;grid-template-columns:repeat(3,1fr);overflow:visible}.rev{flex:none}}
+footer{background:var(--bench);color:var(--muted);padding:44px 0 90px;font-size:14px}
 footer .row{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
-footer a{color:var(--white)}
-footer .note{margin-top:22px;max-width:70ch;color:#9A9A9A}
+footer a{color:var(--black)}
+footer .note{margin-top:22px;max-width:70ch;color:var(--muted)}
 
 .float{position:fixed;right:16px;bottom:16px;z-index:20;background:var(--red);color:var(--white);border-radius:40px;padding:13px 18px;font-family:var(--cond);font-weight:700;font-size:19px;text-decoration:none;display:flex;gap:8px;align-items:center;box-shadow:0 6px 20px rgba(0,0,0,.35)}
 .float svg{width:20px;height:20px}
@@ -232,6 +242,22 @@ footer .note{margin-top:22px;max-width:70ch;color:#9A9A9A}
   </div>
 </section>
 
+<section class="reviews" aria-labelledby="t-rev">
+  <div class="wrap">
+    <h2 id="t-rev">O que dizem no Google</h2>
+    <p class="sub">4,8 de nota com 549 avaliações (nov/2026). Alguns trechos, do jeito que foram escritos.</p>
+    <div class="revs">
+      <figure class="rev"><span class="stars" aria-label="5 estrelas">★★★★★</span><blockquote>Depois de passar meu PlayStation 5 por duas assistências técnicas e nenhuma conseguir resolver o problema, encontrei a Contec Games.</blockquote><figcaption>Talyson N., no Google, há 4 meses</figcaption></figure>
+      <figure class="rev"><span class="stars" aria-label="5 estrelas">★★★★★</span><blockquote>Deixei meu PS5 pela manhã e, no mesmo dia, já recebi o orçamento.</blockquote><figcaption>Eilson J., no Google, há 2 meses</figcaption></figure>
+      <figure class="rev"><span class="stars" aria-label="5 estrelas">★★★★★</span><blockquote>Agilidade, qualidade e honestidade. (…) foi o único lugar que achei em Fortaleza pra fazer a troca dos módulos do meu joystick para TMR no Dualsense Edge.</blockquote><figcaption>Marcos, no Google, há 1 mês</figcaption></figure>
+      <figure class="rev"><span class="stars" aria-label="5 estrelas">★★★★★</span><blockquote>O diagnóstico foi explicado de forma clara e o conserto ficou impecável.</blockquote><figcaption>Rafael A., no Google, há 3 meses</figcaption></figure>
+      <figure class="rev"><span class="stars" aria-label="5 estrelas">★★★★★</span><blockquote>Vim de outra assistência para ressuscitar meu PS5 que estava dado como morto, em dois dias a loja já me retornou com a solução bem transparente em todos os momentos.</blockquote><figcaption>Gabriel S., no Google, há 3 meses</figcaption></figure>
+      <figure class="rev"><span class="stars" aria-label="5 estrelas">★★★★★</span><blockquote>Fiz a instalação dos analógicos magnéticos nos meus controles de PS5 e estou super satisfeita com o serviço.</blockquote><figcaption>Lana B., no Google, há 10 meses</figcaption></figure>
+    </div>
+    <a class="btn btn-ghost-dark" href="https://www.google.com/maps/search/Contec+Games+Assist%C3%AAncia+T%C3%A9cnica+Fortaleza" target="_blank" rel="noopener">Ver as 549 avaliações no Google</a>
+  </div>
+</section>
+
 <section class="pro" aria-labelledby="t-pro">
   <div class="wrap">
     <div>
@@ -285,7 +311,7 @@ footer .note{margin-top:22px;max-width:70ch;color:#9A9A9A}
 <footer>
   <div class="wrap">
     <div class="row">
-      <span><b style="color:#fff">Contec Games Assistência Técnica</b>, Fortaleza, desde 2010. Game over para o defeito.</span>
+      <span><b style="color:var(--black)">Contec Games Assistência Técnica</b>, Fortaleza, desde 2010. Game over para o defeito.</span>
       <a href="https://wa.me/558588115331" target="_blank" rel="noopener">WhatsApp</a>
     </div>
     <p class="note">Prévia de proposta da SIMPLES (<a href="https://www.simplesonline.com" target="_blank" rel="noopener">www.simplesonline.com</a>) feita a partir de informações públicas da Contec Games. Textos e dados ainda a validar com a loja. Nenhum dado é coletado nesta página.</p>
@@ -359,7 +385,7 @@ const scene=new THREE.Scene();
 const pm=new THREE.PMREMGenerator(R); scene.environment=pm.fromScene(new RoomEnvironment(),.04).texture;
 const cam=new THREE.PerspectiveCamera(30,1,.1,100); cam.position.set(0,0,11);
 const key=new THREE.DirectionalLight(0xffffff,1.6); key.position.set(3,5,6); scene.add(key);
-const rim=new THREE.DirectionalLight(0xff2a33,3.2); rim.position.set(-6,1,-4); scene.add(rim);
+const rim=new THREE.DirectionalLight(0xff2a33,2.2); rim.position.set(-6,1,-4); scene.add(rim);
 const rim2=new THREE.DirectionalLight(0xff2a33,1.4); rim2.position.set(6,-2,-3); scene.add(rim2);
 
 // materiais
@@ -433,7 +459,7 @@ const led=new THREE.Mesh(new THREE.BoxGeometry(1.1,.05,.06),new THREE.MeshBasicM
 led.position.set(0,1.05,.2); pad.add(led);
 
 // sombra suave
-const sc=document.createElement("canvas"); sc.width=sc.height=128; const sx=sc.getContext("2d"); const gr=sx.createRadialGradient(64,64,0,64,64,64); gr.addColorStop(0,"rgba(255,40,50,.35)"); gr.addColorStop(1,"rgba(255,40,50,0)"); sx.fillStyle=gr; sx.fillRect(0,0,128,128);
+const sc=document.createElement("canvas"); sc.width=sc.height=128; const sx=sc.getContext("2d"); const gr=sx.createRadialGradient(64,64,0,64,64,64); gr.addColorStop(0,"rgba(0,0,0,.22)"); gr.addColorStop(1,"rgba(0,0,0,0)"); sx.fillStyle=gr; sx.fillRect(0,0,128,128);
 const shadow=new THREE.Mesh(new THREE.PlaneGeometry(7,2.2),new THREE.MeshBasicMaterial({map:new THREE.CanvasTexture(sc),transparent:true,depthWrite:false}));
 shadow.rotation.x=-Math.PI/2; shadow.position.y=-2.6; scene.add(shadow);
 
