@@ -274,8 +274,8 @@ footer .note{margin-top:22px;max-width:70ch;color:#9A9A9A}
     ps5:{t:"PlayStation 5",n:"PS5",img:"img/ventoinha-ps5.jpg",i:"Diagnóstico e conserto na bancada, da limpeza ao reparo de placa.",l:["Revisão geral","Limpeza interna","Troca de pasta térmica","Banho químico em placa","Reparo de placa-mãe","Kit de refrigeração instalado na hora, sem romper o lacre da Sony, com 3 anos de garantia no kit"]},
     ps4:{t:"PlayStation 4",n:"PS4",img:"img/ventoinha-ps5.jpg",i:"O PS4 que já tem anos de jogo merece revisão, não aposentadoria.",l:["Revisão geral","Limpeza interna","Troca de pasta térmica","Banho químico em placa","Reparo de placa-mãe"]},
     xbox:{t:"Xbox Series",n:"Xbox",img:"img/ventoinha-ps5.jpg",i:"Conserto e manutenção dos consoles Xbox atuais.",l:["Revisão geral","Limpeza interna","Troca de pasta térmica","Banho químico em placa","Reparo de placa-mãe"]},
-    ctrl:{t:"Controles",n:"controle",img:"img/teste-controle.jpg",i:"Controles originais de PS4, PS5 e Xbox. Chega de personagem andando sozinho.",l:["Conserto de controles originais","Analógicos Hall Effect no DualSense, contra o drift","Troca dos módulos para TMR no DualSense Edge","Substituição de analógicos"]},
-    pc:{t:"PC Gamer",n:"PC Gamer",img:"img/teste-controle.jpg",i:"Serviço novo da casa: o computador que trava ou desliga sozinho.",l:["Diagnóstico de PC travando ou desligando","Conserto de placa de vídeo","Reparo de placa-mãe"]}
+    ctrl:{t:"Controles",n:"controle",img:"img/teste-controle.jpg",pos:"center 88%",i:"Controles originais de PS4, PS5 e Xbox. Chega de personagem andando sozinho.",l:["Conserto de controles originais","Analógicos Hall Effect no DualSense, contra o drift","Troca dos módulos para TMR no DualSense Edge","Substituição de analógicos"]},
+    pc:{t:"PC Gamer",n:"PC Gamer",img:"img/teste-controle.jpg",pos:"center 30%",i:"Serviço novo da casa: o computador que trava ou desliga sozinho.",l:["Diagnóstico de PC travando ou desligando","Conserto de placa de vídeo","Reparo de placa-mãe"]}
   };
   var tabs=document.querySelectorAll(".tab");
   function show(k){
@@ -284,7 +284,7 @@ footer .note{margin-top:22px;max-width:70ch;color:#9A9A9A}
     document.getElementById("p-intro").textContent=d.i;
     var ul=document.getElementById("p-list");ul.innerHTML="";
     d.l.forEach(function(x){var li=document.createElement("li");li.textContent=x;ul.appendChild(li);});
-    document.getElementById("p-side").style.backgroundImage="url("+d.img+")";
+    var ps=document.getElementById("p-side");ps.style.backgroundImage="url("+d.img+")";ps.style.backgroundPosition=d.pos||"center 45%";
     var c=document.getElementById("p-cta");
     c.textContent="Orçamento para o "+d.n;
     c.href=W+encodeURIComponent("Olá, Contec! Quero um orçamento para o meu "+d.n+".");
