@@ -436,13 +436,13 @@ function stick(px,py){
   const ringR=new THREE.Mesh(new THREE.TorusGeometry(.355,.018,8,48),red); ringR.position.z=.39; s.add(ringR);
   s.position.set(px,py,FZ+.02); pad.add(s); return s;
 }
-const stL=stick(-1.85,.12), stR=stick(1.0,-1.0);
+const stL=stick(-1.0,-1.0), stR=stick(1.0,-1.0);
 
 // direcional em cruz
 const C=new THREE.Shape(); const w=.15,l=.42;
 C.moveTo(-w,l);C.lineTo(w,l);C.lineTo(w,w);C.lineTo(l,w);C.lineTo(l,-w);C.lineTo(w,-w);C.lineTo(w,-l);C.lineTo(-w,-l);C.lineTo(-w,-w);C.lineTo(-l,-w);C.lineTo(-l,w);C.lineTo(-w,w);C.lineTo(-w,l);
 const dp=new THREE.Mesh(new THREE.ExtrudeGeometry(C,{depth:.08,bevelEnabled:true,bevelThickness:.03,bevelSize:.03,bevelSegments:4}),dark);
-dp.position.set(-1.0,-1.0,FZ); pad.add(dp);
+dp.position.set(-1.9,.12,FZ); pad.add(dp);
 
 // quatro botões de ação, sem símbolos
 [[0,.42],[.42,0],[0,-.42],[-.42,0]].forEach((p,i)=>{
