@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Contec Games | Assistência técnica de videogame em Fortaleza (prévia)</title>
+<meta name="description" content="Prévia de site criada pela SIMPLES para a Contec Games, assistência técnica de PS4, PS5, Xbox, controles e PC Gamer em Fortaleza.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#D9232D; --red-deep:#A8141C; --black:#000; --white:#fff;
+  --bench:#EEEDEB; --line:#D6D4D0; --text:#1A1A1A; --muted:#5C5A57; --ok:#1F9D57;
+  --cond:"Barlow Condensed", "Arial Narrow", sans-serif; --body:"Barlow", system-ui, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{font-family:var(--body);color:var(--text);background:var(--white);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+
+.notice{background:#FFF4C2;color:#3A3200;font-size:13.5px;line-height:1.4;padding:9px 22px;text-align:center}
+.notice a{font-weight:600}
+
+/* topo */
+.hero{background:var(--black);color:var(--white);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;border:56px solid var(--red);opacity:.9}
+.bar{display:flex;align-items:center;justify-content:space-between;padding:18px 0;position:relative;z-index:2}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.seal{width:46px;height:46px;border-radius:50%;background:var(--red);display:grid;place-items:center;font-family:var(--cond);font-weight:800;font-size:22px;letter-spacing:-.5px;box-shadow:0 0 0 3px var(--black),0 0 0 5px var(--white)}
+.brand b{font-family:var(--cond);font-weight:700;font-size:22px;line-height:1;letter-spacing:.5px}
+.brand small{display:block;font-size:12px;color:#BDBDBD;letter-spacing:.3px;margin-top:3px}
+.status{font-size:14px;display:flex;align-items:center;gap:8px;background:#1C1C1C;border-radius:30px;padding:7px 14px}
+.dot{width:9px;height:9px;border-radius:50%;background:#888}
+.dot.on{background:var(--ok);box-shadow:0 0 0 4px rgba(31,157,87,.25)}
+.hero-body{position:relative;z-index:2;padding:56px 0 64px}
+.hero h1{font-family:var(--cond);font-weight:800;font-size:clamp(52px,11vw,112px);line-height:.9;letter-spacing:-1px;text-transform:uppercase;max-width:11ch}
+.hero h1 span{display:block;color:var(--red)}
+.hero p.lead{margin-top:22px;font-size:19px;max-width:34ch;color:#E6E6E6}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--cond);font-weight:700;font-size:20px;letter-spacing:.4px;padding:14px 22px;border-radius:6px;border:2px solid transparent;cursor:pointer}
+.btn-red{background:var(--red);color:var(--white)}
+.btn-red:hover{background:var(--red-deep)}
+.btn-ghost{border-color:#5A5A5A;color:var(--white);background:transparent}
+.btn-ghost:hover{border-color:var(--white)}
+.btn svg{width:20px;height:20px;flex:none}
+.proof{margin-top:38px;display:flex;flex-wrap:wrap;gap:8px 26px;font-size:15px;color:#CFCFCF}
+.proof strong{color:var(--white);font-weight:600}
+.proof a{text-decoration-color:#666;text-underline-offset:3px}
+
+/* seletor */
+.picker{background:var(--bench);padding:72px 0}
+h2{font-family:var(--cond);font-weight:800;font-size:clamp(36px,6vw,58px);line-height:.95;text-transform:uppercase;letter-spacing:-.5px}
+.sub{color:var(--muted);margin-top:10px;max-width:52ch}
+.tabs{display:flex;gap:8px;margin-top:30px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;font-family:var(--cond);font-weight:700;font-size:21px;letter-spacing:.3px;padding:12px 20px;border-radius:6px;border:2px solid var(--black);background:var(--white);color:var(--black);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--black);color:var(--white)}
+.tab[aria-selected="true"]::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--red);margin-right:9px;vertical-align:2px}
+.panel{margin-top:18px;background:var(--white);border-radius:10px;border:2px solid var(--black);display:grid;grid-template-columns:1fr;overflow:hidden}
+.panel-main{padding:28px 26px}
+.panel h3{font-family:var(--cond);font-weight:700;font-size:30px;text-transform:uppercase;line-height:1}
+.panel p.intro{color:var(--muted);margin-top:8px}
+.panel ul{list-style:none;margin-top:20px;display:grid;gap:0}
+.panel li{padding:12px 0;border-top:1px solid var(--line);display:flex;gap:12px;align-items:baseline}
+.panel li::before{content:"";flex:none;width:8px;height:8px;background:var(--red);transform:rotate(45deg);position:relative;top:-2px}
+.panel-side{background:var(--black);color:var(--white);padding:26px;display:flex;flex-direction:column;justify-content:space-between;gap:20px}
+.panel-side p{font-size:15px;color:#CFCFCF}
+.panel-side p strong{color:var(--white)}
+.panel-side .btn{justify-content:center}
+@media (min-width:820px){.panel{grid-template-columns:1.6fr 1fr}.panel-main{padding:36px 38px}.panel-side{padding:34px}}
+
+/* passos */
+.steps{padding:72px 0}
+.steps ol{list-style:none;margin-top:34px;display:grid;gap:18px;counter-reset:s}
+.steps li{counter-increment:s;border-left:4px solid var(--red);padding:4px 0 4px 20px}
+.steps li::before{content:counter(s);font-family:var(--cond);font-weight:800;font-size:44px;line-height:1;color:var(--red);display:block}
+.steps li b{display:block;font-family:var(--cond);font-weight:700;font-size:24px;text-transform:uppercase;margin-top:6px}
+.steps li span{color:var(--muted)}
+@media (min-width:820px){.steps ol{grid-template-columns:repeat(3,1fr);gap:30px}}
+
+/* atleta */
+.pro{background:var(--red);color:var(--white);padding:70px 0;position:relative;overflow:hidden}
+.pro .wrap{display:grid;gap:28px;align-items:center}
+.pro blockquote{font-family:var(--cond);font-weight:700;font-size:clamp(34px,5.4vw,54px);line-height:1;text-transform:uppercase}
+.pro p{max-width:46ch;color:#FFE3E4}
+.pro a{color:var(--white);font-weight:600}
+.photo{aspect-ratio:4/5;border:2px dashed rgba(255,255,255,.7);border-radius:10px;display:grid;place-items:center;text-align:center;font-size:14px;color:#FFE3E4;padding:20px}
+.photo.dark{border-color:#BDBDBD;color:var(--muted);aspect-ratio:16/10}
+@media (min-width:820px){.pro .wrap{grid-template-columns:1.4fr 1fr}}
+
+/* loja */
+.shop{padding:72px 0}
+.shop .grid{display:grid;gap:34px;margin-top:30px}
+@media (min-width:820px){.shop .grid{grid-template-columns:1fr 1fr}}
+.hours{list-style:none}
+.hours li{display:flex;justify-content:space-between;padding:11px 0;border-top:1px solid var(--line);font-variant-numeric:tabular-nums}
+.hours li.today{font-weight:600;color:var(--black)}
+.hours li.today span:first-child::after{content:"hoje";font-size:12px;font-weight:600;background:var(--red);color:var(--white);border-radius:4px;padding:2px 7px;margin-left:10px;vertical-align:2px}
+.info dt{font-family:var(--cond);font-weight:700;font-size:20px;text-transform:uppercase;margin-top:18px}
+.info dt:first-child{margin-top:0}
+.info dd{color:var(--muted)}
+.info dd a{color:var(--text);font-weight:500}
+.sale{margin-top:40px;background:var(--bench);border-radius:10px;padding:24px 26px;display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;justify-content:space-between}
+.sale b{font-family:var(--cond);font-weight:700;font-size:24px;text-transform:uppercase;display:block}
+.sale span{color:var(--muted);font-size:15px}
+.sale .btn{background:var(--black);color:var(--white)}
+
+footer{background:var(--black);color:#BDBDBD;padding:44px 0 90px;font-size:14px}
+footer .row{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
+footer a{color:var(--white)}
+footer .note{margin-top:22px;max-width:70ch;color:#9A9A9A}
+
+.float{position:fixed;right:16px;bottom:16px;z-index:20;background:var(--red);color:var(--white);border-radius:40px;padding:13px 18px;font-family:var(--cond);font-weight:700;font-size:19px;text-decoration:none;display:flex;gap:8px;align-items:center;box-shadow:0 6px 20px rgba(0,0,0,.35)}
+.float svg{width:20px;height:20px}
+@media (min-width:820px){.float{display:none}}
+</style>
+</head>
+<body>
+
+<div class="notice">Prévia de proposta criada pela SIMPLES para a Contec Games. Este não é o site oficial. Os espaços marcados como "fotografia da casa" esperam as fotos da loja.</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="#">
+        <span class="seal" aria-hidden="true">CG</span>
+        <span><b>CONTEC GAMES</b><small>Assistência técnica</small></span>
+      </a>
+      <div class="status" id="status" aria-live="polite"><span class="dot" id="dot"></span><span id="statusText">Seg a sex 9h às 17h</span></div>
+    </div>
+    <div class="hero-body">
+      <h1>Seu videogame quebrou? <span>Resolve hoje.</span></h1>
+      <p class="lead">Conserto de PS4, PS5, Xbox, controles e PC Gamer em Fortaleza. Desde 2010.</p>
+      <div class="cta">
+        <a class="btn btn-red" href="https://wa.me/558588115331?text=Ol%C3%A1%2C%20Contec!%20Quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2Z"/></svg>
+          Pedir orçamento no WhatsApp</a>
+        <a class="btn btn-ghost" href="tel:+5585988115331">Ligar (85) 98811-5331</a>
+      </div>
+      <div class="proof">
+        <span><strong>4,8 no Google</strong>, 549 avaliações (nov/2026). <a href="https://www.google.com/maps/search/Contec+Games+Assist%C3%AAncia+T%C3%A9cnica+Fortaleza" target="_blank" rel="noopener">Ver no Google</a></span>
+        <span><strong>Orçamento em até 24h</strong></span>
+        <span><strong>Parcelamento sem juros</strong></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="picker" id="servicos" aria-labelledby="t-servicos">
+  <div class="wrap">
+    <h2 id="t-servicos">Qual é o seu aparelho?</h2>
+    <p class="sub">Escolha e veja o que a Contec resolve. O botão já abre o WhatsApp com o aparelho na mensagem.</p>
+    <div class="tabs" role="tablist" aria-label="Aparelhos">
+      <button class="tab" role="tab" aria-selected="true" aria-controls="panel" data-k="ps5">PS5</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="panel" data-k="ps4">PS4</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="panel" data-k="xbox">Xbox</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="panel" data-k="ctrl">Controles</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="panel" data-k="pc">PC Gamer</button>
+    </div>
+    <div class="panel" id="panel" role="tabpanel" aria-live="polite">
+      <div class="panel-main">
+        <h3 id="p-title">PlayStation 5</h3>
+        <p class="intro" id="p-intro"></p>
+        <ul id="p-list"></ul>
+      </div>
+      <div class="panel-side">
+        <p><strong>Como pedir:</strong> mande o modelo e o que está acontecendo. A Contec faz o diagnóstico e responde com o orçamento em até 24h.</p>
+        <a class="btn btn-red" id="p-cta" href="#" target="_blank" rel="noopener">Orçamento para o PS5</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="steps" aria-labelledby="t-steps">
+  <div class="wrap">
+    <h2 id="t-steps">Do problema ao jogo</h2>
+    <ol>
+      <li><b>Chame no WhatsApp</b><span>Conte o que aconteceu com o aparelho. O atendimento é com agendamento.</span></li>
+      <li><b>Orçamento em até 24h</b><span>Diagnóstico feito, você sabe o que tem e quanto custa antes de decidir.</span></li>
+      <li><b>Conserto com garantia</b><span>Pagamento no cartão, com parcelamento sem juros. Retire na loja ou receba em casa.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="pro" aria-labelledby="t-pro">
+  <div class="wrap">
+    <div>
+      <blockquote id="t-pro">Quem joga profissionalmente também escolhe a Contec.</blockquote>
+      <p style="margin-top:18px">Mailton Santos, jogador do Fortaleza, instalou na Contec os analógicos Hall Effect no controle DualSense: mais precisão e proteção contra o drift. <a href="https://www.instagram.com/contecgames/" target="_blank" rel="noopener">Ver no Instagram</a></p>
+    </div>
+    <div class="photo">fotografia da casa<br>(Mailton na loja, com autorização)</div>
+  </div>
+</section>
+
+<section class="shop" id="loja" aria-labelledby="t-loja">
+  <div class="wrap">
+    <h2 id="t-loja">A loja</h2>
+    <div class="grid">
+      <div>
+        <ul class="hours" id="hours">
+          <li data-d="1"><span>Segunda</span><span>9h às 17h</span></li>
+          <li data-d="2"><span>Terça</span><span>9h às 17h</span></li>
+          <li data-d="3"><span>Quarta</span><span>9h às 17h</span></li>
+          <li data-d="4"><span>Quinta</span><span>9h às 17h</span></li>
+          <li data-d="5"><span>Sexta</span><span>9h às 17h</span></li>
+          <li data-d="6"><span>Sábado</span><span>9h às 12h</span></li>
+          <li data-d="0"><span>Domingo</span><span>Fechado</span></li>
+        </ul>
+        <div class="photo dark" style="margin-top:26px">fotografia da casa<br>(bancada de conserto)</div>
+      </div>
+      <dl class="info">
+        <dt>Endereço</dt>
+        <dd><a href="https://www.google.com/maps/search/Contec+Games+Assist%C3%AAncia+T%C3%A9cnica+Fortaleza" target="_blank" rel="noopener">Rua Ribeiro da Silva, 650 B, Fortaleza, CE, 60325-210</a></dd>
+        <dt>WhatsApp e telefone</dt>
+        <dd><a href="https://wa.me/558588115331" target="_blank" rel="noopener">WhatsApp</a> e <a href="tel:+5585988115331">(85) 98811-5331</a></dd>
+        <dt>E-mail</dt>
+        <dd><a href="mailto:contecassistencia@gmail.com">contecassistencia@gmail.com</a></dd>
+        <dt>Na loja</dt>
+        <dd>Atendimento com agendamento. Estacionamento no local, Wi-Fi e acessibilidade para cadeira de rodas.</dd>
+        <dt>Pagamento</dt>
+        <dd>Cartão de crédito, débito e aproximação. Parcelamento sem juros.</dd>
+        <dt>Entrega</dt>
+        <dd>Retire na loja ou receba em casa.</dd>
+        <dt>Redes</dt>
+        <dd><a href="https://www.instagram.com/contecgames/" target="_blank" rel="noopener">Instagram @contecgames</a></dd>
+      </dl>
+    </div>
+    <div class="sale">
+      <div><b>Também vende console</b><span>PS5 Slim com mídia física. Consulte a disponibilidade.</span></div>
+      <a class="btn" href="https://wa.me/558588115331?text=Ol%C3%A1%2C%20Contec!%20Quero%20saber%20do%20PS5%20Slim." target="_blank" rel="noopener">Perguntar no WhatsApp</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="row">
+      <span><b style="color:#fff">Contec Games Assistência Técnica</b>, Fortaleza, desde 2010</span>
+      <a href="https://wa.me/558588115331" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+    <p class="note">Prévia de proposta da SIMPLES (<a href="https://www.simplesonline.com" target="_blank" rel="noopener">www.simplesonline.com</a>) feita a partir de informações públicas da Contec Games. Textos e dados ainda a validar com a loja. Nenhum dado é coletado nesta página.</p>
+  </div>
+</footer>
+
+<a class="float" href="https://wa.me/558588115331?text=Ol%C3%A1%2C%20Contec!%20Quero%20um%20or%C3%A7amento." target="_blank" rel="noopener" aria-label="Pedir orçamento no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z"/></svg>Orçamento</a>
+
+<script>
+(function(){
+  var W="https://wa.me/558588115331?text=";
+  var D={
+    ps5:{t:"PlayStation 5",n:"PS5",i:"Diagnóstico e conserto na bancada, da limpeza ao reparo de placa.",l:["Revisão geral","Limpeza interna","Troca de pasta térmica","Banho químico em placa","Reparo de placa-mãe"]},
+    ps4:{t:"PlayStation 4",n:"PS4",i:"O PS4 que já tem anos de jogo merece revisão, não aposentadoria.",l:["Revisão geral","Limpeza interna","Troca de pasta térmica","Banho químico em placa","Reparo de placa-mãe"]},
+    xbox:{t:"Xbox Series",n:"Xbox",i:"Conserto e manutenção dos consoles Xbox atuais.",l:["Revisão geral","Limpeza interna","Troca de pasta térmica","Banho químico em placa","Reparo de placa-mãe"]},
+    ctrl:{t:"Controles",n:"controle",i:"Controles originais de PS4, PS5 e Xbox. Chega de personagem andando sozinho.",l:["Conserto de controles originais","Analógicos Hall Effect no DualSense, contra o drift","Troca dos módulos para TMR no DualSense Edge","Substituição de analógicos"]},
+    pc:{t:"PC Gamer",n:"PC Gamer",i:"Serviço novo da casa: o computador que trava ou desliga sozinho.",l:["Diagnóstico de PC travando ou desligando","Conserto de placa de vídeo","Reparo de placa-mãe"]}
+  };
+  var tabs=document.querySelectorAll(".tab");
+  function show(k){
+    var d=D[k];
+    document.getElementById("p-title").textContent=d.t;
+    document.getElementById("p-intro").textContent=d.i;
+    var ul=document.getElementById("p-list");ul.innerHTML="";
+    d.l.forEach(function(x){var li=document.createElement("li");li.textContent=x;ul.appendChild(li);});
+    var c=document.getElementById("p-cta");
+    c.textContent="Orçamento para o "+d.n;
+    c.href=W+encodeURIComponent("Olá, Contec! Quero um orçamento para o meu "+d.n+".");
+    tabs.forEach(function(b){b.setAttribute("aria-selected",b.dataset.k===k?"true":"false");});
+  }
+  tabs.forEach(function(b,ix){
+    b.addEventListener("click",function(){show(b.dataset.k);});
+    b.addEventListener("keydown",function(e){
+      if(e.key==="ArrowRight"||e.key==="ArrowLeft"){var n=tabs[(ix+(e.key==="ArrowRight"?1:tabs.length-1))%tabs.length];n.focus();show(n.dataset.k);}
+    });
+  });
+  show("ps5");
+
+  // horário de Fortaleza
+  try{
+    var p=new Intl.DateTimeFormat("en-US",{timeZone:"America/Fortaleza",weekday:"short",hour:"numeric",minute:"numeric",hour12:false}).formatToParts(new Date());
+    var g=function(t){return (p.find(function(x){return x.type===t;})||{}).value;};
+    var wd={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[g("weekday")];
+    var m=(parseInt(g("hour"),10)%24)*60+parseInt(g("minute"),10);
+    var close=wd===6?720:(wd===0?0:1020);
+    var open=wd!==0&&m>=540&&m<close;
+    var li=document.querySelector('.hours li[data-d="'+wd+'"]'); if(li) li.classList.add("today");
+    var txt;
+    if(open){txt="Aberto agora, até "+(wd===6?"12h":"17h");document.getElementById("dot").classList.add("on");}
+    else if(wd!==0&&m<540){txt="Fechado, abre hoje às 9h";}
+    else{txt="Fechado, abre "+((wd===6||wd===0)?"segunda":"amanhã")+" às 9h";}
+    document.getElementById("statusText").textContent=txt;
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
