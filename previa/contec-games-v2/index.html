@@ -77,6 +77,11 @@ h2{font-family:var(--cond);font-weight:800;font-size:clamp(36px,6vw,58px);line-h
 .panel-side{background:var(--black) center/cover no-repeat;color:var(--white);padding:26px;display:flex;flex-direction:column;justify-content:flex-end;gap:20px;min-height:300px;position:relative}
 .panel-side::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15) 0%,rgba(0,0,0,.88) 62%)}
 .panel-side>*{position:relative}
+.panel-side.prod{background-color:var(--white);background-size:auto 58%;color:var(--text);min-height:440px;border-left:1px solid var(--line)}
+.panel-side.prod::before{background:linear-gradient(180deg,rgba(255,255,255,0) 52%,var(--white) 66%)}
+.panel-side.prod p{color:var(--muted)}
+.panel-side.prod p strong{color:var(--black)}
+@media (max-width:819px){.panel-side.prod{border-left:0;border-top:1px solid var(--line)}}
 .panel-side p{font-size:15px;color:#CFCFCF}
 .panel-side p strong{color:var(--white)}
 .panel-side .btn{justify-content:center}
@@ -165,7 +170,7 @@ footer .note{margin-top:22px;max-width:70ch;color:var(--muted)}
 </head>
 <body>
 
-<div class="notice">Prévia de proposta criada pela SIMPLES para a Contec Games. Este não é o site oficial. As fotografias são do Instagram da Contec.</div>
+<div class="notice">Prévia de proposta criada pela SIMPLES para a Contec Games. Este não é o site oficial. As fotos da loja são do Instagram da Contec; as dos consoles são de referência.</div>
 
 <header class="hero">
   <div class="wrap">
@@ -325,9 +330,9 @@ footer .note{margin-top:22px;max-width:70ch;color:var(--muted)}
 (function(){
   var W="https://wa.me/558588115331?text=";
   var D={
-    ps5:{t:"PlayStation 5",n:"PS5",img:"img/ventoinha-ps5.jpg",i:"Diagnóstico e conserto na bancada, da limpeza ao reparo de placa.",l:["Revisão geral","Limpeza interna","Troca de pasta térmica","Banho químico em placa","Reparo de placa-mãe","Kit de refrigeração instalado na hora, sem romper o lacre da Sony, com 3 anos de garantia no kit"]},
-    ps4:{t:"PlayStation 4",n:"PS4",img:"img/ventoinha-ps5.jpg",i:"O PS4 que já tem anos de jogo merece revisão, não aposentadoria.",l:["Revisão geral","Limpeza interna","Troca de pasta térmica","Banho químico em placa","Reparo de placa-mãe"]},
-    xbox:{t:"Xbox Series",n:"Xbox",img:"img/ventoinha-ps5.jpg",i:"Conserto e manutenção dos consoles Xbox atuais.",l:["Revisão geral","Limpeza interna","Troca de pasta térmica","Banho químico em placa","Reparo de placa-mãe"]},
+    ps5:{t:"PlayStation 5",n:"PS5",img:"img/console-ps5.jpg",prod:1,i:"Diagnóstico e conserto na bancada, da limpeza ao reparo de placa.",l:["Revisão geral","Limpeza interna","Troca de pasta térmica","Banho químico em placa","Reparo de placa-mãe","Kit de refrigeração instalado na hora, sem romper o lacre da Sony, com 3 anos de garantia no kit"]},
+    ps4:{t:"PlayStation 4",n:"PS4",img:"img/console-ps4.jpg",prod:1,i:"O PS4 que já tem anos de jogo merece revisão, não aposentadoria.",l:["Revisão geral","Limpeza interna","Troca de pasta térmica","Banho químico em placa","Reparo de placa-mãe"]},
+    xbox:{t:"Xbox Series",n:"Xbox",img:"img/console-xbox.jpg",prod:1,i:"Conserto e manutenção dos consoles Xbox atuais.",l:["Revisão geral","Limpeza interna","Troca de pasta térmica","Banho químico em placa","Reparo de placa-mãe"]},
     ctrl:{t:"Controles",n:"controle",img:"img/teste-controle.jpg",pos:"center 88%",i:"Controles originais de PS4, PS5 e Xbox. Chega de personagem andando sozinho.",l:["Conserto de controles originais","Analógicos Hall Effect no DualSense, contra o drift","Troca dos módulos para TMR no DualSense Edge","Substituição de analógicos"]},
     pc:{t:"PC Gamer",n:"PC Gamer",img:"img/teste-controle.jpg",pos:"center 30%",i:"Serviço novo da casa: o computador que trava ou desliga sozinho.",l:["Diagnóstico de PC travando ou desligando","Conserto de placa de vídeo","Reparo de placa-mãe"]}
   };
@@ -340,7 +345,7 @@ footer .note{margin-top:22px;max-width:70ch;color:var(--muted)}
     document.getElementById("p-intro").textContent=d.i;
     var ul=document.getElementById("p-list");ul.innerHTML="";
     d.l.forEach(function(x){var li=document.createElement("li");li.textContent=x;ul.appendChild(li);});
-    var ps=document.getElementById("p-side");ps.style.backgroundImage="url("+d.img+")";ps.style.backgroundPosition=d.pos||"center 45%";
+    var ps=document.getElementById("p-side");ps.style.backgroundImage="url("+d.img+")";ps.style.backgroundPosition=d.prod?"center 18px":(d.pos||"center 45%");ps.classList.toggle("prod",!!d.prod);
     var c=document.getElementById("p-cta");
     c.textContent="Orçamento para o "+d.n;
     c.href=W+encodeURIComponent("Olá, Contec! Quero um orçamento para o meu "+d.n+".");
