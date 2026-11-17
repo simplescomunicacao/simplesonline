@@ -395,7 +395,7 @@ bandM.position.z=FZ-.01; pad.add(bandM);
 const tc=document.createElement("canvas"); tc.width=tc.height=256; const x=tc.getContext("2d");
 x.fillStyle="#D9232D"; x.beginPath(); x.arc(128,128,124,0,7); x.fill();
 x.fillStyle="#fff"; x.font="800 118px 'Barlow Condensed', Arial Narrow, sans-serif"; x.textAlign="center"; x.textBaseline="middle"; x.fillText("CG",128,136);
-const tex=new THREE.CanvasTexture(tc); tex.colorSpace=THREE.SRGBColorSpace;
+const tex=new THREE.CanvasTexture(tc); tex.colorSpace=THREE.SRGBColorSpace; tex.center.set(.5,.5); tex.rotation=-Math.PI/2;
 const seal=new THREE.Mesh(new THREE.CylinderGeometry(.3,.3,.05,48),[dark,new THREE.MeshPhysicalMaterial({map:tex,roughness:.3,clearcoat:1}),dark]);
 seal.rotation.x=Math.PI/2; seal.position.set(0,.22,FZ+.05); pad.add(seal);
 
@@ -450,7 +450,7 @@ const up=()=>{drag=false;cv.classList.remove("grab");};
 cv.addEventListener("pointerup",up); cv.addEventListener("pointercancel",up);
 
 function size(){const w=stage.clientWidth,h=stage.clientHeight;R.setSize(w,h,false);cam.aspect=w/h;
-  const fit=w<700?1.0:1.35; cam.position.z=(w/h<1?15.5:11)/fit; cam.updateProjectionMatrix();kick();}
+  const fit=w<700?1.0:1.35; cam.position.z=(w/h<1?20:12.5)/fit; cam.updateProjectionMatrix();kick();}
 addEventListener("resize",size);
 
 let running=false, visible=true;
