@@ -29,10 +29,15 @@ a{color:inherit}
 
 /* topo */
 .hero{background:var(--black);color:var(--white);position:relative;overflow:hidden}
-.hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;border:56px solid var(--red);opacity:.9}
+.hero-grid{display:grid;gap:34px;align-items:center}
+.hero-photo{position:relative;width:min(78vw,420px);aspect-ratio:1;justify-self:center;margin-bottom:8px}
+.hero-photo img{width:100%;height:100%;object-fit:cover;border-radius:50%;border:clamp(14px,3vw,26px) solid var(--red);box-shadow:0 0 0 6px var(--black),0 0 0 9px #2A2A2A;display:block}
+.hero-photo figcaption{position:absolute;left:50%;bottom:-6px;transform:translateX(-50%);background:var(--white);color:var(--black);font-family:var(--cond);font-weight:700;font-size:17px;padding:5px 14px;border-radius:4px;white-space:nowrap}
+@media (min-width:860px){.hero-grid{grid-template-columns:1.25fr 1fr}.hero-photo{width:100%;justify-self:end}}
 .bar{display:flex;align-items:center;justify-content:space-between;padding:18px 0;position:relative;z-index:2}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-.seal{width:46px;height:46px;border-radius:50%;background:var(--red);display:grid;place-items:center;font-family:var(--cond);font-weight:800;font-size:22px;letter-spacing:-.5px;box-shadow:0 0 0 3px var(--black),0 0 0 5px var(--white)}
+.seal{width:46px;height:46px;border-radius:50%;background:var(--red);display:grid;place-items:center;font-family:var(--cond);font-weight:800;font-size:22px;letter-spacing:-.5px;overflow:hidden}
+.seal img{width:100%;height:100%;object-fit:cover;display:block}
 .brand b{font-family:var(--cond);font-weight:700;font-size:22px;line-height:1;letter-spacing:.5px}
 .brand small{display:block;font-size:12px;color:#BDBDBD;letter-spacing:.3px;margin-top:3px}
 .status{font-size:14px;display:flex;align-items:center;gap:8px;background:#1C1C1C;border-radius:30px;padding:7px 14px}
@@ -69,7 +74,9 @@ h2{font-family:var(--cond);font-weight:800;font-size:clamp(36px,6vw,58px);line-h
 .panel ul{list-style:none;margin-top:20px;display:grid;gap:0}
 .panel li{padding:12px 0;border-top:1px solid var(--line);display:flex;gap:12px;align-items:baseline}
 .panel li::before{content:"";flex:none;width:8px;height:8px;background:var(--red);transform:rotate(45deg);position:relative;top:-2px}
-.panel-side{background:var(--black);color:var(--white);padding:26px;display:flex;flex-direction:column;justify-content:space-between;gap:20px}
+.panel-side{background:var(--black) center/cover no-repeat;color:var(--white);padding:26px;display:flex;flex-direction:column;justify-content:flex-end;gap:20px;min-height:300px;position:relative}
+.panel-side::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15) 0%,rgba(0,0,0,.88) 62%)}
+.panel-side>*{position:relative}
 .panel-side p{font-size:15px;color:#CFCFCF}
 .panel-side p strong{color:var(--white)}
 .panel-side .btn{justify-content:center}
@@ -90,6 +97,7 @@ h2{font-family:var(--cond);font-weight:800;font-size:clamp(36px,6vw,58px);line-h
 .pro blockquote{font-family:var(--cond);font-weight:700;font-size:clamp(34px,5.4vw,54px);line-height:1;text-transform:uppercase}
 .pro p{max-width:46ch;color:#FFE3E4}
 .pro a{color:var(--white);font-weight:600}
+.pro-photo{width:100%;height:auto;border-radius:10px;border:4px solid var(--white);display:block}
 .photo{aspect-ratio:16/9;border:2px dashed rgba(255,255,255,.7);border-radius:10px;display:grid;place-items:center;text-align:center;font-size:14px;color:#FFE3E4;padding:20px}
 .photo.dark{border-color:#BDBDBD;color:var(--muted);aspect-ratio:16/10}
 @media (min-width:820px){.pro .wrap{grid-template-columns:1.4fr 1fr}.pro .photo{aspect-ratio:4/5}}
@@ -123,18 +131,19 @@ footer .note{margin-top:22px;max-width:70ch;color:#9A9A9A}
 </head>
 <body>
 
-<div class="notice">Prévia de proposta criada pela SIMPLES para a Contec Games. Este não é o site oficial. Os espaços marcados como "fotografia da casa" esperam as fotos da loja.</div>
+<div class="notice">Prévia de proposta criada pela SIMPLES para a Contec Games. Este não é o site oficial. As fotografias são do Instagram da Contec.</div>
 
 <header class="hero">
   <div class="wrap">
     <div class="bar">
       <a class="brand" href="#">
-        <span class="seal" aria-hidden="true">CG</span>
+        <span class="seal" aria-hidden="true"><img src="img/logo.jpg" width="46" height="46" alt="" onerror="this.remove();this.parentNode&&(this.parentNode.textContent='CG')"></span>
         <span><b>CONTEC GAMES</b><small>Assistência técnica</small></span>
       </a>
       <div class="status" id="status" aria-live="polite"><span class="dot" id="dot"></span><span id="statusText">Seg a sex 9h às 17h</span></div>
     </div>
-    <div class="hero-body">
+    <div class="hero-body hero-grid">
+      <div>
       <h1>Seu videogame quebrou? <span>Resolve hoje.</span></h1>
       <p class="lead">Conserto de PS4, PS5, Xbox, controles e PC Gamer em Fortaleza. Desde 2010.</p>
       <div class="cta">
@@ -148,6 +157,11 @@ footer .note{margin-top:22px;max-width:70ch;color:#9A9A9A}
         <span><strong>Orçamento em até 24h</strong></span>
         <span><strong>Parcelamento sem juros</strong></span>
       </div>
+      </div>
+      <figure class="hero-photo">
+        <img src="img/marcelo-bancada.jpg" width="900" height="900" alt="Marcelo na bancada da Contec Games, com um PS5 aberto e ferramentas">
+        <figcaption>Marcelo, na bancada da Contec</figcaption>
+      </figure>
     </div>
   </div>
 </header>
@@ -170,7 +184,7 @@ footer .note{margin-top:22px;max-width:70ch;color:#9A9A9A}
         <p class="intro" id="p-intro"></p>
         <ul id="p-list"></ul>
       </div>
-      <div class="panel-side">
+      <div class="panel-side" id="p-side">
         <p><strong>Como pedir:</strong> mande o modelo e o que está acontecendo. A Contec faz o diagnóstico e responde com o orçamento em até 24h.</p>
         <a class="btn btn-red" id="p-cta" href="#" target="_blank" rel="noopener">Orçamento para o PS5</a>
       </div>
@@ -180,7 +194,8 @@ footer .note{margin-top:22px;max-width:70ch;color:#9A9A9A}
 
 <section class="steps" aria-labelledby="t-steps">
   <div class="wrap">
-    <h2 id="t-steps">Do problema ao jogo</h2>
+    <h2 id="t-steps">CON de confiança. TEC de tecnologia.</h2>
+    <p class="sub">A Contec carrega no nome o que oferece há 15 anos em Fortaleza. Do problema ao jogo, são três passos.</p>
     <ol>
       <li><b>Chame no WhatsApp</b><span>Conte o que aconteceu com o aparelho. O atendimento é com agendamento.</span></li>
       <li><b>Orçamento em até 24h</b><span>Diagnóstico feito, você sabe o que tem e quanto custa antes de decidir.</span></li>
@@ -195,7 +210,7 @@ footer .note{margin-top:22px;max-width:70ch;color:#9A9A9A}
       <blockquote id="t-pro">Quem joga profissionalmente também escolhe a Contec.</blockquote>
       <p style="margin-top:18px">Mailton Santos, jogador do Fortaleza, instalou na Contec os analógicos Hall Effect no controle DualSense: mais precisão e proteção contra o drift. <a href="https://www.instagram.com/contecgames/" target="_blank" rel="noopener">Ver no Instagram</a></p>
     </div>
-    <div class="photo">fotografia da casa<br>(Mailton na loja, com autorização)</div>
+    <img class="pro-photo" src="img/marcelo-mailton.jpg" width="900" height="900" loading="lazy" alt="Marcelo e Mailton Santos na Contec Games">
   </div>
 </section>
 
@@ -213,7 +228,6 @@ footer .note{margin-top:22px;max-width:70ch;color:#9A9A9A}
           <li data-d="6"><span>Sábado</span><span>9h às 12h</span></li>
           <li data-d="0"><span>Domingo</span><span>Fechado</span></li>
         </ul>
-        <div class="photo dark" style="margin-top:26px">fotografia da casa<br>(bancada de conserto)</div>
       </div>
       <dl class="info">
         <dt>Endereço</dt>
@@ -243,7 +257,7 @@ footer .note{margin-top:22px;max-width:70ch;color:#9A9A9A}
 <footer>
   <div class="wrap">
     <div class="row">
-      <span><b style="color:#fff">Contec Games Assistência Técnica</b>, Fortaleza, desde 2010</span>
+      <span><b style="color:#fff">Contec Games Assistência Técnica</b>, Fortaleza, desde 2010. Game over para o defeito.</span>
       <a href="https://wa.me/558588115331" target="_blank" rel="noopener">WhatsApp</a>
     </div>
     <p class="note">Prévia de proposta da SIMPLES (<a href="https://www.simplesonline.com" target="_blank" rel="noopener">www.simplesonline.com</a>) feita a partir de informações públicas da Contec Games. Textos e dados ainda a validar com a loja. Nenhum dado é coletado nesta página.</p>
@@ -257,11 +271,11 @@ footer .note{margin-top:22px;max-width:70ch;color:#9A9A9A}
 (function(){
   var W="https://wa.me/558588115331?text=";
   var D={
-    ps5:{t:"PlayStation 5",n:"PS5",i:"Diagnóstico e conserto na bancada, da limpeza ao reparo de placa.",l:["Revisão geral","Limpeza interna","Troca de pasta térmica","Banho químico em placa","Reparo de placa-mãe"]},
-    ps4:{t:"PlayStation 4",n:"PS4",i:"O PS4 que já tem anos de jogo merece revisão, não aposentadoria.",l:["Revisão geral","Limpeza interna","Troca de pasta térmica","Banho químico em placa","Reparo de placa-mãe"]},
-    xbox:{t:"Xbox Series",n:"Xbox",i:"Conserto e manutenção dos consoles Xbox atuais.",l:["Revisão geral","Limpeza interna","Troca de pasta térmica","Banho químico em placa","Reparo de placa-mãe"]},
-    ctrl:{t:"Controles",n:"controle",i:"Controles originais de PS4, PS5 e Xbox. Chega de personagem andando sozinho.",l:["Conserto de controles originais","Analógicos Hall Effect no DualSense, contra o drift","Troca dos módulos para TMR no DualSense Edge","Substituição de analógicos"]},
-    pc:{t:"PC Gamer",n:"PC Gamer",i:"Serviço novo da casa: o computador que trava ou desliga sozinho.",l:["Diagnóstico de PC travando ou desligando","Conserto de placa de vídeo","Reparo de placa-mãe"]}
+    ps5:{t:"PlayStation 5",n:"PS5",img:"img/ventoinha-ps5.jpg",i:"Diagnóstico e conserto na bancada, da limpeza ao reparo de placa.",l:["Revisão geral","Limpeza interna","Troca de pasta térmica","Banho químico em placa","Reparo de placa-mãe","Kit de refrigeração instalado na hora, sem romper o lacre da Sony, com 3 anos de garantia no kit"]},
+    ps4:{t:"PlayStation 4",n:"PS4",img:"img/ventoinha-ps5.jpg",i:"O PS4 que já tem anos de jogo merece revisão, não aposentadoria.",l:["Revisão geral","Limpeza interna","Troca de pasta térmica","Banho químico em placa","Reparo de placa-mãe"]},
+    xbox:{t:"Xbox Series",n:"Xbox",img:"img/ventoinha-ps5.jpg",i:"Conserto e manutenção dos consoles Xbox atuais.",l:["Revisão geral","Limpeza interna","Troca de pasta térmica","Banho químico em placa","Reparo de placa-mãe"]},
+    ctrl:{t:"Controles",n:"controle",img:"img/teste-controle.jpg",i:"Controles originais de PS4, PS5 e Xbox. Chega de personagem andando sozinho.",l:["Conserto de controles originais","Analógicos Hall Effect no DualSense, contra o drift","Troca dos módulos para TMR no DualSense Edge","Substituição de analógicos"]},
+    pc:{t:"PC Gamer",n:"PC Gamer",img:"img/teste-controle.jpg",i:"Serviço novo da casa: o computador que trava ou desliga sozinho.",l:["Diagnóstico de PC travando ou desligando","Conserto de placa de vídeo","Reparo de placa-mãe"]}
   };
   var tabs=document.querySelectorAll(".tab");
   function show(k){
@@ -270,6 +284,7 @@ footer .note{margin-top:22px;max-width:70ch;color:#9A9A9A}
     document.getElementById("p-intro").textContent=d.i;
     var ul=document.getElementById("p-list");ul.innerHTML="";
     d.l.forEach(function(x){var li=document.createElement("li");li.textContent=x;ul.appendChild(li);});
+    document.getElementById("p-side").style.backgroundImage="url("+d.img+")";
     var c=document.getElementById("p-cta");
     c.textContent="Orçamento para o "+d.n;
     c.href=W+encodeURIComponent("Olá, Contec! Quero um orçamento para o meu "+d.n+".");
