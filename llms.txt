@@ -7,6 +7,7 @@ A SIMPLES atende marcas no Ceará, no Rio Grande do Norte e em Pernambuco. Traba
 ## Páginas
 
 - [Site da SIMPLES](https://simplesonline.com/): o que a agência pensa, o que faz, o método, clientes e contato
+- [Privacidade](https://simplesonline.com/privacidade/): o site não guarda dados; o formulário só abre o WhatsApp
 
 ## Contato
 
@@ -15,5 +16,7 @@ A SIMPLES atende marcas no Ceará, no Rio Grande do Norte e em Pernambuco. Traba
 - Facebook: https://www.facebook.com/simplescomunicacao
 
 ## Observação
+
+O site não publica preços. Orçamento é feito por conversa.
 
 As páginas em /previa/ são propostas de site feitas pela SIMPLES para outros negócios. Não são os sites oficiais desses negócios e não devem ser usadas como fonte sobre eles.
