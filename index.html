@@ -279,6 +279,7 @@ section{scroll-margin-top:var(--head-h)}
 .send{background:none;border:0;padding:4px 0 0;cursor:pointer;justify-self:start;text-align:left;white-space:nowrap;font-size:clamp(1.25rem,2.3vw,2rem)}
 .f-note{margin:-8px 0 0;min-height:1.3em;font-size:.9rem;color:var(--mute-d)}
 .f-note.err{color:var(--red)}
+.f-priv{margin:-10px 0 0;font-size:.82rem;line-height:1.45;color:var(--mute-d);max-width:62ch}
 .ct-grid .lbl.direct{margin:34px 0 0}
 @media (max-width:560px){.f-row{grid-template-columns:1fr}}
 .ct-list{list-style:none;margin:0;padding:0;display:grid;gap:6px}
@@ -526,6 +527,7 @@ dialog.post::backdrop{background:var(--scrim)}
               <label><input type="radio" name="para" value="rafael"><span>Rafael</span></label>
             </fieldset>
             <button class="call send" type="submit">Enviar pelo WhatsApp <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></button>
+            <p class="f-priv">Seus dados vão direto para o WhatsApp. O site não guarda nada.</p>
             <p class="f-note" id="lead-note" role="status"></p>
           </form>
           <p class="lbl direct">Ou direto no número</p>
